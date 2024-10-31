@@ -171,8 +171,8 @@ st.markdown('''
 - Supported clients in understanding and applying data science and machine learning tools, including Python and `Streamlit`.
 ''')
 
-txt('**Content Creator**, [Educational Content on Social Media Platforms](https://)',
-'2019-Present')
+# txt('**Content Creator**, [Educational Content on Social Media Platforms](https://)', '2019-Present')
+txt('**Content Creator**, Educational Content on Social Media Platforms', '2019-Present')
 st.markdown('''
 - Created engaging educational content across platforms like YouTube and TikTok, with notable audience engagement on various posts. [View an example here](https://www.tiktok.com/@jazzarcade).
 - Wrote engaging and informative scripts for videos, ensuring that complex topics were explained in a simple and accessible way.
