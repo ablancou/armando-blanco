@@ -113,9 +113,19 @@ st.write('''
 **About this app**:  
 This app predicts whether a patient is at risk of developing diabetes.
 
-This app was created using Python and a previously trained neural network built with the PyTorch framework. It provides accurate predictions based on the user's input parameters.
+Technology used: This app was created using Python and a previously trained neural network built with the PyTorch framework. It provides accurate predictions based on the user's input parameters.
 ''')
 st.write('[View the Diabetes Prediction App](https://ablancou-diabetes-prediction-app-4jhd5b.streamlit.app/)')
+
+# Project:
+st.write('''
+### Heart Disease Prediction App
+**About this app**:  
+This app predicts the probability of having heart disease.
+
+Technology used: This app was created using Python and a previously trained neural network built with the PyTorch framework. It provides accurate predictions based on the user's input parameters.
+''')
+st.write('[View the Diabetes Prediction App](https://ablancou-heart-disease-prediction-app-tmyzus.streamlit.app/)')
 
 # Project:
 st.write('''
