@@ -153,7 +153,7 @@ st.markdown('''
 ## Education
 ''')
 
-txt('** Bachelor in Business Administration **, *Universidad Anáhuac*, Mexico City',
+txt('** Bachelor of Business Administration **, *Universidad Anáhuac*, Mexico City',
 '(2005 - 2009)')
 
 
@@ -163,7 +163,7 @@ st.markdown('''
 ''')
 
 txt('**Full-Stack Software Developer and Data Scientist**, Freelance',
-'2012-Present')
+'2014-Present')
 st.markdown('''
 - Developed and deployed educational games and interactive learning tools, integrating AI-powered content for enhanced learning experiences.
 - Built and deployed neural networks using `PyTorch` for data science projects, providing data-driven solutions.
