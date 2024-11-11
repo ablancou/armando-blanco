@@ -12,7 +12,7 @@ st.write('''
 ''')
 
 image = Image.open('AB.png')
-st.image(image, width=150)
+st.image(image, width=120)
 
 st.markdown('## Summary', unsafe_allow_html=True)
 st.info('''
