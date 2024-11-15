@@ -231,7 +231,7 @@ txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
 
 txt2('CodeSignal', 'https://app.codesignal.com/profile/ablancou')
 
-txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancour')
+txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancou')
 
 txt2('Duolingo', 'https://www.duolingo.com/profile/ablancou') 
 
