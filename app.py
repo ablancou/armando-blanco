@@ -216,7 +216,7 @@ txt3('Data visualization', '`matplotlib`, `seaborn`, `plotly`')
 txt3('Model deployment', '`Streamlit`, `Google Colab`')
 txt3('Web development', '`Streamlit`, `HTML`, `CSS`, `JavaScript`, `WordPress`, `React`, `Redux`')
 txt3('Version Control', '`Git`, `GitHub`')
-txt3('Cloud platforms', '`Google Cloud`, `Google Colab`')
+txt3('Cloud platforms', '`AWS`, `Google Colab`')
 txt3('Presentation & Content Creation', 'Proficient in creating professional presentations, design documents, and educational content using the `Microsoft Office Suite`, `Apple iWork Suite`, and AI-powered design tools.')
 #####################
 st.markdown('''
@@ -228,6 +228,10 @@ txt2('LinkedIn', 'https://www.linkedin.com/in/armandoblanco')
 txt2('GitHub', 'https://github.com/ablancou')
 
 txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
+
+txt2('CodeSignal', 'https://app.codesignal.com/profile/ablancou')
+
+txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancour')
 
 txt2('Duolingo', 'https://www.duolingo.com/profile/ablancou') 
 
