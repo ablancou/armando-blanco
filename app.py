@@ -21,6 +21,7 @@ st.info('''
 - Proven expertise in building and deploying neural networks using `PyTorch`, and creating interactive applications with `Streamlit`.
 - Extensive experience in designing and implementing data pipelines, as well as working with SQL/NoSQL databases to manage and analyze large-scale data.
 - Proficient in API integration, Git/GitHub for version control, and Agile methodologies, with a focus on continuous improvement in iterative development practices.
+- Currently advancing knowledge in `AWS`, `React`, `Next.js`, and `CDI Pipelines`, focusing on enhancing cloud-based and scalable software solutions.
 
 ''')
 
@@ -218,14 +219,19 @@ st.markdown('''
 ''')
 txt4('Python', 'A versatile programming language for data science and software development', 'https://www.python.org/')
 txt4('Google Colab', 'A cloud-based platform for Python coding and machine learning experimentation', 'https://colab.research.google.com/')
+txt4('AWS', 'A cloud computing platform providing scalable services and solutions', 'https://aws.amazon.com/')
 txt4('PyTorch', 'An open-source machine learning library used for building neural networks', 'https://pytorch.org/')
 txt4('Streamlit', 'A framework for building and deploying data science web apps', 'https://streamlit.io/')
 txt4('Git/GitHub', 'Version control system used for code management and collaboration', 'https://github.com/')
 txt4('SQL/NoSQL', 'Database management for structured and unstructured data', 'https://www.postgresql.org/')
+txt4('React', 'A JavaScript library for building user interfaces', 'https://reactjs.org/')
+txt4('Next.js', 'A React-based framework for server-side rendering and static site generation', 'https://nextjs.org/')
 txt4('Jupyter Notebooks', 'An open-source tool for interactive coding, used widely in data science', 'https://jupyter.org/')
 txt4('TensorFlow', 'An open-source framework for machine learning and artificial intelligence', 'https://www.tensorflow.org/')
 txt4('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/')
 txt4('Heroku', 'A cloud platform as a service supporting several programming languages', 'https://www.heroku.com/')
+txt4('Agile Methodologies', 'An iterative approach to software development and project management', 'https://www.agilealliance.org/')
+txt4('CDI Pipelines', 'Continuous Deployment Integration for automated software releases', 'https://www.atlassian.com/continuous-delivery/ci-vs-cd')
 
 #####################
 
@@ -243,21 +249,5 @@ txt3('Presentation & Content Creation', 'Proficient in creating professional pre
 
 #####################
 
-st.markdown('''
-## Technical Profiles
-''')
 
-txt2('LinkedIn', 'https://www.linkedin.com/in/armandoblanco')
-
-txt2('GitHub', 'https://github.com/ablancou')
-
-txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
-
-txt2('LeetCode', 'https://leetcode.com/u/ablanco')
-
-txt2('CodeSignal', 'https://app.codesignal.com/profile/ablancou')
-
-txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancou')
-
-txt2('Twitter', 'https://twitter.com/ablancou')
 
