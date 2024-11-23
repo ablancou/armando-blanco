@@ -57,7 +57,7 @@ st.markdown("""
         <a class="nav-link" href="#technologies-and-tools">Technologies & Tools</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#social-media">Social Media</a>
+        <a class="nav-link" href="#technical-profiles">Technical Profiles</a>
       </li>
     </ul>
   </div>
@@ -95,6 +95,7 @@ def txt4(a, b, c):
     st.markdown(b)
   with col3:
     st.markdown(c)
+
 #####################
 
 
@@ -158,6 +159,7 @@ txt('** Bachelor of Business Administration **, *Universidad Anáhuac*, Mexico C
 
 
 #####################
+
 st.markdown('''
 ## Work Experience
 ''')
@@ -188,6 +190,27 @@ st.markdown('''
 - Wrote engaging and informative scripts for videos, ensuring that complex topics were explained in a simple and accessible way.
 - Focused on educational content that helps learners in areas such as music theory and other educational subjects.
 ''')
+
+#####################
+
+st.markdown('''
+## Technical Profiles
+''')
+
+txt2('LinkedIn', 'https://www.linkedin.com/in/armandoblanco')
+
+txt2('GitHub', 'https://github.com/ablancou')
+
+txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
+
+txt2('LeetCode', 'https://leetcode.com/u/ablanco')
+
+txt2('CodeSignal', 'https://app.codesignal.com/profile/ablancou')
+
+txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancou')
+
+txt2('Twitter', 'https://twitter.com/ablancou')
+
 #####################
 
 st.markdown('''
@@ -204,7 +227,6 @@ txt4('TensorFlow', 'An open-source framework for machine learning and artificial
 txt4('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/')
 txt4('Heroku', 'A cloud platform as a service supporting several programming languages', 'https://www.heroku.com/')
 
-
 #####################
 
 st.markdown('''
@@ -218,9 +240,11 @@ txt3('Web development', '`Streamlit`, `HTML`, `CSS`, `JavaScript`, `WordPress`, 
 txt3('Version Control', '`Git`, `GitHub`')
 txt3('Cloud platforms', '`AWS`, `Google Colab`')
 txt3('Presentation & Content Creation', 'Proficient in creating professional presentations, design documents, and educational content using the `Microsoft Office Suite`, `Apple iWork Suite`, and AI-powered design tools.')
+
 #####################
+
 st.markdown('''
-## Social Media
+## Technical Profiles
 ''')
 
 txt2('LinkedIn', 'https://www.linkedin.com/in/armandoblanco')
@@ -229,11 +253,11 @@ txt2('GitHub', 'https://github.com/ablancou')
 
 txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
 
+txt2('LeetCode', 'https://leetcode.com/u/ablanco')
+
 txt2('CodeSignal', 'https://app.codesignal.com/profile/ablancou')
 
 txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancou')
-
-txt2('Duolingo', 'https://www.duolingo.com/profile/ablancou') 
 
 txt2('Twitter', 'https://twitter.com/ablancou')
 
