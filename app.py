@@ -214,39 +214,59 @@ txt2('Twitter', 'https://twitter.com/ablancou')
 
 #####################
 
+# Main title for the section
 st.markdown('''
 ## Technologies and Tools
 ''')
 
-# General Programming and Tools
-txt4('Python', 'A versatile programming language for data science and software development', 'https://www.python.org/')
-txt4('C', 'A foundational programming language for system-level programming', 'https://en.wikipedia.org/wiki/C_(programming_language)')
-txt4('C++', 'An extension of C, popular for game development and high-performance applications', 'https://isocpp.org/')
+# Subcategory: General Programming and Tools
+st.markdown('''
+### General Programming and Tools
+''')
+txt4('C++', 'An efficient programming language essential for embedded systems and high-performance software in real-time applications', 'https://isocpp.org/')
+txt4('Python', 'A versatile programming language used in AI, machine learning, and automation for modern technological solutions', 'https://www.python.org/')
+txt4('JavaScript/TypeScript', 'Core technologies for interactive web applications, with TypeScript enhancing scalability and maintainability', 'https://www.typescriptlang.org/')
+txt4('C', 'A foundational programming language ideal for system-level programming and understanding hardware-software interaction', 'https://en.wikipedia.org/wiki/C_(programming_language)')
 txt4('C#', 'A modern, object-oriented language used for Windows applications and game development', 'https://learn.microsoft.com/en-us/dotnet/csharp/')
 txt4('Visual Studio Code (VSC)', 'A powerful, lightweight code editor with extensive extensions support', 'https://code.visualstudio.com/')
 
-# Machine Learning and AI
+# Subcategory: Machine Learning and AI
+st.markdown('''
+### Machine Learning and AI
+''')
 txt4('PyTorch', 'An open-source machine learning library used for building neural networks', 'https://pytorch.org/')
 txt4('TensorFlow', 'A framework for machine learning and artificial intelligence applications', 'https://www.tensorflow.org/')
 txt4('Jupyter Notebooks', 'An open-source tool for interactive coding, widely used in data science', 'https://jupyter.org/')
 
-# Cloud Computing and Frameworks
+# Subcategory: Cloud Computing and Frameworks
+st.markdown('''
+### Cloud Computing and Frameworks
+''')
 txt4('AWS', 'A cloud platform providing scalable services and solutions', 'https://aws.amazon.com/')
 txt4('Google Colab', 'A cloud-based platform for Python coding and machine learning experimentation', 'https://colab.research.google.com/')
 txt4('React', 'A JavaScript library for building dynamic user interfaces', 'https://reactjs.org/')
 txt4('Next.js', 'A React-based framework for server-side rendering and static site generation', 'https://nextjs.org/')
 txt4('Streamlit', 'A framework for building and deploying data science web apps', 'https://streamlit.io/')
 
-# Database Management and Version Control
+# Subcategory: Database Management and Version Control
+st.markdown('''
+### Database Management and Version Control
+''')
 txt4('SQL', 'Structured Query Language for managing relational databases', 'https://www.mysql.com/')
 txt4('NoSQL', 'Non-relational database systems for flexible, scalable data storage', 'https://www.mongodb.com/nosql-explained')
 txt4('Git/GitHub', 'Version control system used for code management and collaboration', 'https://github.com/')
 
-# Development Methodologies
+# Subcategory: Development Methodologies
+st.markdown('''
+### Development Methodologies
+''')
 txt4('Agile Methodologies', 'Iterative approach to software development and project management', 'https://www.atlassian.com/agile')
 txt4('CDI Pipelines', 'Automated software delivery process for continuous deployment and integration', 'https://www.atlassian.com/continuous-delivery/ci-vs-cd')
 
-# Containers and Deployment
+# Subcategory: Containers and Deployment
+st.markdown('''
+### Containers and Deployment
+''')
 txt4('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/')
 
 #####################
