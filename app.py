@@ -109,6 +109,22 @@ Here are some of the projects I have deployed using Streamlit Cloud. Click on th
 
 ''')
 
+# Project: 
+st.write('''
+### Music Theory Game: Key Signature Recognition
+**Description**:  
+
+An interactive music theory game leveraging modern web technologies to improve knowledge of music theory concepts, such as key signature recognition, under time constraints.
+
+Technical Skills:
+	•	Built with React.js, Next.js, and Phaser.js for modern UI/UX and responsive gameplay.
+	•	Deployed with AWS Amplify for streamlined hosting and CI/CD pipelines, with domain management handled through Route 53.
+	•	JavaScript (ES6+), HTML, CSS, and Tailwind CSS for responsive and visually appealing design.
+	•	Gamification principles, cloud deployment, and state management.
+''')
+st.write('[Play the Music Theory Game](https://www.jazzarcade.com/key-signature-recognition-game)')
+
+
 # Project:
 st.write('''
 ### Diabetes Prediction App
@@ -137,16 +153,6 @@ A medical calculation tool that includes multiple calculators to aid in clinical
 ''')
 st.write('[View the Medical Calculators Toolkit](https://medical-calculators-toolkit-for-general-medicine.streamlit.app/)')
 
-# Project: 
-st.write('''
-### Music Theory Game: Key Signature Recognition
-**Description**:  
-Music Theory - Key Signature Recognition.  
-Flash Music Theory Test: 10 Seconds per Key Signature. Enhance Your Skills in 2 Minutes!
-
-Finish and unveil your stats plus the key signatures that need your focus.
-''')
-st.write('[Play the Music Theory Game](https://jazzarcade.com/index.php/key-signature-recognition-game/)')
 
 
 #####################
