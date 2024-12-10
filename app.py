@@ -116,12 +116,13 @@ st.write('''
 
 An interactive music theory game leveraging modern web technologies to improve knowledge of music theory concepts, such as key signature recognition, under time constraints.
 
-Technical Skills:
-	•	Built with React.js, Next.js, and Phaser.js for modern UI/UX and responsive gameplay.
-	•	Deployed with AWS Amplify for streamlined hosting and CI/CD pipelines, with domain management handled through Route 53.
-	•	JavaScript (ES6+), HTML, CSS, and Tailwind CSS for responsive and visually appealing design.
-	•	Gamification principles, cloud deployment, and state management.
+**Technical Skills**:
+- Built with React.js, Next.js, and Phaser.js for modern UI/UX and responsive gameplay.
+- Deployed with AWS Amplify for streamlined hosting and CI/CD pipelines, with domain management handled through Route 53.
+- JavaScript (ES6+), HTML, CSS, and Tailwind CSS for responsive and visually appealing design.
+- Gamification principles, cloud deployment, and state management.
 ''')
+
 st.write('[Play the Music Theory Game](https://www.jazzarcade.com/key-signature-recognition-game)')
 
 
