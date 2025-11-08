@@ -8,7 +8,7 @@ with open("style.css") as f:
 # Header
 st.write('''
 # Armando Blanco
-##### *Resume* - Software Engineer II Aspirant
+##### *Resume* - Software Engineer II Candidate
 ''')
 image = Image.open('AB.png')
 st.image(image, width=125)
@@ -84,7 +84,7 @@ def txt3(a, b):
   with col1:
     st.markdown(a)
   with col2:
-    st.markdown(b)
+    st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
   col1, col2, col3 = st.columns([0.5, 1.5, 3])
@@ -95,11 +95,6 @@ def txt4_with_icon(name, desc, url, icon_url):
     st.markdown(f"[{name}]({url})")
   with col3:
     st.markdown(desc)
-
-#####################
-# Sidebar for Filters (Optional, improves UX)
-st.sidebar.title("Filters")
-show_tech_music = st.sidebar.checkbox("Show only Tech + Music", False)
 
 #####################
 st.markdown('''
@@ -225,50 +220,49 @@ icon_urls = {
 }
 
 # Subcategories with txt4_with_icon
-if not show_tech_music:
-    st.markdown('''
-    ### General Programming and Tools
-    ''')
-    txt4_with_icon('C++', 'An efficient programming language essential for embedded systems and high-performance software in real-time applications', 'https://isocpp.org/', icon_urls.get('C++'))
-    txt4_with_icon('Python', 'A versatile programming language used in AI, machine learning, and automation for modern technological solutions', 'https://www.python.org/', icon_urls.get('Python'))
-    txt4_with_icon('JavaScript/TypeScript', 'Core technologies for interactive web applications, with TypeScript enhancing scalability and maintainability', 'https://www.typescriptlang.org/', icon_urls.get('JavaScript/TypeScript'))
-    txt4_with_icon('C', 'A foundational programming language ideal for system-level programming and understanding hardware-software interaction', 'https://en.wikipedia.org/wiki/C_(programming_language)', icon_urls.get('C'))
-    txt4_with_icon('C#', 'A modern, object-oriented language used for Windows applications and game development', 'https://learn.microsoft.com/en-us/dotnet/csharp/', icon_urls.get('C#'))
-    txt4_with_icon('Visual Studio Code (VSC)', 'A powerful, lightweight code editor with extensive extensions support', 'https://code.visualstudio.com/', icon_urls.get('Visual Studio Code (VSC)'))
+st.markdown('''
+### General Programming and Tools
+''')
+txt4_with_icon('C++', 'An efficient programming language essential for embedded systems and high-performance software in real-time applications', 'https://isocpp.org/', icon_urls.get('C++'))
+txt4_with_icon('Python', 'A versatile programming language used in AI, machine learning, and automation for modern technological solutions', 'https://www.python.org/', icon_urls.get('Python'))
+txt4_with_icon('JavaScript/TypeScript', 'Core technologies for interactive web applications, with TypeScript enhancing scalability and maintainability', 'https://www.typescriptlang.org/', icon_urls.get('JavaScript/TypeScript'))
+txt4_with_icon('C', 'A foundational programming language ideal for system-level programming and understanding hardware-software interaction', 'https://en.wikipedia.org/wiki/C_(programming_language)', icon_urls.get('C'))
+txt4_with_icon('C#', 'A modern, object-oriented language used for Windows applications and game development', 'https://learn.microsoft.com/en-us/dotnet/csharp/', icon_urls.get('C#'))
+txt4_with_icon('Visual Studio Code (VSC)', 'A powerful, lightweight code editor with extensive extensions support', 'https://code.visualstudio.com/', icon_urls.get('Visual Studio Code (VSC)'))
 
-    st.markdown('''
-    ### Machine Learning and AI
-    ''')
-    txt4_with_icon('PyTorch', 'An open-source machine learning library used for building neural networks', 'https://pytorch.org/', icon_urls.get('PyTorch'))
-    txt4_with_icon('TensorFlow', 'A framework for machine learning and artificial intelligence applications', 'https://www.tensorflow.org/', icon_urls.get('TensorFlow'))
-    txt4_with_icon('Jupyter Notebooks', 'An open-source tool for interactive coding, widely used in data science', 'https://jupyter.org/', icon_urls.get('Jupyter Notebooks'))
+st.markdown('''
+### Machine Learning and AI
+''')
+txt4_with_icon('PyTorch', 'An open-source machine learning library used for building neural networks', 'https://pytorch.org/', icon_urls.get('PyTorch'))
+txt4_with_icon('TensorFlow', 'A framework for machine learning and artificial intelligence applications', 'https://www.tensorflow.org/', icon_urls.get('TensorFlow'))
+txt4_with_icon('Jupyter Notebooks', 'An open-source tool for interactive coding, widely used in data science', 'https://jupyter.org/', icon_urls.get('Jupyter Notebooks'))
 
-    st.markdown('''
-    ### Cloud Computing and Frameworks
-    ''')
-    txt4_with_icon('AWS', 'A cloud platform providing scalable services and solutions', 'https://aws.amazon.com/', icon_urls.get('AWS'))
-    txt4_with_icon('Google Colab', 'A cloud-based platform for Python coding and machine learning experimentation', 'https://colab.research.google.com/', icon_urls.get('Google Colab'))
-    txt4_with_icon('React', 'A JavaScript library for building dynamic user interfaces', 'https://reactjs.org/', icon_urls.get('React'))
-    txt4_with_icon('Next.js', 'A React-based framework for server-side rendering and static site generation', 'https://nextjs.org/', icon_urls.get('Next.js'))
-    txt4_with_icon('Streamlit', 'A framework for building and deploying data science web apps', 'https://streamlit.io/', icon_urls.get('Streamlit'))
+st.markdown('''
+### Cloud Computing and Frameworks
+''')
+txt4_with_icon('AWS', 'A cloud platform providing scalable services and solutions', 'https://aws.amazon.com/', icon_urls.get('AWS'))
+txt4_with_icon('Google Colab', 'A cloud-based platform for Python coding and machine learning experimentation', 'https://colab.research.google.com/', icon_urls.get('Google Colab'))
+txt4_with_icon('React', 'A JavaScript library for building dynamic user interfaces', 'https://reactjs.org/', icon_urls.get('React'))
+txt4_with_icon('Next.js', 'A React-based framework for server-side rendering and static site generation', 'https://nextjs.org/', icon_urls.get('Next.js'))
+txt4_with_icon('Streamlit', 'A framework for building and deploying data science web apps', 'https://streamlit.io/', icon_urls.get('Streamlit'))
 
-    st.markdown('''
-    ### Database Management and Version Control
-    ''')
-    txt4_with_icon('SQL', 'Structured Query Language for managing relational databases', 'https://www.mysql.com/', icon_urls.get('SQL'))
-    txt4_with_icon('NoSQL', 'Non-relational database systems for flexible, scalable data storage', 'https://www.mongodb.com/nosql-explained', icon_urls.get('NoSQL'))
-    txt4_with_icon('Git/GitHub', 'Version control system used for code management and collaboration', 'https://github.com/', icon_urls.get('Git/GitHub'))
+st.markdown('''
+### Database Management and Version Control
+''')
+txt4_with_icon('SQL', 'Structured Query Language for managing relational databases', 'https://www.mysql.com/', icon_urls.get('SQL'))
+txt4_with_icon('NoSQL', 'Non-relational database systems for flexible, scalable data storage', 'https://www.mongodb.com/nosql-explained', icon_urls.get('NoSQL'))
+txt4_with_icon('Git/GitHub', 'Version control system used for code management and collaboration', 'https://github.com/', icon_urls.get('Git/GitHub'))
 
-    st.markdown('''
-    ### Development Methodologies
-    ''')
-    txt4_with_icon('Agile Methodologies', 'Iterative approach to software development and project management', 'https://www.atlassian.com/agile', icon_urls.get('Agile Methodologies'))
-    txt4_with_icon('CI/CD Pipelines', 'Automated software delivery process for continuous deployment and integration', 'https://www.atlassian.com/continuous-delivery/ci-vs-cd', icon_urls.get('CI/CD Pipelines'))
+st.markdown('''
+### Development Methodologies
+''')
+txt4_with_icon('Agile Methodologies', 'Iterative approach to software development and project management', 'https://www.atlassian.com/agile', icon_urls.get('Agile Methodologies'))
+txt4_with_icon('CI/CD Pipelines', 'Automated software delivery process for continuous deployment and integration', 'https://www.atlassian.com/continuous-delivery/ci-vs-cd', icon_urls.get('CI/CD Pipelines'))
 
-    st.markdown('''
-    ### Containers and Deployment
-    ''')
-    txt4_with_icon('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/', icon_urls.get('Docker'))
+st.markdown('''
+### Containers and Deployment
+''')
+txt4_with_icon('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/', icon_urls.get('Docker'))
 
 #####################
 # New Section: Tech + Art/Music
@@ -284,7 +278,7 @@ txt3('Creative Production', 'DAWs + Python scripts for arrangements and composit
 st.markdown('''
 ## Skills
 ''', unsafe_allow_html=True)
-txt3('Programming', '`Python` (10 years), `JavaScript` (6 years), `TypeScript`, `C`, `C++`, `Java`, `C#` (4 years), `R`, `Swift`')
+txt3('Programming', '`Python` <small>(10 years)</small>, `JavaScript` <small>(6 years)</small>, `TypeScript`, `C`, `C++`, `Java`, `C#` <small>(4 years)</small>, `R`, `Swift`')
 txt3('Data processing/wrangling', '`SQL`, `pandas`, `numpy` (used in Kaggle AI projects)')
 txt3('Data visualization', '`matplotlib`, `seaborn`, `plotly`')
 txt3('Model deployment', '`Streamlit`, `Google Colab`')
@@ -293,10 +287,3 @@ txt3('Version Control', '`Git`, `GitHub` (multiple contributions)')
 txt3('Cloud platforms', '`AWS`, `Google Colab`')
 txt3('Presentation & Content Creation', 'Proficient in creating professional presentations, design documents, and educational content using the `Microsoft Office Suite`, `Apple iWork Suite`, and AI-powered design tools. (As Marketing Manager/Department Head, boosted impact with Python scripts)')
 txt3('Tech Self-Learning', 'LeetCode: 300 problems (C++/Python); CodeSignal: ~9000 EP, 100 practices; HackerRank: Gold Level (~1250 points); Courses on Coursera/edX/SoloLearn')
-
-#####################
-# Call to Action
-st.markdown('''
-## Interested in Hiring Me?
-Seeking Software Engineer II remote/hybrid with focus on tech + music/art. Link to my LinkedIn or email: [ablancou@example.com]. Let's talk about opportunities with top salaries and great quality of life!
-''', unsafe_allow_html=True)
