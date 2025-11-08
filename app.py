@@ -90,7 +90,7 @@ def txt4_with_icon(name, desc, url, icon_url):
   col1, col2, col3 = st.columns([0.5, 1.5, 3])
   with col1:
     if icon_url:
-      st.image(icon_url, width=30)
+      st.image(icon_url, width=25)
   with col2:
     st.markdown(f"[{name}]({url})")
   with col3:
@@ -287,3 +287,10 @@ txt3('Version Control', '`Git`, `GitHub` (multiple contributions)')
 txt3('Cloud platforms', '`AWS`, `Google Colab`')
 txt3('Presentation & Content Creation', 'Proficient in creating professional presentations, design documents, and educational content using the `Microsoft Office Suite`, `Apple iWork Suite`, and AI-powered design tools. (As Marketing Manager/Department Head, boosted impact with Python scripts)')
 txt3('Tech Self-Learning', 'LeetCode: 300 problems (C++/Python); CodeSignal: ~9000 EP, 100 practices; HackerRank: Gold Level (~1250 points); Courses on Coursera/edX/SoloLearn')
+
+#####################
+# Call to Action (solo LinkedIn)
+st.markdown('''
+## Contact
+Connect via [LinkedIn](https://www.linkedin.com/in/armandoblanco) for inquiries or opportunities.
+''', unsafe_allow_html=True)
