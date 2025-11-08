@@ -87,10 +87,10 @@ def txt3(a, b):
     st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([0.5, 1.5, 3])
+  col1, col2, col3 = st.columns([0.8, 1.5, 3])
   with col1:
     if icon_url:
-      st.image(icon_url, width=25)
+      st.image(icon_url, width=30)
   with col2:
     st.markdown(f"[{name}]({url})")
   with col3:
@@ -195,7 +195,7 @@ st.markdown('''
 These tools have enabled me to develop impactful projects, such as interactive apps for music theory integrating tech and art.
 ''', unsafe_allow_html=True)
 
-# Dict of icon URLs (stable, official sources)
+# Dict of icon URLs (updated for broken ones)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
     'Python': 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png',
@@ -212,10 +212,10 @@ icon_urls = {
     'Next.js': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/512px-Nextjs-logo.svg.png',
     'Streamlit': 'https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png',
     'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
-    'NoSQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png',  # Using MongoDB as representative
+    'NoSQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png',
     'Git/GitHub': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
-    'Agile Methodologies': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Agile_Alliance_Logo.png/512px-Agile_Alliance_Logo.png',  # Placeholder for Agile
-    'CI/CD Pipelines': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Gitlab_logo-1_color-black-text-rgb.svg/512px-Gitlab_logo-1_color-black-text-rgb.svg.png',  # Using GitLab as rep for CI/CD
+    'Agile Methodologies': 'https://img.icons8.com/ios/50/agile.png',  # Valid replacement
+    'CI/CD Pipelines': 'https://www.svgrepo.com/download/372275/ci-cd.svg',  # Valid SVG
     'Docker': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/512px-Docker_%28container_engine%29_logo.svg.png'
 }
 
