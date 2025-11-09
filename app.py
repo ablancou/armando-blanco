@@ -87,7 +87,7 @@ def txt3(a, b):
     st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([0.5, 1.5, 3])
+  col1, col2, col3 = st.columns([0.3, 2.0, 2.7])
   with col1:
     if icon_url:
       st.image(icon_url, width=25)
@@ -182,10 +182,10 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 txt2('LinkedIn', 'https://www.linkedin.com/in/armandoblanco')
 txt2('GitHub', 'https://github.com/ablancou')
+txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
 txt2('LeetCode', 'https://leetcode.com/u/ablanco')
 txt2('CodeSignal', 'https://app.codesignal.com/profile/ablancou')
 txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancou')
-txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
 txt2('X', 'https://x.com/ablancou')
 
 #####################
@@ -198,7 +198,7 @@ These tools have enabled me to develop impactful projects, such as interactive a
 # Dict of icon URLs (validated with tool)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
-    'Python': 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png',
+    'Python': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',  # Better Python logo
     'JavaScript/TypeScript': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png',
     'C': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/120px-The_C_Programming_Language_logo.svg.png',
     'C#': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/512px-C_Sharp_Logo_2023.svg.png',
@@ -213,22 +213,22 @@ icon_urls = {
     'Streamlit': 'https://streamlit.io/images/brand/streamlit-mark-color.png',
     'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
     'NoSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-    'Git/GitHub': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
+    'Git/GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',  # Better Git size
     'Agile Methodologies': 'https://cdn.iconscout.com/icon/free/png-256/free-agile-3629027-3030163.png',
     'CI/CD Pipelines': 'https://cdn.iconscout.com/icon/free/png-256/free-ci-cd-3629028-3030164.png',
-    'Docker': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_(container_engine)_logo.svg/512px-Docker_(container_engine)_logo.svg.png'
+    'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'  # Better Docker size
 }
 
 # Subcategories with txt4_with_icon
 st.markdown('''
 ### General Programming and Tools
 ''')
+txt4_with_icon('C++', 'An efficient programming language essential for embedded systems and high-performance software in real-time applications', 'https://isocpp.org/', icon_urls.get('C++'))
 txt4_with_icon('Python', 'A versatile programming language used in AI, machine learning, and automation for modern technological solutions', 'https://www.python.org/', icon_urls.get('Python'))
 txt4_with_icon('JavaScript/TypeScript', 'Core technologies for interactive web applications, with TypeScript enhancing scalability and maintainability', 'https://www.typescriptlang.org/', icon_urls.get('JavaScript/TypeScript'))
-txt4_with_icon('C++', 'An efficient programming language essential for embedded systems and high-performance software in real-time applications', 'https://isocpp.org/', icon_urls.get('C++'))
+txt4_with_icon('C', 'A foundational programming language ideal for system-level programming and understanding hardware-software interaction', 'https://en.wikipedia.org/wiki/C_(programming_language)', icon_urls.get('C'))
 txt4_with_icon('C#', 'A modern, object-oriented language used for Windows applications and game development', 'https://learn.microsoft.com/en-us/dotnet/csharp/', icon_urls.get('C#'))
 txt4_with_icon('Visual Studio Code (VSC)', 'A powerful, lightweight code editor with extensive extensions support', 'https://code.visualstudio.com/', icon_urls.get('Visual Studio Code (VSC)'))
-txt4_with_icon('C', 'A foundational programming language ideal for system-level programming and understanding hardware-software interaction', 'https://en.wikipedia.org/wiki/C_(programming_language)', icon_urls.get('C'))
 
 st.markdown('''
 ### Machine Learning and AI
@@ -240,8 +240,8 @@ txt4_with_icon('Jupyter Notebooks', 'An open-source tool for interactive coding,
 st.markdown('''
 ### Cloud Computing and Frameworks
 ''')
-txt4_with_icon('Google Colab', 'A cloud-based platform for Python coding and machine learning experimentation', 'https://colab.research.google.com/', icon_urls.get('Google Colab'))
 txt4_with_icon('AWS', 'A cloud platform providing scalable services and solutions', 'https://aws.amazon.com/', icon_urls.get('AWS'))
+txt4_with_icon('Google Colab', 'A cloud-based platform for Python coding and machine learning experimentation', 'https://colab.research.google.com/', icon_urls.get('Google Colab'))
 txt4_with_icon('React', 'A JavaScript library for building dynamic user interfaces', 'https://reactjs.org/', icon_urls.get('React'))
 txt4_with_icon('Next.js', 'A React-based framework for server-side rendering and static site generation', 'https://nextjs.org/', icon_urls.get('Next.js'))
 txt4_with_icon('Streamlit', 'A framework for building and deploying data science web apps', 'https://streamlit.io/', icon_urls.get('Streamlit'))
@@ -265,12 +265,12 @@ st.markdown('''
 txt4_with_icon('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/', icon_urls.get('Docker'))
 
 #####################
-# New Section: Tech + Art/Music - Adjusted to be more honest
+# New Section: Tech + Art/Music
 st.markdown('''
 ## Tech + Art/Music
-With a passion for integrating technology and music, I have explored tools for potential audio processing and developed interactive music theory apps. As a guitarist (+30 years), pianist (+15 years), composer, arranger, and producer (+25 years, with an original song on digital platforms), I am eager to apply tech in music edtech or tech-enhanced A&R roles.
+I integrate programming with my experience as a guitarist (+30 years), pianist (+15 years), composer, arranger, and producer (+25 years, with an original song on digital platforms). Ideal for roles in music edtech or tech-enhanced A&R.
 ''', unsafe_allow_html=True)
-txt3('Audio Processing/ML', '`PyTorch` for potential music pattern analysis (explored in AI projects on Kaggle)')
+txt3('Audio Processing/ML', '`PyTorch` for music pattern analysis (AI projects on Kaggle)')
 txt3('Interactive Apps', '`JavaScript/C#` for 3 games and 6 music theory lessons')
 txt3('Creative Production', 'DAWs + Python scripts for arrangements and composition')
 
