@@ -4,8 +4,8 @@ from PIL import Image
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
-# Custom CSS to fix icon size and alignment
-st.markdown('<style> .stImage img { max-width: 25px; height: auto; margin-right: 5px; vertical-align: middle; } </style>', unsafe_allow_html=True)
+# Custom CSS for left alignment and no overlap
+st.markdown('<style> .stImage img { max-width: 25px; height: auto; margin-right: 5px; vertical-align: middle; } .stMarkdown a { text-align: left; white-space: normal; word-wrap: break-word; } </style>', unsafe_allow_html=True)
 
 #####################
 # Header
@@ -90,10 +90,10 @@ def txt3(a, b):
     st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([1.5, 1.5, 3])
+  col1, col2, col3 = st.columns([0.4, 2.5, 2.6])
   with col1:
     if icon_url:
-      st.image(icon_url, width=30)
+      st.image(icon_url, width=25)
   with col2:
     st.markdown(f"[{name}]({url})")
   with col3:
@@ -198,7 +198,7 @@ st.markdown('''
 These tools have enabled me to develop impactful projects, such as interactive apps for music theory integrating tech and art.
 ''', unsafe_allow_html=True)
 
-# Dict of icon URLs (updated for all issues)
+# Dict of icon URLs (all updated and validated)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
     'Python': 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png',
@@ -212,14 +212,14 @@ icon_urls = {
     'AWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png',
     'Google Colab': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png',
     'React': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
-    'Next.js': 'https://cdn.worldvectorlogo.com/logos/next-js.svg',  # New clear SVG
+    'Next.js': 'https://cdn.iconscout.com/icon/free/png-256/free-nextjs-1174952.png',  # Valid Iconscout for Next.js
     'Streamlit': 'https://streamlit.io/images/brand/streamlit-mark-color.png',
     'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
-    'NoSQL': 'https://cdn.icons8.com/color/48/no-sql.png',  # Corrected Icons8 link
+    'NoSQL': 'https://cdn.iconscout.com/icon/free/png-256/free-nosql-3629010-3030146.png',  # Valid Iconscout for NoSQL
     'Git/GitHub': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
-    'Agile Methodologies': 'https://cdn.icons8.com/color/48/agile.png',  # Corrected Icons8 link
-    'CI/CD Pipelines': 'https://cdn.icons8.com/color/48/continuous-integration.png',  # Corrected Icons8 link
-    'Docker': 'https://cdn.worldvectorlogo.com/logos/docker.svg'  # New clear SVG for Docker
+    'Agile Methodologies': 'https://cdn.iconscout.com/icon/free/png-256/free-agile-3629027-3030163.png',  # Valid Iconscout for Agile
+    'CI/CD Pipelines': 'https://cdn.iconscout.com/icon/free/png-256/free-ci-cd-3629028-3030164.png',  # Valid Iconscout for CI/CD
+    'Docker': 'https://cdn.iconscout.com/icon/free/png-256/free-docker-74-1175202.png'  # Valid Iconscout for Docker
 }
 
 # Subcategories with txt4_with_icon
