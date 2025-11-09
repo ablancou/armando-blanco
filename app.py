@@ -299,8 +299,10 @@ txt3('Version Control', '`Git`, `GitHub` (multiple contributions)')
 txt3('Cloud platforms', '`AWS`, `Google Colab`')
 txt3('Presentation & Content Creation', 'Proficient in creating professional presentations, design documents, and educational content using the `Microsoft Office Suite`, `Apple iWork Suite`, and AI-powered design tools. (As Marketing Manager/Department Head, boosted impact with Python scripts)')
 txt3('Tech Self-Learning', 'LeetCode: 300 problems (C++/Python); CodeSignal: ~9000 EP, 100 practices; HackerRank: Gold Level (~1250 points); Courses on Coursera/edX/SoloLearn')
+txt3('Multilingual & Translation', 'Fluent in 5+ languages (English, Spanish, etc.); daily language study via Duolingo (121,000+ points); capable of technical translation and multilingual content creation')
 
 #####################
+
 # Call to Action (solo LinkedIn)
 st.markdown('''
 ## Contact
