@@ -87,10 +87,10 @@ def txt3(a, b):
     st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([1.2, 1.5, 3])
+  col1, col2, col3 = st.columns([1.5, 1.5, 3])
   with col1:
     if icon_url:
-      st.image(icon_url, width=30)
+      st.image(icon_url, width=28)
   with col2:
     st.markdown(f"[{name}]({url})")
   with col3:
@@ -195,7 +195,7 @@ st.markdown('''
 These tools have enabled me to develop impactful projects, such as interactive apps for music theory integrating tech and art.
 ''', unsafe_allow_html=True)
 
-# Dict of icon URLs (updated for broken/small ones)
+# Dict of icon URLs (updated for all issues)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
     'Python': 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png',
@@ -209,14 +209,14 @@ icon_urls = {
     'AWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png',
     'Google Colab': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png',
     'React': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
-    'Next.js': 'https://img.icons8.com/color/96/nextjs.png',  # New Icons8 for Next.js
+    'Next.js': 'https://img.icons8.com/color/48/nextjs.png',  # Updated to Icons8
     'Streamlit': 'https://streamlit.io/images/brand/streamlit-mark-color.png',
     'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
-    'NoSQL': 'https://img.icons8.com/color/96/nosql.png',  # New generic NoSQL icon
+    'NoSQL': 'https://img.icons8.com/color/48/nosql.png',  # Updated to Icons8
     'Git/GitHub': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
-    'Agile Methodologies': 'https://img.icons8.com/color/96/agile.png',
-    'CI/CD Pipelines': 'https://img.icons8.com/color/96/continuous-integration.png',
-    'Docker': 'https://img.icons8.com/color/96/docker.png'  # New Icons8 for Docker visibility
+    'Agile Methodologies': 'https://img.icons8.com/color/48/agile.png',
+    'CI/CD Pipelines': 'https://img.icons8.com/color/48/continuous-integration.png',
+    'Docker': 'https://img.icons8.com/color/48/docker.png'  # Updated to Icons8
 }
 
 # Subcategories with txt4_with_icon
