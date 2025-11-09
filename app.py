@@ -4,6 +4,9 @@ from PIL import Image
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
+# Custom CSS to fix icon size and alignment
+st.markdown('<style> .stImage img { max-width: 25px; height: auto; margin-right: 5px; vertical-align: middle; } </style>', unsafe_allow_html=True)
+
 #####################
 # Header
 st.write('''
@@ -90,7 +93,7 @@ def txt4_with_icon(name, desc, url, icon_url):
   col1, col2, col3 = st.columns([1.5, 1.5, 3])
   with col1:
     if icon_url:
-      st.image(icon_url, width=28)
+      st.image(icon_url, width=30)
   with col2:
     st.markdown(f"[{name}]({url})")
   with col3:
@@ -209,14 +212,14 @@ icon_urls = {
     'AWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png',
     'Google Colab': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png',
     'React': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
-    'Next.js': 'https://img.icons8.com/color/48/nextjs.png',  # Updated to Icons8
+    'Next.js': 'https://cdn.worldvectorlogo.com/logos/next-js.svg',  # New clear SVG
     'Streamlit': 'https://streamlit.io/images/brand/streamlit-mark-color.png',
     'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
-    'NoSQL': 'https://img.icons8.com/color/48/nosql.png',  # Updated to Icons8
+    'NoSQL': 'https://cdn.icons8.com/color/48/no-sql.png',  # Corrected Icons8 link
     'Git/GitHub': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
-    'Agile Methodologies': 'https://img.icons8.com/color/48/agile.png',
-    'CI/CD Pipelines': 'https://img.icons8.com/color/48/continuous-integration.png',
-    'Docker': 'https://img.icons8.com/color/48/docker.png'  # Updated to Icons8
+    'Agile Methodologies': 'https://cdn.icons8.com/color/48/agile.png',  # Corrected Icons8 link
+    'CI/CD Pipelines': 'https://cdn.icons8.com/color/48/continuous-integration.png',  # Corrected Icons8 link
+    'Docker': 'https://cdn.worldvectorlogo.com/logos/docker.svg'  # New clear SVG for Docker
 }
 
 # Subcategories with txt4_with_icon
