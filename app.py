@@ -87,10 +87,10 @@ def txt3(a, b):
     st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([0.8, 1.5, 3])
+  col1, col2, col3 = st.columns([1.0, 1.5, 3])
   with col1:
     if icon_url:
-      st.image(icon_url, width=30)
+      st.image(icon_url, width=35)
   with col2:
     st.markdown(f"[{name}]({url})")
   with col3:
@@ -195,7 +195,7 @@ st.markdown('''
 These tools have enabled me to develop impactful projects, such as interactive apps for music theory integrating tech and art.
 ''', unsafe_allow_html=True)
 
-# Dict of icon URLs (updated for broken ones)
+# Dict of icon URLs (updated for better/small ones)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
     'Python': 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png',
@@ -203,20 +203,20 @@ icon_urls = {
     'C': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/120px-The_C_Programming_Language_logo.svg.png',
     'C#': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/512px-C_Sharp_Logo_2023.svg.png',
     'Visual Studio Code (VSC)': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png',
-    'PyTorch': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/PyTorch_logo_black.svg/512px-PyTorch_logo_black.svg.png',
+    'PyTorch': 'https://pytorch.org/assets/images/logo-icon.svg',  # Better SVG for visibility
     'TensorFlow': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/512px-Tensorflow_logo.svg.png',
     'Jupyter Notebooks': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/512px-Jupyter_logo.svg.png',
     'AWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png',
     'Google Colab': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png',
     'React': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
     'Next.js': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/512px-Nextjs-logo.svg.png',
-    'Streamlit': 'https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png',
+    'Streamlit': 'https://streamlit.io/images/brand/streamlit-mark-color.png',  # Color mark for better size
     'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
     'NoSQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png',
     'Git/GitHub': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
-    'Agile Methodologies': 'https://img.icons8.com/ios/50/agile.png',  # Valid replacement
-    'CI/CD Pipelines': 'https://www.svgrepo.com/download/372275/ci-cd.svg',  # Valid SVG
-    'Docker': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/512px-Docker_%28container_engine%29_logo.svg.png'
+    'Agile Methodologies': 'https://img.icons8.com/color/48/agile.png',  # Better color icon
+    'CI/CD Pipelines': 'https://img.icons8.com/color/48/continuous-integration.png',  # Better visible icon
+    'Docker': 'https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png'  # Better logo for size
 }
 
 # Subcategories with txt4_with_icon
