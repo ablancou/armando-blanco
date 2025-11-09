@@ -20,8 +20,8 @@ st.markdown("""
 st.write('''
 # Armando Blanco
 ''')
-st.markdown('<div style="text-align: center;">Resume</div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: center; font-size: 20px;">Software Engineer II Candidate</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center;font-size: 20px;">Resume</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; font-size: 10px;">Software Engineer II Candidate</div>', unsafe_allow_html=True)
 image = Image.open('AB.png')
 st.image(image, width=125)
 
