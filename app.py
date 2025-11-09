@@ -4,11 +4,11 @@ from PIL import Image
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
-# CSS for Summary (darker blue transparent background, light blue text, 3D shadow)
+# CSS for Summary (darker blue transparent background, light blue text, 3D shadow) - more transparent
 st.markdown("""
 <style>
   div.stAlert > div {
-    background-color: rgba(0, 0, 139, 0.8) !important;
+    background-color: rgba(0, 0, 139, 0.7) !important;
     color: #add8e6 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   }
@@ -16,12 +16,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 #####################
-# Header
+# Header - centered titles
 st.write('''
 # Armando Blanco
-### Resume
-#### Software Engineer II Candidate
 ''')
+st.markdown('<div style="text-align: center;">Resume</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; font-size: 20px;">Software Engineer II Candidate</div>', unsafe_allow_html=True)
 image = Image.open('AB.png')
 st.image(image, width=125)
 
@@ -210,7 +210,7 @@ These tools have enabled me to develop impactful projects, such as interactive a
 # Dict of icon URLs (validated with tool)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
-    'Python': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png', # Better Python logo
+    'Python': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
     'JavaScript/TypeScript': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png',
     'C': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/120px-The_C_Programming_Language_logo.svg.png',
     'C#': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/512px-C_Sharp_Logo_2023.svg.png',
