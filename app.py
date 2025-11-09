@@ -8,7 +8,7 @@ with open("style.css") as f:
 st.markdown("""
 <style>
   div.stAlert > div {
-    background-color: rgba(0, 0, 139, 0.7) !important;
+    background-color: rgba(0, 0, 139, 0.3) !important;
     color: #add8e6 !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   }
