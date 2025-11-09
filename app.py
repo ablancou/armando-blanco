@@ -265,7 +265,7 @@ st.markdown('''
 txt4_with_icon('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/', icon_urls.get('Docker'))
 
 #####################
-# New Section: Tech + Art/Music - Adjusted
+# New Section: Tech + Art/Music - Adjusted to be more honest
 st.markdown('''
 ## Tech + Art/Music
 With a passion for integrating technology and music, I have explored tools for potential audio processing and developed interactive music theory apps. As a guitarist (+30 years), pianist (+15 years), composer, arranger, and producer (+25 years, with an original song on digital platforms), I am eager to apply tech in music edtech or tech-enhanced A&R roles.
