@@ -4,30 +4,11 @@ from PIL import Image
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
-# CSS for Summary (darker blue transparent background, light blue text, 3D shadow)
-st.markdown("""
-<style>
-  div.stAlert > div {
-    background-color: rgba(0, 51, 102, 0.8) !important;
-    color: #add8e6 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-  }
-  /* Optional subtle galaxy background - uncomment to use
-  body {
-    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-    background-opacity: 0.1;
-    background-repeat: repeat;
-  }
-  */
-</style>
-""", unsafe_allow_html=True)
-
 #####################
 # Header
 st.write('''
 # Armando Blanco
-### Resume
-#### Software Engineer II Candidate
+##### *Resume* - Software Engineer II Candidate
 ''')
 image = Image.open('AB.png')
 st.image(image, width=125)
@@ -106,7 +87,7 @@ def txt3(a, b):
     st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([0.5, 1.5, 3])
+  col1, col2, col3 = st.columns([0.3, 2.0, 2.7])
   with col1:
     if icon_url:
       st.image(icon_url, width=25)
@@ -217,7 +198,7 @@ These tools have enabled me to develop impactful projects, such as interactive a
 # Dict of icon URLs (validated with tool)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
-    'Python': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
+    'Python': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',  # Better Python logo
     'JavaScript/TypeScript': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png',
     'C': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/120px-The_C_Programming_Language_logo.svg.png',
     'C#': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/512px-C_Sharp_Logo_2023.svg.png',
