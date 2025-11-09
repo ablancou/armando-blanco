@@ -87,7 +87,7 @@ def txt3(a, b):
     st.markdown(b, unsafe_allow_html=True)
 
 def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([0.5, 1.5, 3])
+  col1, col2, col3 = st.columns([0.3, 2.0, 2.7])
   with col1:
     if icon_url:
       st.image(icon_url, width=25)
@@ -195,10 +195,10 @@ st.markdown('''
 These tools have enabled me to develop impactful projects, such as interactive apps for music theory integrating tech and art.
 ''', unsafe_allow_html=True)
 
-# Dict of icon URLs (updated for all issues)
+# Dict of icon URLs (validated with tool)
 icon_urls = {
     'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
-    'Python': 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png',
+    'Python': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',  # Better Python logo
     'JavaScript/TypeScript': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png',
     'C': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/120px-The_C_Programming_Language_logo.svg.png',
     'C#': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/512px-C_Sharp_Logo_2023.svg.png',
@@ -209,14 +209,14 @@ icon_urls = {
     'AWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png',
     'Google Colab': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png',
     'React': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
-    'Next.js': 'https://cdn.iconscout.com/icon/free/png-256/free-nextjs-1174952.png',
+    'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
     'Streamlit': 'https://streamlit.io/images/brand/streamlit-mark-color.png',
     'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
-    'NoSQL': 'https://cdn.iconscout.com/icon/free/png-256/free-nosql-3629010-3030146.png',
-    'Git/GitHub': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
+    'NoSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+    'Git/GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',  # Better Git size
     'Agile Methodologies': 'https://cdn.iconscout.com/icon/free/png-256/free-agile-3629027-3030163.png',
     'CI/CD Pipelines': 'https://cdn.iconscout.com/icon/free/png-256/free-ci-cd-3629028-3030164.png',
-    'Docker': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_(container_engine)_logo.svg/512px-Docker_(container_engine)_logo.svg.png'  # Reverted to blue whale
+    'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'  # Better Docker size
 }
 
 # Subcategories with txt4_with_icon
