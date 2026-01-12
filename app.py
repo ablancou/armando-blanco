@@ -1,310 +1,419 @@
 import streamlit as st
 from PIL import Image
 
+# Page config
+st.set_page_config(
+    page_title="Armando Blanco | Full-Stack Developer & Data Scientist",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
+# Load custom CSS
 with open("style.css") as f:
-    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-# CSS for Summary (darker blue transparent background, light blue text, 3D shadow) - more transparent
+# ==================== HEADER ====================
 st.markdown("""
-<style>
-  div.stAlert > div {
-    background-color: rgba(0, 0, 139, 0.3) !important;
-    color: #add8e6 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-  }
-</style>
+<div class="header-section">
+    <div class="header-badge">Full-Stack Developer & Data Scientist</div>
+    <h1 class="header-title">Armando Blanco</h1>
+</div>
 """, unsafe_allow_html=True)
 
-#####################
-# Header - centered titles
-st.write('''
-# Armando Blanco
-''')
-st.markdown('<div style="text-align: center;font-size: 20px;">Resume</div>', unsafe_allow_html=True)
-st.markdown('<div style="text-align: center; font-size: 10px;">Software Engineer II Candidate</div>', unsafe_allow_html=True)
+# Profile Image
 image = Image.open('AB.png')
-st.image(image, width=125)
+col1, col2, col3 = st.columns([1, 0.5, 1])
+with col2:
+    st.image(image, width=120)
 
-st.markdown('## Summary', unsafe_allow_html=True)
-st.info('''
-- Full-Stack Software Developer and Data Scientist with 10+ years of experience, including development of educational tools like an app with 3 games and 6 interactive lessons for music theory.
-- Proven expertise in building and deploying neural networks using PyTorch (independent AI projects with Kaggle data), and creating interactive applications with Streamlit.
-- Extensive experience in designing and implementing data pipelines, as well as working with SQL/NoSQL databases to manage and analyze large-scale data.
-- Proficient in API integration, Git/GitHub for version control, and Agile methodologies, with a focus on continuous improvement in iterative development practices—as former Marketing Manager/Department Head, used Python scripts to boost lead impact.
-- Auto-learning: 300 problems solved on LeetCode (C++/Python), ~9000 Total EP and ~100 practices on CodeSignal, "Problem Solving: Gold Level" (~1250 points) on HackerRank.
-- Passion for music/art: +30 years as guitarist, +15 as pianist, +25 as composer/arranger/producer (original song on all digital platforms). Seeking remote/hybrid roles in tech + music/art with top salary and excellent quality of life.
-''')
+# ==================== SUMMARY ====================
+st.markdown('<h2 class="section-title">Summary</h2>', unsafe_allow_html=True)
 
-#####################
-# Navigation
-st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
 st.markdown("""
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #16A2CB;">
-  <a class="navbar-brand" href="" target="_blank">Armando Blanco</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link disabled" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#programming-projects">Programming Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#education">Education</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#work-experience">Work Experience</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#technologies-and-tools">Technologies & Tools</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#tech-art-music">Tech + Art/Music</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#skills">Skills</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#technical-profiles">Technical Profiles</a>
-      </li>
+<div class="summary-box">
+    <ul class="summary-list">
+        <li>Full-Stack Software Developer and Data Scientist with <span class="highlight">10+</span> years of experience, including the development of educational tools and data-driven solutions.</li>
+        <li>Proven expertise in building and deploying neural networks using <span class="highlight">PyTorch</span>, and creating interactive applications with <span class="highlight">Streamlit</span>.</li>
+        <li>Extensive experience in designing and implementing data pipelines, as well as working with SQL/NoSQL databases to manage and analyze large-scale data.</li>
+        <li>Proficient in API integration, Git/GitHub for version control, and Agile methodologies, with a focus on continuous improvement in iterative development practices.</li>
     </ul>
-  </div>
-</nav>
+</div>
 """, unsafe_allow_html=True)
 
-#####################
-# Custom functions
-def txt(a, b):
-  col1, col2 = st.columns([4,1])
-  with col1:
-    st.markdown(a)
-  with col2:
-    st.markdown(b)
+# ==================== FLAGSHIP PROJECT: JAZZ ARCADE ====================
+st.markdown('<h2 class="section-title">🎮 Flagship Project</h2>', unsafe_allow_html=True)
 
-def txt2(a, b):
-  col1, col2 = st.columns([1,4])
-  with col1:
-    st.markdown(f'`{a}`')
-  with col2:
-    st.markdown(b)
+st.markdown("""
+<div class="flagship-card">
+    <div class="flagship-header">
+        <div class="flagship-title-row">
+            <h3>Jazz Arcade</h3>
+            <a href="https://jazzarcade.com" target="_blank" class="flagship-link">
+                jazzarcade.com →
+            </a>
+        </div>
+        <p class="flagship-tagline">A comprehensive music education platform</p>
+    </div>
+    <div class="flagship-features">
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="feature-icon">🎯</span>
+                <span class="feature-text">12 Interactive Games (Phaser 3)</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📚</span>
+                <span class="feature-text">22+ Music Theory Lessons</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎹</span>
+                <span class="feature-text">590+ Practice Exercises</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎼</span>
+                <span class="feature-text">Jazz Studio - Professional Notation Suite</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔐</span>
+                <span class="feature-text">User Authentication (AWS Cognito)</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🌍</span>
+                <span class="feature-text">6 Languages (EN, ES, IT, PT, FR, DE)</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">☁️</span>
+                <span class="feature-text">Cloud-synced Progress Tracking</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔗</span>
+                <span class="feature-text">REST API + GraphQL Integration</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🤖</span>
+                <span class="feature-text">Google Gemini AI Integration</span>
+            </div>
+        </div>
+    </div>
+    <div class="flagship-tech">
+        <span class="tech-tag">Next.js 15</span>
+        <span class="tech-tag">React 18</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Tailwind CSS</span>
+        <span class="tech-tag">AWS Amplify</span>
+        <span class="tech-tag">Phaser 3</span>
+        <span class="tech-tag">GraphQL</span>
+        <span class="tech-tag">DynamoDB</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
-def txt3(a, b):
-  col1, col2 = st.columns([1,2])
-  with col1:
-    st.markdown(a)
-  with col2:
-    st.markdown(b, unsafe_allow_html=True)
+# ==================== DATA SCIENCE PROJECTS ====================
+st.markdown('<h2 class="section-title">🏥 Data Science & Healthcare Projects</h2>', unsafe_allow_html=True)
 
-def txt4_with_icon(name, desc, url, icon_url):
-  col1, col2, col3 = st.columns([0.3, 2.0, 2.7])
-  with col1:
-    if icon_url:
-      st.image(icon_url, width=25)
-  with col2:
-    st.markdown(f"[{name}]({url})")
-  with col3:
-    st.markdown(desc)
+col1, col2 = st.columns(2)
 
-#####################
-st.markdown('''
-## Programming Projects
-Here are some of the projects I have deployed using Streamlit Cloud. Click on the links to explore them.
-''', unsafe_allow_html=True)
+with col1:
+    st.markdown("""
+    <div class="project-card">
+        <div class="project-icon">🩺</div>
+        <h4>Diabetes Prediction App</h4>
+        <p>This app predicts whether a patient is at risk of developing diabetes.</p>
+        <p class="project-tech-desc">Technology used: Python and a previously trained neural network built with the <span class="highlight">PyTorch</span> framework. It provides accurate predictions based on the user's input parameters.</p>
+        <a href="https://ablancou-diabetes-prediction-app-4jhd5b.streamlit.app/" target="_blank" class="project-link">
+            View Project →
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
-# Project 1
-st.write('''
-### Music Theory Game: Key Signature Recognition
-**Description**:
-An interactive music theory game leveraging modern web technologies to improve knowledge of music theory concepts, such as key signature recognition, under time constraints.
-**Technical Skills**:
-- Built with React.js, Next.js, and Phaser.js for modern UI/UX and responsive gameplay.
-- Deployed with AWS Amplify for streamlined hosting and CI/CD pipelines, with domain management handled through Route 53.
-- JavaScript (ES6+), HTML, CSS, and Tailwind CSS for responsive and visually appealing design.
-- Gamification principles, cloud deployment, and state management.
-''')
-st.write('[Play the Music Theory Game](https://www.jazzarcade.com/key-signature-recognition-game)')
+with col2:
+    st.markdown("""
+    <div class="project-card">
+        <div class="project-icon">❤️</div>
+        <h4>Heart Disease Prediction App</h4>
+        <p>This app predicts the probability of having heart disease.</p>
+        <p class="project-tech-desc">Technology used: Python and a previously trained neural network built with the <span class="highlight">PyTorch</span> framework. It provides accurate predictions based on the user's input parameters.</p>
+        <a href="https://ablancou-heart-disease-prediction-app-tmyzus.streamlit.app/" target="_blank" class="project-link">
+            View Project →
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
-# Project 2
-st.write('''
-### Diabetes Prediction App
-**About this app**:
-This app predicts whether a patient is at risk of developing diabetes.
-Technology used: This app was created using Python and a previously trained neural network built with the PyTorch framework. It provides accurate predictions based on the user's input parameters.
-''')
-st.write('[View the Diabetes Prediction App](https://ablancou-diabetes-prediction-app-4jhd5b.streamlit.app/)')
+col3, col4 = st.columns(2)
 
-# Project 3
-st.write('''
-### Heart Disease Prediction App
-**About this app**:
-This app predicts the probability of having heart disease.
-Technology used: This app was created using Python and a previously trained neural network built with the PyTorch framework. It provides accurate predictions based on the user's input parameters.
-''')
-st.write('[View the Heart Disease Prediction App](https://ablancou-heart-disease-prediction-app-tmyzus.streamlit.app/)')
+with col3:
+    st.markdown("""
+    <div class="project-card">
+        <div class="project-icon">🧮</div>
+        <h4>Medical Calculators Toolkit</h4>
+        <p>A medical calculation tool that includes multiple calculators to aid in clinical decision-making in general medicine.</p>
+        <a href="https://medical-calculators-toolkit-for-general-medicine.streamlit.app/" target="_blank" class="project-link">
+            View Project →
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
-# Project 4
-st.write('''
-### Medical Calculators Toolkit for General Medicine
-**About this app**:
-A medical calculation tool that includes multiple calculators to aid in clinical decision-making in general medicine.
-''')
-st.write('[View the Medical Calculators Toolkit](https://medical-calculators-toolkit-for-general-medicine.streamlit.app/)')
+with col4:
+    st.markdown("""
+    <div class="project-card">
+        <div class="project-icon">🧬</div>
+        <h4>Genetic Diagnostics Pipeline</h4>
+        <p>Automated variant classification analysis following ACMG standards. Generates executive reports for diagnostic laboratories with professional visualizations.</p>
+        <div class="project-tech-tags">
+            <span class="mini-tag">Python</span>
+            <span class="mini-tag">pandas</span>
+            <span class="mini-tag">matplotlib</span>
+            <span class="mini-tag">python-pptx</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-#####################
-st.markdown('''
-## Education
-''', unsafe_allow_html=True)
-txt('**Bachelor of Business Administration**, *Universidad Anáhuac*, Mexico City',
-'(2005 - 2009)')
+# ==================== EDUCATION ====================
+st.markdown('<h2 class="section-title">🎓 Education</h2>', unsafe_allow_html=True)
 
-#####################
-st.markdown('''
-## Work Experience
-''', unsafe_allow_html=True)
-txt('**Full-Stack Software Developer and Data Scientist**, Freelance',
-'2014-Present')
-st.markdown('''
-- Developed and deployed educational games and interactive learning tools, integrating AI-powered content for enhanced learning experiences.
-- Built and deployed neural networks using `PyTorch` for data science projects, providing data-driven solutions.
-- Designed and implemented data pipelines, managing and analyzing large-scale data using SQL/NoSQL databases.
-- Created web applications using `Streamlit`, enabling real-time data interaction and visualization.
-- Applied Git/GitHub for version control across several projects, ensuring effective code management and collaboration.
-- Continuously expanding knowledge in full-stack development, currently pursuing courses in advanced cloud architecture and deployment.
-''')
-txt('**Technical Consultant**, Data Science and Machine Learning Projects, Freelance',
-'2015-Present')
-st.markdown('''
-- Provided consultation services for data-driven projects, assisting in the implementation of machine learning models using `PyTorch`.
-- Guided clients through data analysis processes, from data cleaning and preparation to model training and evaluation.
-- Supported clients in understanding and applying data science and machine learning tools, including Python and `Streamlit`.
-''')
-txt('**Content Creator**, Educational Content on Social Media Platforms', '2019-Present')
-st.markdown('''
-- Created engaging educational content across platforms like YouTube and TikTok, with notable audience engagement on various posts. [View an example here](https://www.tiktok.com/@jazzarcade).
-- Wrote engaging and informative scripts for videos, ensuring that complex topics were explained in a simple and accessible way.
-- Focused on educational content that helps learners in areas such as music theory and other educational subjects.
-''')
+st.markdown("""
+<div class="education-card">
+    <div class="education-content">
+        <h4>Bachelor in Business Administration</h4>
+        <p class="education-school">Universidad Anáhuac, Mexico City</p>
+    </div>
+    <span class="education-date">2005 - 2009</span>
+</div>
+""", unsafe_allow_html=True)
 
-#####################
-st.markdown('''
-## Technical Profiles
-''', unsafe_allow_html=True)
-txt2('LinkedIn', 'https://www.linkedin.com/in/armandoblanco')
-txt2('GitHub', 'https://github.com/ablancou')
-txt2('SoloLearn', 'https://www.sololearn.com/es/profile/3850882')
-txt2('LeetCode', 'https://leetcode.com/u/ablanco')
-txt2('CodeSignal', 'https://app.codesignal.com/profile/ablancou')
-txt2('HackerRank', 'https://www.hackerrank.com/profile/ablancou')
-txt2('X', 'https://x.com/ablancou')
+# ==================== WORK EXPERIENCE ====================
+st.markdown('<h2 class="section-title">💼 Work Experience</h2>', unsafe_allow_html=True)
 
-#####################
-# Technologies and Tools with Icons
-st.markdown('''
-## Technologies and Tools
-These tools have enabled me to develop impactful projects, such as interactive apps for music theory integrating tech and art.
-''', unsafe_allow_html=True)
+# Experience 1
+st.markdown("""
+<div class="experience-card">
+    <div class="experience-header">
+        <div>
+            <h4>Full-Stack Software Developer and Data Scientist</h4>
+            <p class="experience-company">Freelance</p>
+        </div>
+        <span class="experience-date">2012 - Present</span>
+    </div>
+    <ul class="experience-list">
+        <li>Developed and deployed educational games and interactive learning tools, integrating AI-powered content for enhanced learning experiences.</li>
+        <li>Built and deployed neural networks using <span class="highlight">PyTorch</span> for data science projects, providing data-driven solutions.</li>
+        <li>Designed and implemented data pipelines, managing and analyzing large-scale data using SQL/NoSQL databases.</li>
+        <li>Created web applications using <span class="highlight">Streamlit</span>, enabling real-time data interaction and visualization.</li>
+        <li>Applied Git/GitHub for version control across several projects, ensuring effective code management and collaboration.</li>
+        <li>Continuously expanding knowledge in full-stack development, currently pursuing courses in advanced cloud architecture and deployment.</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
 
-# Dict of icon URLs (validated with tool)
-icon_urls = {
-    'C++': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/182px-ISO_C%2B%2B_Logo.svg.png',
-    'Python': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
-    'JavaScript/TypeScript': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png',
-    'C': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/120px-The_C_Programming_Language_logo.svg.png',
-    'C#': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/512px-C_Sharp_Logo_2023.svg.png',
-    'Visual Studio Code (VSC)': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png',
-    'PyTorch': 'https://pytorch.org/assets/images/logo-icon.svg',
-    'TensorFlow': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/512px-Tensorflow_logo.svg.png',
-    'Jupyter Notebooks': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/512px-Jupyter_logo.svg.png',
-    'AWS': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png',
-    'Google Colab': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png',
-    'React': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
-    'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-    'Streamlit': 'https://streamlit.io/images/brand/streamlit-mark-color.png',
-    'SQL': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/512px-Sql_data_base_with_logo.png',
-    'NoSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-    'Git/GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', # Better Git size
-    'Agile Methodologies': 'https://cdn.iconscout.com/icon/free/png-256/free-agile-3629027-3030163.png',
-    'CI/CD Pipelines': 'https://cdn.iconscout.com/icon/free/png-256/free-ci-cd-3629028-3030164.png',
-    'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' # Better Docker size
-}
+# Experience 2
+st.markdown("""
+<div class="experience-card">
+    <div class="experience-header">
+        <div>
+            <h4>Technical Consultant</h4>
+            <p class="experience-company">Data Science and Machine Learning Projects, Freelance</p>
+        </div>
+        <span class="experience-date">2015 - Present</span>
+    </div>
+    <ul class="experience-list">
+        <li>Provided consultation services for data-driven projects, assisting in the implementation of machine learning models using <span class="highlight">PyTorch</span>.</li>
+        <li>Guided clients through data analysis processes, from data cleaning and preparation to model training and evaluation.</li>
+        <li>Supported clients in understanding and applying data science and machine learning tools, including Python and <span class="highlight">Streamlit</span>.</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
 
-# Subcategories with txt4_with_icon
-st.markdown('''
-### General Programming and Tools
-''')
-txt4_with_icon('C++', 'An efficient programming language essential for embedded systems and high-performance software in real-time applications', 'https://isocpp.org/', icon_urls.get('C++'))
-txt4_with_icon('Python', 'A versatile programming language used in AI, machine learning, and automation for modern technological solutions', 'https://www.python.org/', icon_urls.get('Python'))
-txt4_with_icon('JavaScript/TypeScript', 'Core technologies for interactive web applications, with TypeScript enhancing scalability and maintainability', 'https://www.typescriptlang.org/', icon_urls.get('JavaScript/TypeScript'))
-txt4_with_icon('C', 'A foundational programming language ideal for system-level programming and understanding hardware-software interaction', 'https://en.wikipedia.org/wiki/C_(programming_language)', icon_urls.get('C'))
-txt4_with_icon('C#', 'A modern, object-oriented language used for Windows applications and game development', 'https://learn.microsoft.com/en-us/dotnet/csharp/', icon_urls.get('C#'))
-txt4_with_icon('Visual Studio Code (VSC)', 'A powerful, lightweight code editor with extensive extensions support', 'https://code.visualstudio.com/', icon_urls.get('Visual Studio Code (VSC)'))
+# Experience 3
+st.markdown("""
+<div class="experience-card">
+    <div class="experience-header">
+        <div>
+            <h4>Content Creator</h4>
+            <p class="experience-company">Educational Content on Social Media Platforms</p>
+        </div>
+        <span class="experience-date">2019 - Present</span>
+    </div>
+    <ul class="experience-list">
+        <li>Created engaging educational content across platforms like YouTube and TikTok, with notable audience engagement on various posts. <a href="https://www.tiktok.com/@jazzarcade" target="_blank" class="inline-link">View an example here</a>.</li>
+        <li>Wrote engaging and informative scripts for videos, ensuring that complex topics were explained in a simple and accessible way.</li>
+        <li>Focused on educational content that helps learners in areas such as music theory and other educational subjects.</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
 
-st.markdown('''
-### Machine Learning and AI
-''')
-txt4_with_icon('PyTorch', 'An open-source machine learning library used for building neural networks', 'https://pytorch.org/', icon_urls.get('PyTorch'))
-txt4_with_icon('TensorFlow', 'A framework for machine learning and artificial intelligence applications', 'https://www.tensorflow.org/', icon_urls.get('TensorFlow'))
-txt4_with_icon('Jupyter Notebooks', 'An open-source tool for interactive coding, widely used in data science', 'https://jupyter.org/', icon_urls.get('Jupyter Notebooks'))
+# ==================== TECHNICAL EXPERTISE ====================
+st.markdown('<h2 class="section-title">🛠️ Technical Expertise</h2>', unsafe_allow_html=True)
 
-st.markdown('''
-### Cloud Computing and Frameworks
-''')
-txt4_with_icon('AWS', 'A cloud platform providing scalable services and solutions', 'https://aws.amazon.com/', icon_urls.get('AWS'))
-txt4_with_icon('Google Colab', 'A cloud-based platform for Python coding and machine learning experimentation', 'https://colab.research.google.com/', icon_urls.get('Google Colab'))
-txt4_with_icon('React', 'A JavaScript library for building dynamic user interfaces', 'https://reactjs.org/', icon_urls.get('React'))
-txt4_with_icon('Next.js', 'A React-based framework for server-side rendering and static site generation', 'https://nextjs.org/', icon_urls.get('Next.js'))
-txt4_with_icon('Streamlit', 'A framework for building and deploying data science web apps', 'https://streamlit.io/', icon_urls.get('Streamlit'))
+st.markdown("""
+<div class="skills-grid">
+    <div class="skill-category">
+        <h5>Frontend</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">Next.js 15</span>
+            <span class="skill-tag">React 18</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Phaser 3</span>
+            <span class="skill-tag">HTML/CSS</span>
+        </div>
+    </div>
+    <div class="skill-category">
+        <h5>Backend</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">AWS Amplify Data</span>
+        </div>
+    </div>
+    <div class="skill-category">
+        <h5>Cloud & Auth</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">AWS Amplify</span>
+            <span class="skill-tag">AWS Cognito</span>
+            <span class="skill-tag">DynamoDB</span>
+            <span class="skill-tag">OAuth 2.0</span>
+        </div>
+    </div>
+    <div class="skill-category">
+        <h5>Data Science</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">pandas</span>
+            <span class="skill-tag">matplotlib</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">NumPy</span>
+        </div>
+    </div>
+    <div class="skill-category">
+        <h5>AI Integration</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">Google Gemini API</span>
+            <span class="skill-tag">LLM Prompt Engineering</span>
+            <span class="skill-tag">Neural Networks</span>
+        </div>
+    </div>
+    <div class="skill-category">
+        <h5>Audio & Music</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">VexFlow</span>
+            <span class="skill-tag">Tone.js</span>
+            <span class="skill-tag">Web Audio API</span>
+            <span class="skill-tag">SVGuitar</span>
+        </div>
+    </div>
+    <div class="skill-category">
+        <h5>DevOps & Tools</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">Git/GitHub</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Google Colab</span>
+        </div>
+    </div>
+    <div class="skill-category">
+        <h5>Internationalization</h5>
+        <div class="skill-tags">
+            <span class="skill-tag">next-intl</span>
+            <span class="skill-tag">6 Languages</span>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
-st.markdown('''
-### Database Management and Version Control
-''')
-txt4_with_icon('SQL', 'Structured Query Language for managing relational databases', 'https://www.mysql.com/', icon_urls.get('SQL'))
-txt4_with_icon('NoSQL', 'Non-relational database systems for flexible, scalable data storage', 'https://www.mongodb.com/nosql-explained', icon_urls.get('NoSQL'))
-txt4_with_icon('Git/GitHub', 'Version control system used for code management and collaboration', 'https://github.com/', icon_urls.get('Git/GitHub'))
+# ==================== TECHNOLOGIES & TOOLS ====================
+st.markdown('<h2 class="section-title">🔧 Technologies and Tools</h2>', unsafe_allow_html=True)
 
-st.markdown('''
-### Development Methodologies
-''')
-txt4_with_icon('Agile Methodologies', 'Iterative approach to software development and project management', 'https://www.atlassian.com/agile', icon_urls.get('Agile Methodologies'))
-txt4_with_icon('CI/CD Pipelines', 'Automated software delivery process for continuous deployment and integration', 'https://www.atlassian.com/continuous-delivery/ci-vs-cd', icon_urls.get('CI/CD Pipelines'))
+technologies = [
+    ("Python", "A versatile programming language for data science and software development", "https://www.python.org/"),
+    ("Next.js", "React framework for production-grade web applications", "https://nextjs.org/"),
+    ("React", "JavaScript library for building user interfaces", "https://react.dev/"),
+    ("TypeScript", "Typed superset of JavaScript for scalable applications", "https://www.typescriptlang.org/"),
+    ("AWS Amplify", "Full-stack cloud platform for web and mobile apps", "https://aws.amazon.com/amplify/"),
+    ("PyTorch", "An open-source machine learning library used for building neural networks", "https://pytorch.org/"),
+    ("Streamlit", "A framework for building and deploying data science web apps", "https://streamlit.io/"),
+    ("Google Colab", "A cloud-based platform for Python coding and machine learning experimentation", "https://colab.research.google.com/"),
+    ("Git/GitHub", "Version control system used for code management and collaboration", "https://github.com/"),
+    ("Phaser 3", "HTML5 game framework for desktop and mobile", "https://phaser.io/"),
+]
 
-st.markdown('''
-### Containers and Deployment
-''')
-txt4_with_icon('Docker', 'A platform for developing, shipping, and running applications in containers', 'https://www.docker.com/', icon_urls.get('Docker'))
+st.markdown('<div class="tech-table">', unsafe_allow_html=True)
+for tech, desc, url in technologies:
+    st.markdown(f"""
+    <div class="tech-row">
+        <span class="tech-name">{tech}</span>
+        <span class="tech-desc">{desc}</span>
+        <a href="{url}" target="_blank" class="tech-link">Learn more →</a>
+    </div>
+    """, unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
-#####################
-# New Section: Tech + Art/Music
-st.markdown('''
-## Tech + Art/Music
-I integrate programming with my experience as a guitarist (+30 years), pianist (+15 years), composer, arranger, and producer (+25 years, with an original song on digital platforms). Ideal for roles in music edtech or tech-enhanced A&R.
-''', unsafe_allow_html=True)
-txt3('Audio Processing/ML', '`PyTorch` for music pattern analysis (AI projects on Kaggle)')
-txt3('Interactive Apps', '`JavaScript/C#` for 3 games and 6 music theory lessons')
-txt3('Creative Production', 'DAWs + Python scripts for arrangements and composition')
+# ==================== SKILLS ====================
+st.markdown('<h2 class="section-title">💡 Skills</h2>', unsafe_allow_html=True)
 
-#####################
-st.markdown('''
-## Skills
-''', unsafe_allow_html=True)
-txt3('Programming', '`Python` <small>(10 years)</small>, `JavaScript` <small>(6 years)</small>, `TypeScript`, `C`, `C++`, `Java`, `C#` <small>(4 years)</small>, `R`, `Swift`')
-txt3('Data processing/wrangling', '`SQL`, `pandas`, `numpy` (used in Kaggle AI projects)')
-txt3('Data visualization', '`matplotlib`, `seaborn`, `plotly`')
-txt3('Model deployment', '`Streamlit`, `Google Colab`')
-txt3('Web development', '`Streamlit`, `HTML`, `CSS`, `JavaScript`, `WordPress`, `React`, `Redux` (multiple GitHub repos)')
-txt3('Version Control', '`Git`, `GitHub` (multiple contributions)')
-txt3('Cloud platforms', '`AWS`, `Google Colab`')
-txt3('Presentation & Content Creation', 'Proficient in creating professional presentations, design documents, and educational content using the `Microsoft Office Suite`, `Apple iWork Suite`, and AI-powered design tools. (As Marketing Manager/Department Head, boosted impact with Python scripts)')
-txt3('Tech Self-Learning', 'LeetCode: 300 problems (C++/Python); CodeSignal: ~9000 EP, 100 practices; HackerRank: Gold Level (~1250 points); Courses on Coursera/edX/SoloLearn')
-txt3('Multilingual & Translation', 'Fluent in 5+ languages (English, Spanish, etc.); daily language study via Duolingo (121,000+ points); capable of technical translation and multilingual content creation')
+skills_data = [
+    ("Programming", "Python, JavaScript, TypeScript, C, C++, Java, C#, R, Swift"),
+    ("Data Processing", "SQL, pandas, NumPy"),
+    ("Data Visualization", "matplotlib, seaborn, plotly"),
+    ("Model Deployment", "Streamlit, Google Colab, AWS Amplify"),
+    ("Web Development", "Next.js, React, Streamlit, HTML, CSS, JavaScript, Tailwind CSS"),
+    ("Game Development", "Phaser 3, Web Audio API"),
+    ("Version Control", "Git, GitHub"),
+    ("Cloud Platforms", "AWS (Amplify, Cognito, DynamoDB), Google Cloud, Google Colab"),
+    ("Presentation & Content", "Proficient in creating professional presentations, design documents, and educational content using the Microsoft Office Suite, Apple iWork Suite, and AI-powered design tools."),
+]
 
-#####################
+st.markdown('<div class="skills-table">', unsafe_allow_html=True)
+for skill, details in skills_data:
+    st.markdown(f"""
+    <div class="skill-row">
+        <span class="skill-name">{skill}</span>
+        <span class="skill-details">{details}</span>
+    </div>
+    """, unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
-# Call to Action (solo LinkedIn)
-st.markdown('''
-## Contact
-Connect via [LinkedIn](https://www.linkedin.com/in/armandoblanco) for inquiries or opportunities.
-''', unsafe_allow_html=True)
+# ==================== SOCIAL MEDIA ====================
+st.markdown('<h2 class="section-title">🔗 Social Media</h2>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="social-grid">
+    <a href="https://www.linkedin.com/in/armandoblanco" target="_blank" class="social-card">
+        <span class="social-icon">💼</span>
+        <span class="social-name">LinkedIn</span>
+        <span class="social-url">linkedin.com/in/armandoblanco</span>
+    </a>
+    <a href="https://github.com/ablancou" target="_blank" class="social-card">
+        <span class="social-icon">💻</span>
+        <span class="social-name">GitHub</span>
+        <span class="social-url">github.com/ablancou</span>
+    </a>
+    <a href="https://jazzarcade.com" target="_blank" class="social-card">
+        <span class="social-icon">🎮</span>
+        <span class="social-name">Jazz Arcade</span>
+        <span class="social-url">jazzarcade.com</span>
+    </a>
+    <a href="https://www.sololearn.com/es/profile/3850882" target="_blank" class="social-card">
+        <span class="social-icon">📚</span>
+        <span class="social-name">SoloLearn</span>
+        <span class="social-url">sololearn.com/profile</span>
+    </a>
+    <a href="https://www.duolingo.com/profile/ablancou" target="_blank" class="social-card">
+        <span class="social-icon">🦉</span>
+        <span class="social-name">Duolingo</span>
+        <span class="social-url">duolingo.com/profile/ablancou</span>
+    </a>
+    <a href="https://twitter.com/ablancou" target="_blank" class="social-card">
+        <span class="social-icon">🐦</span>
+        <span class="social-name">Twitter</span>
+        <span class="social-url">twitter.com/ablancou</span>
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
+# ==================== FOOTER ====================
+st.markdown("""
+<div class="footer">
+    <p>© 2025 Armando Blanco. Built with passion and code.</p>
+</div>
+""", unsafe_allow_html=True)
