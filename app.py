@@ -406,7 +406,7 @@ st.markdown("""
     <a href="https://x.com/ablancou" target="_blank" class="social-card">
         <span class="social-icon">🐦</span>
         <span class="social-name">X</span>
-        <span class="social-url">twitter.com/ablancou</span>
+        <span class="social-url">x.com/ablancou</span>
     </a>
 </div>
 """, unsafe_allow_html=True)
