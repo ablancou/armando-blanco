@@ -403,9 +403,9 @@ st.markdown("""
         <span class="social-name">Duolingo</span>
         <span class="social-url">duolingo.com/profile/ablancou</span>
     </a>
-    <a href="https://twitter.com/ablancou" target="_blank" class="social-card">
+    <a href="https://x.com/ablancou" target="_blank" class="social-card">
         <span class="social-icon">🐦</span>
-        <span class="social-name">Twitter</span>
+        <span class="social-name">X</span>
         <span class="social-url">twitter.com/ablancou</span>
     </a>
 </div>
