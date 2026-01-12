@@ -556,6 +556,35 @@ header {visibility: hidden;}
     font-size: 2rem;
 }
 
+.social-fa-icon {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-card:hover .social-fa-icon {
+    transform: scale(1.1);
+}
+
+.linkedin-icon {
+    color: #0A66C2;
+}
+
+.github-icon {
+    color: #f0f6fc;
+}
+
+.sololearn-icon {
+    color: #1abc9c;
+}
+
+.duolingo-icon {
+    color: #58CC02;
+}
+
+.x-icon {
+    color: #f0f6fc;
+}
+
 .social-name {
     color: var(--text-bright);
     font-weight: 600;
