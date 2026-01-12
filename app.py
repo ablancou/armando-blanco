@@ -376,35 +376,33 @@ st.markdown('</div>', unsafe_allow_html=True)
 # ==================== SOCIAL MEDIA ====================
 st.markdown('<h2 class="section-title">🔗 Social Media</h2>', unsafe_allow_html=True)
 
+# Font Awesome CDN
+st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">', unsafe_allow_html=True)
+
 st.markdown("""
 <div class="social-grid">
     <a href="https://www.linkedin.com/in/armandoblanco" target="_blank" class="social-card">
-        <span class="social-icon">💼</span>
+        <i class="fab fa-linkedin social-fa-icon linkedin-icon"></i>
         <span class="social-name">LinkedIn</span>
         <span class="social-url">linkedin.com/in/armandoblanco</span>
     </a>
     <a href="https://github.com/ablancou" target="_blank" class="social-card">
-        <span class="social-icon">💻</span>
+        <i class="fab fa-github social-fa-icon github-icon"></i>
         <span class="social-name">GitHub</span>
         <span class="social-url">github.com/ablancou</span>
     </a>
-    <a href="https://jazzarcade.com" target="_blank" class="social-card">
-        <span class="social-icon">🎮</span>
-        <span class="social-name">Jazz Arcade</span>
-        <span class="social-url">jazzarcade.com</span>
-    </a>
     <a href="https://www.sololearn.com/es/profile/3850882" target="_blank" class="social-card">
-        <span class="social-icon">📚</span>
+        <i class="fas fa-code social-fa-icon sololearn-icon"></i>
         <span class="social-name">SoloLearn</span>
         <span class="social-url">sololearn.com/profile</span>
     </a>
     <a href="https://www.duolingo.com/profile/ablancou" target="_blank" class="social-card">
-        <span class="social-icon">🦉</span>
+        <i class="fas fa-language social-fa-icon duolingo-icon"></i>
         <span class="social-name">Duolingo</span>
         <span class="social-url">duolingo.com/profile/ablancou</span>
     </a>
     <a href="https://x.com/ablancou" target="_blank" class="social-card">
-        <span class="social-icon">🐦</span>
+        <i class="fab fa-x-twitter social-fa-icon x-icon"></i>
         <span class="social-name">X</span>
         <span class="social-url">x.com/ablancou</span>
     </a>
