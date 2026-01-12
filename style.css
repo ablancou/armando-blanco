@@ -1,16 +1,17 @@
 /* ==================== ROOT VARIABLES ==================== */
 :root {
-    --primary: #0a192f;
-    --primary-light: #112240;
-    --accent: #64ffda;
-    --accent-secondary: #57cbff;
-    --text-primary: #ccd6f6;
-    --text-secondary: #8892b0;
-    --text-bright: #e6f1ff;
-    --gradient-accent: linear-gradient(135deg, #64ffda 0%, #57cbff 100%);
-    --card-bg: rgba(17, 34, 64, 0.6);
-    --border-color: rgba(100, 255, 218, 0.1);
-    --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    --primary: #0a0f1a;
+    --primary-light: #111827;
+    --accent: #3b82f6;
+    --accent-secondary: #60a5fa;
+    --accent-bright: #93c5fd;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-bright: #f8fafc;
+    --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --card-bg: rgba(17, 24, 39, 0.7);
+    --border-color: rgba(59, 130, 246, 0.15);
+    --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
     --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 }
@@ -19,8 +20,8 @@
 .stApp {
     background: var(--primary);
     background-image: 
-        radial-gradient(ellipse at 20% 80%, rgba(100, 255, 218, 0.03) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(87, 203, 255, 0.03) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
 }
 
 /* Hide Streamlit branding */
@@ -43,8 +44,8 @@ header {visibility: hidden;}
 .header-badge {
     display: inline-block;
     padding: 0.5rem 1.5rem;
-    background: rgba(100, 255, 218, 0.1);
-    border: 1px solid rgba(100, 255, 218, 0.3);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     border-radius: 50px;
     color: var(--accent);
     font-family: var(--font-mono);
@@ -137,7 +138,7 @@ header {visibility: hidden;}
 }
 
 .flagship-card:hover {
-    border-color: rgba(100, 255, 218, 0.3);
+    border-color: rgba(59, 130, 246, 0.3);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
@@ -174,7 +175,7 @@ header {visibility: hidden;}
 }
 
 .flagship-link:hover {
-    background: rgba(100, 255, 218, 0.1);
+    background: rgba(59, 130, 246, 0.1);
 }
 
 .flagship-tagline {
@@ -195,13 +196,13 @@ header {visibility: hidden;}
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem;
-    background: rgba(100, 255, 218, 0.03);
+    background: rgba(59, 130, 246, 0.03);
     border-radius: 8px;
     transition: all 0.2s ease;
 }
 
 .feature-item:hover {
-    background: rgba(100, 255, 218, 0.08);
+    background: rgba(59, 130, 246, 0.08);
 }
 
 .feature-icon {
@@ -221,7 +222,7 @@ header {visibility: hidden;}
 
 .tech-tag {
     padding: 0.4rem 1rem;
-    background: rgba(100, 255, 218, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     border-radius: 50px;
     color: var(--accent);
     font-family: var(--font-mono);
@@ -244,7 +245,7 @@ header {visibility: hidden;}
 }
 
 .project-card:hover {
-    border-color: rgba(100, 255, 218, 0.3);
+    border-color: rgba(59, 130, 246, 0.3);
     transform: translateY(-4px);
     box-shadow: var(--shadow);
 }
@@ -282,7 +283,7 @@ header {visibility: hidden;}
 
 .mini-tag {
     padding: 0.25rem 0.75rem;
-    background: rgba(100, 255, 218, 0.08);
+    background: rgba(59, 130, 246, 0.08);
     border-radius: 50px;
     color: var(--accent-secondary);
     font-family: var(--font-mono);
@@ -334,7 +335,7 @@ header {visibility: hidden;}
     font-size: 0.9rem;
     color: var(--text-secondary);
     padding: 0.25rem 0.75rem;
-    background: rgba(100, 255, 218, 0.05);
+    background: rgba(59, 130, 246, 0.05);
     border-radius: 50px;
 }
 
@@ -374,7 +375,7 @@ header {visibility: hidden;}
     font-size: 0.9rem;
     color: var(--text-secondary);
     padding: 0.25rem 0.75rem;
-    background: rgba(100, 255, 218, 0.05);
+    background: rgba(59, 130, 246, 0.05);
     border-radius: 50px;
 }
 
@@ -424,7 +425,7 @@ header {visibility: hidden;}
 }
 
 .skill-category:hover {
-    border-color: rgba(100, 255, 218, 0.2);
+    border-color: rgba(59, 130, 246, 0.2);
 }
 
 .skill-category h5 {
@@ -445,7 +446,7 @@ header {visibility: hidden;}
 
 .skill-tag {
     padding: 0.35rem 0.75rem;
-    background: rgba(100, 255, 218, 0.05);
+    background: rgba(59, 130, 246, 0.05);
     border-radius: 6px;
     color: var(--text-primary);
     font-size: 0.85rem;
@@ -471,7 +472,7 @@ header {visibility: hidden;}
 }
 
 .tech-row:hover {
-    border-color: rgba(100, 255, 218, 0.2);
+    border-color: rgba(59, 130, 246, 0.2);
 }
 
 .tech-name {
@@ -574,7 +575,7 @@ header {visibility: hidden;}
 }
 
 .sololearn-icon {
-    color: #1abc9c;
+    color: #3b82f6;
 }
 
 .duolingo-icon {
@@ -646,5 +647,5 @@ header {visibility: hidden;}
 .stImage img {
     border-radius: 50%;
     border: 3px solid var(--accent);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
