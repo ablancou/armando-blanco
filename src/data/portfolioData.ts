@@ -121,8 +121,8 @@ export const allProjects: Project[] = [
     id: "smart-med-calc",
     category: "Data Science",
     title: "Statura Predict",
-    tagline: "Adult Stature Predictor for the Mexican Population.",
-    description: "First clinical tool for predicting adult height specifically designed for the Mexican pediatric population.",
+    tagline: "Mexican Pediatric Adult Height Predictor.",
+    description: "Clinical decision-support tool for adult height prediction specifically calibrated for the Mexican pediatric population, built on nationally representative data from ENSANUT 2018 (n=13,264) published by Flores et al. (2024) under CC BY 4.0. Combines four validated prediction methods — Bayley-Pinneau, Khamis-Roche, Tanner Mid-Parental, and LMS Percentile Projection — into a weighted hybrid model with automatic outlier detection. Includes Mexican-specific growth percentile curves with cross-reference against WHO and CDC standards. Built with Python and the Reflex framework.\n\nFor educational and clinical reference use only — not a substitute for professional medical evaluation.",
     techDesc: "Combines 4 prediction methods into a weighted hybrid system with automatic outlier detection. Built with official ENSANUT data.",
     icon: "Calculator",
     image: "/projects/smartmedcalc.png", // Assuming path follows pattern
