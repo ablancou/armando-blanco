@@ -150,8 +150,8 @@ export default function Portfolio() {
                 }
               />
               <BentoGridItem
-                title="Clinical Focus"
-                description="Expertise in ACMG-compliant diagnostic software."
+                title="AI Integration"
+                description="Pioneering LLM orchestration and adaptive neural learning systems."
                 className="md:col-span-1"
                 icon={<Zap />}
               />
