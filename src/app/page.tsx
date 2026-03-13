@@ -345,22 +345,31 @@ function ProjectCard({ project, isLarge = false }: { project: any, isLarge?: boo
       )}>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent z-10" />
         
-        {/* Placeholder for real images/GIFs */}
-        <div className="w-full h-full flex items-center justify-center bg-slate-800">
-          <div className="flex flex-col items-center gap-4 opacity-40 group-hover:opacity-100 transition-opacity duration-700">
-            {isHovered && project.gif ? (
-               <div className="animate-pulse flex flex-col items-center text-blue-400">
-                  <Monitor size={64} />
-                  <span className="text-xs font-mono uppercase mt-2 tracking-widest">Hover Playback Mode</span>
-               </div>
-            ) : (
-                <div className="flex flex-col items-center text-slate-500">
-                  <Monitor size={48} />
-                  <span className="text-xs font-mono uppercase mt-2 tracking-widest">{project.title} Preview</span>
-                </div>
-            )}
+        {/* Project Image */}
+        {project.image ? (
+          <Image 
+            src={project.image} 
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-slate-800">
+            <div className="flex flex-col items-center gap-4 opacity-40 group-hover:opacity-100 transition-opacity duration-700">
+              {isHovered && project.gif ? (
+                 <div className="animate-pulse flex flex-col items-center text-blue-400">
+                    <Monitor size={64} />
+                    <span className="text-xs font-mono uppercase mt-2 tracking-widest">Hover Playback Mode</span>
+                 </div>
+              ) : (
+                  <div className="flex flex-col items-center text-slate-500">
+                    <Monitor size={48} />
+                    <span className="text-xs font-mono uppercase mt-2 tracking-widest">{project.title} Preview</span>
+                  </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Category Badge */}
         <div className="absolute top-6 left-6 z-20">
