@@ -115,10 +115,7 @@ export const featuredProjects: Project[] = [
     image: "/projects/cosmosview.png",
     url: "https://cosmosview.vercel.app/",
     techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"]
-  }
-]
-
-export const allProjects: Project[] = [
+  },
   {
     id: "smart-med-calc",
     category: "Clinical AI",
@@ -130,7 +127,10 @@ export const allProjects: Project[] = [
     image: "/projects/smartmedcalc.png", // Assuming path follows pattern
     url: "https://smartmedcalc-silver-apple.reflex.run/",
     techTags: ["Python", "Reflex", "Data Science", "Clinical Tools"]
-  },
+  }
+]
+
+export const allProjects: Project[] = [
   {
     id: "diabetes-prediction",
     category: "Data Science",
