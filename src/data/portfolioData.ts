@@ -106,6 +106,30 @@ export const flagshipProject: Project = {
 
 export const allProjects: Project[] = [
   {
+    id: "cosmos-view",
+    category: "Data Science",
+    title: "CosmosView",
+    tagline: "Interactive Real-Time Space and 3D Orbit Visualizer.",
+    description: "High-performance interactive 3D web application to visualize the night sky and track thousands of real-time satellites.",
+    techDesc: "Implemented real-time orbital propagation using SGP4 mathematical models and live TLE data.",
+    icon: "Eye",
+    image: "/projects/cosmosview.png", // Assuming path follows pattern
+    url: "https://cosmosview.vercel.app/",
+    techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"]
+  },
+  {
+    id: "smart-med-calc",
+    category: "Data Science",
+    title: "Statura Predict",
+    tagline: "Adult Stature Predictor for the Mexican Population.",
+    description: "First clinical tool for predicting adult height specifically designed for the Mexican pediatric population.",
+    techDesc: "Combines 4 prediction methods into a weighted hybrid system with automatic outlier detection. Built with official ENSANUT data.",
+    icon: "Calculator",
+    image: "/projects/smartmedcalc.png", // Assuming path follows pattern
+    url: "https://smartmedcalc-silver-apple.reflex.run/",
+    techTags: ["Python", "Reflex", "Data Science", "Clinical Tools"]
+  },
+  {
     id: "diabetes-prediction",
     category: "Data Science",
     title: "Diabetes Prediction AI",

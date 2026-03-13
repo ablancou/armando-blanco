@@ -65,6 +65,19 @@ export default function Portfolio() {
               <span>Available for high-impact projects</span>
             </div>
             
+            <div className="relative w-32 h-32 mx-auto mb-8 group">
+              <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/40 transition-all duration-700" />
+              <div className="relative w-full h-full rounded-full border-2 border-blue-500/50 p-1 overflow-hidden bg-slate-900 shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                <Image
+                  src="/AB.png"
+                  alt="Armando Blanco"
+                  width={128}
+                  height={128}
+                  className="rounded-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
+            </div>
+            
             <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8">
               Empowering <span className="text-gradient">Intelligence</span>
               <br />
@@ -72,7 +85,7 @@ export default function Portfolio() {
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-              Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>. 
+              Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>.&nbsp;
               {personalInfo.tagline}
             </p>
             
