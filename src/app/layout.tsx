@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Armando Blanco | Portfolio",
+  title: "🚀 Armando Blanco | Portfolio",
   description: "Senior Full-Stack Developer & Data Scientist Portfolio",
 };
 
