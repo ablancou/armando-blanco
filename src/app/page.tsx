@@ -23,22 +23,32 @@ import {
 } from "lucide-react"
 
 import { 
-  personalInfo, 
-  featuredProjects, 
+  translations,
+  techStack,
+  featuredProjects,
   allProjects,
   technicalExpertise,
-  techStack,
-  coreSkills
+  personalInfo,
+  socials
 } from "@/data/portfolioData"
+
+import { useLanguage } from "@/context/LanguageContext"
 
 import Navbar from "@/components/Navbar"
 import { BentoGrid, BentoGridItem } from "@/components/BentoGrid"
 import { cn } from "@/lib/utils"
 
+import { LighthouseScorecard } from "@/components/LighthouseScorecard"
+import { SatelliteTracker } from "@/components/SatelliteTracker"
+import { SkillCloud } from "@/components/SkillCloud"
+import { CareerTimeline } from "@/components/CareerTimeline"
+import { AIChatbot } from "@/components/AIChatbot"
+
 export default function Portfolio() {
   const { scrollYProgress } = useScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95])
+  const { t, language } = useLanguage()
   
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 overflow-x-hidden">
@@ -46,7 +56,7 @@ export default function Portfolio() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-48 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute top-1/4 -left-20 w-80 h-80 bg-blue-600/10 rounded-full blur-[120px] animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-[120px] animate-pulse-slow" />
@@ -62,7 +72,7 @@ export default function Portfolio() {
           >
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-sm font-medium tracking-wide">
               <Sparkles size={14} className="animate-spin" />
-              <span>Available for high-impact projects</span>
+              <span>{t.common.available}</span>
             </div>
             
             <div className="relative w-32 h-32 mx-auto mb-8 group">
@@ -79,14 +89,25 @@ export default function Portfolio() {
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8">
-              Empowering <span className="text-gradient">Intelligence</span>
+              {language === 'es' ? (
+                <>Engineer <span className="text-gradient">Tier II</span></>
+              ) : (
+                <>Engineer <span className="text-gradient">Tier II</span></>
+              )}
               <br />
-              <span className="text-4xl md:text-6xl text-slate-400 font-bold">Through Elite Engineering</span>
+              <span className="text-4xl md:text-6xl text-slate-400 font-bold">
+                {language === 'en' ? "Leading Innovation in Mexico" : 
+                 language === 'es' ? "Liderando Innovación en México" :
+                 language === 'it' ? "Leader nell'Innovazione in Messico" :
+                 language === 'fr' ? "Leader de l'Innovation au Mexique" :
+                 language === 'pt' ? "Liderando Inovação no México" :
+                 "Innovationsführer in Mexiko"}
+              </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-              Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>.&nbsp;
-              {personalInfo.tagline}
+              Hi, I&apos;m <span className="text-white font-medium">{t.personalInfo.name}</span>.&nbsp;
+              {t.personalInfo.role}
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
@@ -96,16 +117,17 @@ export default function Portfolio() {
                 href="#projects" 
                 className="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-2xl shadow-blue-500/20 flex items-center gap-2 group"
               >
-                Explore My Work 
+                {t.common.exploreWork} 
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="#contact" 
-                className="px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all backdrop-blur-md flex items-center gap-2"
+                className="px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all backdrop-blur-md flex items-center gap-2 group text-white no-underline"
               >
-                Let&apos;s Build Together
+                {t.common.letBuild}
+                <Sparkles size={18} className="text-blue-400" />
               </motion.a>
             </div>
           </motion.div>
@@ -129,18 +151,18 @@ export default function Portfolio() {
           <div className="md:sticky md:top-32 w-full md:w-1/3">
             <h2 className="text-4xl font-bold mb-6 flex items-center gap-3">
               <span className="w-12 h-1.5 bg-blue-500 rounded-full"></span>
-              The Vision
+              {t.common.vision}
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              Bridging the gap between raw data and professional software architecture. My approach is rooted in academic excellence and decade-long field experience.
+              {t.common.visionText}
             </p>
           </div>
           
           <div className="w-full md:w-2/3 space-y-8">
             <BentoGrid>
               <BentoGridItem
-                title="10+ Years Experience"
-                description="A decade of building distributed systems and AI pipelines."
+                title={language === 'en' ? "10+ Years Experience" : "10+ Años de Experiencia"}
+                description={t.personalInfo.summary[0]}
                 className="md:col-span-2"
                 header={
                   <div className="flex items-center gap-4 text-slate-300">
@@ -166,8 +188,8 @@ export default function Portfolio() {
                 description="Next.js, PyTorch, AWS, and modern DevOps."
                 className="md:col-span-2"
                 header={<div className="flex flex-wrap gap-2">
-                  {techStack.map(t => (
-                    <span key={t.name} className="px-2 py-1 bg-slate-800 rounded-lg text-[10px] text-blue-400 border border-blue-500/10 uppercase tracking-tighter">{t.name}</span>
+                  {techStack.map((ts: any) => (
+                    <span key={ts.name} className="px-2 py-1 bg-slate-800 rounded-lg text-[10px] text-blue-400 border border-blue-500/10 uppercase tracking-tighter">{ts.name}</span>
                   ))}
                 </div>}
               />
@@ -180,36 +202,46 @@ export default function Portfolio() {
       <section id="projects" className="py-32 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-20">
-            <h2 className="text-sm font-black tracking-widest text-blue-500 uppercase mb-4">Elite Showcase</h2>
-            <h3 className="text-5xl md:text-7xl font-black mb-8">Selected <span className="text-white">Engineering</span> Artifacts</h3>
+            <h2 className="text-sm font-black tracking-widest text-blue-500 uppercase mb-4">{t.common.eliteShowcase}</h2>
+            <h3 className="text-5xl md:text-7xl font-black mb-8">{t.common.engineeringArtifacts.split(' ').slice(0, -1).join(' ')} <span className="text-white">{t.common.engineeringArtifacts.split(' ').slice(-1)}</span></h3>
           </div>
 
           {/* Featured Projects Highlight */}
           <div className="space-y-12 mb-12">
-            {featuredProjects.map((project) => (
+            {featuredProjects.map((project: any) => (
               <ProjectCard key={project.id} project={project} isLarge />
             ))}
           </div>
 
           {/* Other Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {allProjects.map((project) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {allProjects.map((project: any) => (
               <ProjectCard key={project.id} project={project} />
             ))}
+            <SatelliteTracker />
           </div>
         </div>
+      </section>
+
+      {/* Engineering Excellence Audit */}
+      <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <LighthouseScorecard />
       </section>
 
       {/* Expertise Section */}
       <section id="skills" className="py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-black mb-6">Technological <span className="text-gradient">Fortitude</span></h2>
-            <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light">The foundational stack powering mission-critical solutions.</p>
+            <h2 className="text-4xl md:text-6xl font-black mb-6">{t.common.fortitude.split(' ')[0]} <span className="text-gradient">{t.common.fortitude.split(' ')[1] || "Expertise"}</span></h2>
+            <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light">{t.common.fortitudeText}</p>
+          </div>
+
+          <div className="mb-24">
+            <SkillCloud />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {technicalExpertise.map((cat, idx) => {
+            {technicalExpertise.map((cat: any, idx: number) => {
               const Icon = cat.icon
               return (
                 <motion.div 
@@ -225,7 +257,7 @@ export default function Portfolio() {
                   </div>
                   <h3 className="text-2xl font-bold mb-6 text-slate-100">{cat.category}</h3>
                   <div className="flex flex-wrap gap-2">
-                    {cat.skills.map(skill => (
+                    {cat.skills.map((skill: string) => (
                       <span key={skill} className="px-3 py-1.5 bg-white/5 rounded-xl text-xs font-medium text-slate-300 border border-white/5 hover:bg-white/10 transition-colors">
                         {skill}
                       </span>
@@ -239,50 +271,8 @@ export default function Portfolio() {
       </section>
 
       {/* Experience - The Narrative */}
-      <section id="experience" className="py-32 border-t border-white/5">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-20">
-            <h2 className="text-4xl font-black mb-4">Professional <span className="text-gradient-emerald">Trajectory</span></h2>
-            <p className="text-slate-400">A timeline of innovation and complex problem-solving.</p>
-          </div>
-
-          <div className="space-y-12">
-            {personalInfo.experience.map((job, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="group relative flex gap-8 md:gap-12"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-blue-500 group-hover:scale-150 transition-transform duration-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
-                  <div className="w-0.5 h-full bg-gradient-to-b from-blue-500/50 to-transparent mt-2" />
-                </div>
-                
-                <div className="pb-16 flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">{job.title}</h3>
-                      <p className="text-blue-400/80 font-medium">{job.company}</p>
-                    </div>
-                    <span className="text-sm font-mono text-slate-500 bg-white/5 px-4 py-1.5 rounded-full border border-white/10 h-fit self-start md:self-center">
-                      {job.date}
-                    </span>
-                  </div>
-                  <ul className="space-y-4">
-                    {job.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="text-slate-400 text-lg leading-relaxed flex items-start gap-4">
-                        <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-blue-500/40 shrink-0" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <section id="experience" className="py-12 border-t border-white/5">
+        <CareerTimeline />
       </section>
 
       {/* Footer / Connect */}
@@ -290,13 +280,13 @@ export default function Portfolio() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-7xl font-black mb-8">Let&apos;s Build <span className="text-gradient">Meaningful</span> Software</h2>
+          <h2 className="text-5xl md:text-7xl font-black mb-8">{t.common.footerTitle.split(' ').slice(0, -1).join(' ')} <span className="text-gradient">{t.common.footerTitle.split(' ').slice(-1)}</span></h2>
           <p className="text-slate-400 text-xl mb-16 max-w-2xl mx-auto font-light leading-relaxed">
-            I am always open to exploring complex technical challenges and collaborating with visionary teams.
+            {t.common.footerText}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-24">
-            {personalInfo.socials.map((social) => (
+            {socials.map((social: any) => (
               <motion.a 
                 key={social.name} 
                 href={social.url} 
@@ -316,11 +306,12 @@ export default function Portfolio() {
               Handcrafted with Next.js, Framer Motion & Pure Precision
             </p>
             <p className="text-slate-700 text-xs">
-              © {new Date().getFullYear()} {personalInfo.name}. All systems operational.
+              © {new Date().getFullYear()} {t.personalInfo.name}. All systems operational.
             </p>
           </div>
         </div>
       </footer>
+      <AIChatbot />
     </main>
   )
 }

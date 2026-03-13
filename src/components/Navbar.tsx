@@ -20,6 +20,8 @@ const navItems = [
   { name: "Contact", href: "#contact", icon: MessageSquare },
 ]
 
+import { LanguageSwitcher } from "./LanguageSwitcher"
+
 export default function Navbar() {
   const [hovered, setHovered] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -39,8 +41,8 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", damping: 20, stiffness: 100, delay: 0.5 }}
         className={cn(
-          "flex items-center gap-2 p-2 rounded-2xl glass transition-all duration-500",
-          scrolled ? "bg-slate-900/80 scale-100" : "bg-transparent border-transparent shadow-none scale-105"
+          "flex items-center gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl glass border border-white/10 transition-all duration-500",
+          scrolled ? "bg-slate-900/80 scale-95 sm:scale-100 shadow-2xl" : "bg-transparent border-transparent shadow-none scale-100 sm:scale-105"
         )}
       >
         {navItems.map((item) => {
@@ -51,7 +53,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className="relative p-3 group outline-none"
+              className="relative p-2 sm:p-3 group outline-none"
               onMouseEnter={() => setHovered(item.name)}
               onMouseLeave={() => setHovered(null)}
             >
@@ -70,10 +72,10 @@ export default function Navbar() {
 
               <div className="relative">
                 <Icon 
-                  size={20} 
+                  size={18} 
                   className={cn(
                     "transition-all duration-300",
-                    isHovered ? "text-blue-400 scale-125" : "text-slate-400"
+                    isHovered ? "text-blue-400 scale-110" : "text-slate-400"
                   )}
                 />
                 
@@ -84,7 +86,7 @@ export default function Navbar() {
                       initial={{ opacity: 0, y: 10, scale: 0.9 }}
                       animate={{ opacity: 1, y: -40, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                      className="absolute left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-slate-800 text-slate-100 text-xs font-medium whitespace-nowrap pointer-events-none border border-slate-700 shadow-xl"
+                      className="absolute left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-slate-800 text-slate-100 text-[10px] font-medium whitespace-nowrap pointer-events-none border border-slate-700 shadow-xl"
                     >
                       {item.name}
                     </motion.span>
@@ -98,11 +100,14 @@ export default function Navbar() {
                   opacity: isHovered ? 1 : 0,
                   scale: isHovered ? 1 : 0.5
                 }}
-                className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-500"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-500"
               />
             </a>
           )
         })}
+        
+        <div className="w-px h-6 bg-white/10 mx-1 sm:mx-2" />
+        <LanguageSwitcher />
       </motion.nav>
     </div>
   )
