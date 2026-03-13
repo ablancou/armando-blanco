@@ -151,7 +151,7 @@ export default function Portfolio() {
               />
               <BentoGridItem
                 title="AI Integration"
-                description="Pioneering LLM orchestration and adaptive neural learning systems."
+                description="Architecting LLM orchestration and adaptive neural learning systems."
                 className="md:col-span-1"
                 icon={<Zap />}
               />
