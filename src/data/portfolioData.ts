@@ -84,42 +84,44 @@ export interface Project {
   gif?: string;
   features?: { icon: string; text: string }[];
   techTags: string[];
-  category: "Flagship" | "Data Science" | "Tools";
+  category: string;
 }
 
-export const flagshipProject: Project = {
-  id: "jazz-arcade",
-  category: "Flagship",
-  title: "Jazz Arcade",
-  url: "https://jazzarcade.com",
-  tagline: "The gold standard for music education platforms.",
-  image: "/projects/jazz-arcade.png",
-  gif: "/projects/jazz-arcade.gif",
-  features: [
-    { icon: "🎯", text: "12 Interactive Games (Phaser 3)" },
-    { icon: "🤖", text: "AI-Powered Adaptive Pedagogy" },
-    { icon: "🎼", text: "Professional Notation Suite" },
-    { icon: "🌍", text: "Multi-language Global Support" }
-  ],
-  techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "Phaser 3", "Gemini AI"]
-}
-
-export const allProjects: Project[] = [
+export const featuredProjects: Project[] = [
+  {
+    id: "jazz-arcade",
+    category: "Full-Stack Architecture",
+    title: "Jazz Arcade",
+    url: "https://jazzarcade.com",
+    tagline: "The gold standard for music education platforms.",
+    image: "/projects/jazz-arcade.png",
+    gif: "/projects/jazz-arcade.gif",
+    features: [
+      { icon: "🎯", text: "12 Interactive Games (Phaser 3)" },
+      { icon: "🤖", text: "AI-Powered Adaptive Pedagogy" },
+      { icon: "🎼", text: "Professional Notation Suite" },
+      { icon: "🌍", text: "Multi-language Global Support" }
+    ],
+    techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "Phaser 3", "Gemini AI"]
+  },
   {
     id: "cosmos-view",
-    category: "Data Science",
+    category: "Precision Engineering",
     title: "CosmosView",
     tagline: "Interactive Real-Time Space and 3D Orbit Visualizer.",
     description: "High-performance interactive 3D web application to visualize the night sky and track thousands of real-time satellites.",
     techDesc: "Implemented real-time orbital propagation using SGP4 mathematical models and live TLE data.",
     icon: "Eye",
-    image: "/projects/cosmosview.png", // Assuming path follows pattern
+    image: "/projects/cosmosview.png",
     url: "https://cosmosview.vercel.app/",
     techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"]
-  },
+  }
+]
+
+export const allProjects: Project[] = [
   {
     id: "smart-med-calc",
-    category: "Data Science",
+    category: "Clinical AI",
     title: "Statura Predict",
     tagline: "Mexican Pediatric Adult Height Predictor.",
     description: "Clinical decision-support tool for adult height prediction specifically calibrated for the Mexican pediatric population, built on nationally representative data from ENSANUT 2018 (n=13,264) published by Flores et al. (2024) under CC BY 4.0. Combines four validated prediction methods — Bayley-Pinneau, Khamis-Roche, Tanner Mid-Parental, and LMS Percentile Projection — into a weighted hybrid model with automatic outlier detection. Includes Mexican-specific growth percentile curves with cross-reference against WHO and CDC standards. Built with Python and the Reflex framework.\n\nFor educational and clinical reference use only — not a substitute for professional medical evaluation.",

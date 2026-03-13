@@ -24,7 +24,7 @@ import {
 
 import { 
   personalInfo, 
-  flagshipProject, 
+  featuredProjects, 
   allProjects,
   technicalExpertise,
   techStack,
@@ -184,9 +184,11 @@ export default function Portfolio() {
             <h3 className="text-5xl md:text-7xl font-black mb-8">Selected <span className="text-white">Engineering</span> Artifacts</h3>
           </div>
 
-          {/* Flagship Highlight */}
-          <div className="mb-12">
-            <ProjectCard project={flagshipProject} isLarge />
+          {/* Featured Projects Highlight */}
+          <div className="space-y-12 mb-12">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} isLarge />
+            ))}
           </div>
 
           {/* Other Projects Grid */}
