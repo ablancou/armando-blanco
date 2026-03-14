@@ -54,7 +54,7 @@ export function AIChatbot() {
         onClick={() => setIsOpen(true)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-32 right-8 z-50 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-2xl shadow-blue-500/40 border border-white/20 group"
+        className="fixed bottom-24 right-4 sm:bottom-32 sm:right-8 z-50 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-2xl shadow-blue-500/40 border border-white/20 group"
       >
         <div className="absolute inset-0 bg-blue-400 rounded-full blur-xl opacity-0 group-hover:opacity-40 transition-opacity" />
         <Bot size={28} className="relative z-10" />
@@ -67,7 +67,7 @@ export function AIChatbot() {
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-32 right-8 z-50 w-96 max-w-[calc(100vw-2rem)] h-[500px] glass rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-24 right-4 sm:bottom-32 sm:right-8 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[400px] sm:h-[500px] glass rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="p-6 border-b border-white/5 bg-white/5 flex items-center justify-between">

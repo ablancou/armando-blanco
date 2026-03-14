@@ -29,7 +29,7 @@ function Milestone({ date, title, company, description, icon, side, isLast }: Mi
         initial={{ opacity: 0, x: side === "left" ? -50 : 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        className={`w-full md:w-[45%] glass-card p-6 rounded-[2rem] border-white/5 bg-slate-900/40 relative group hover:border-blue-500/30 transition-all duration-500 ml-12 md:ml-0`}
+        className={`w-[calc(100%-3rem)] md:w-[45%] glass-card p-6 rounded-[2rem] border-white/5 bg-slate-900/40 relative group hover:border-blue-500/30 transition-all duration-500 ml-10 md:ml-0`}
       >
         <div className="absolute -top-3 -left-3 md:group-hover:-translate-y-2 transition-transform duration-500">
            <span className="px-4 py-1 rounded-full bg-blue-600 text-[10px] font-black uppercase tracking-widest text-white shadow-xl">

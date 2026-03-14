@@ -56,7 +56,7 @@ export default function Portfolio() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-48 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative min-h-[90vh] sm:min-h-[90vh] flex items-center justify-center pt-24 sm:pt-32 pb-32 sm:pb-48 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute top-1/4 -left-20 w-80 h-80 bg-blue-600/10 rounded-full blur-[120px] animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-[120px] animate-pulse-slow" />
@@ -75,7 +75,7 @@ export default function Portfolio() {
               <span>{t.common.available}</span>
             </div>
             
-            <div className="relative w-32 h-32 mx-auto mb-8 group">
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 group">
               <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/40 transition-all duration-700" />
               <div className="relative w-full h-full rounded-full border-2 border-blue-500/50 p-1 overflow-hidden bg-slate-900 shadow-[0_0_30px_rgba(59,130,246,0.5)]">
                 <Image
@@ -88,7 +88,7 @@ export default function Portfolio() {
               </div>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight mb-6 sm:mb-8 pb-4 sm:pb-0">
               {language === 'es' ? (
                 <>Engineer <span className="text-gradient">Tier II</span></>
               ) : (

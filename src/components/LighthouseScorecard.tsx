@@ -102,7 +102,7 @@ export function LighthouseScorecard() {
         <p className="text-slate-500 text-xs font-light">Verified system performance and architecture quality.</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <CircularProgress label="Performance" score={100} icon={<Zap size={10} />} delay={0.2} />
         <CircularProgress label="Accessibility" score={100} icon={<UserCheck size={10} />} delay={0.4} />
         <CircularProgress label="Best Practices" score={100} icon={<ShieldCheck size={10} />} delay={0.6} />
