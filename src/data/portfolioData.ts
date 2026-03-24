@@ -350,6 +350,18 @@ export const technicalExpertise = [
 
 export const featuredProjects: any[] = [
   {
+    id: "orbital-dome",
+    category: "Precision Engineering",
+    title: "Orbital Dome",
+    tagline: "Interactive Real-Time Space and 3D Orbit Visualizer.",
+    description: "High-performance interactive 3D web application to visualize the night sky and track thousands of real-time satellites.",
+    techDesc: "Implemented real-time orbital propagation using SGP4 mathematical models and live TLE data.",
+    icon: "Eye",
+    image: "/projects/cosmosview.png",
+    url: "https://www.orbitaldome.com",
+    techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"]
+  },
+  {
     id: "jazz-arcade",
     category: "Full-Stack Architecture",
     title: "Jazz Arcade",
@@ -364,18 +376,6 @@ export const featuredProjects: any[] = [
       { icon: "🌍", text: "Multi-language Global Support" }
     ],
     techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "Phaser 3", "Gemini AI"]
-  },
-  {
-    id: "orbital-dome",
-    category: "Precision Engineering",
-    title: "Orbital Dome",
-    tagline: "Interactive Real-Time Space and 3D Orbit Visualizer.",
-    description: "High-performance interactive 3D web application to visualize the night sky and track thousands of real-time satellites.",
-    techDesc: "Implemented real-time orbital propagation using SGP4 mathematical models and live TLE data.",
-    icon: "Eye",
-    image: "/projects/cosmosview.png",
-    url: "https://www.orbitaldome.com",
-    techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"]
   },
   {
     id: "smart-med-calc",
