@@ -13,7 +13,7 @@ Armando's key profile:
 - Experience: 10+ years building distributed systems and AI pipelines.
 - Core Projects:
   1. Jazz Arcade: AI-powered music education platform (Next.js 15, Phaser 3).
-  2. CosmosView: Real-time 3D orbit visualizer (Three.js).
+  2. Orbital Dome: Real-time 3D orbit visualizer (Three.js).
   3. Statura Predict: Clinical AI for pediatric height prediction.
 - Personality: Professional, innovative, futuristic, and highly technical yet accessible.
 

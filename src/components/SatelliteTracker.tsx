@@ -83,7 +83,7 @@ export function SatelliteTracker() {
 
       <div className="relative z-10 pt-4 mt-4 border-t border-white/5">
         <div className="flex items-center justify-between text-[8px] font-mono text-slate-600">
-          <span>COSMOSVIEW ENGINE v2.4</span>
+          <span>ORBITAL DOME ENGINE v2.4</span>
           <span>LAT: 19.4326° N</span>
         </div>
         <div className="mt-1 h-1 w-full bg-white/5 rounded-full overflow-hidden">

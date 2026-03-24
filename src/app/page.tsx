@@ -89,25 +89,13 @@ export default function Portfolio() {
             </div>
             
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tight mb-6 sm:mb-8 pb-4 sm:pb-0">
-              {language === 'es' ? (
-                <>Engineer <span className="text-gradient">Tier II</span></>
-              ) : (
-                <>Engineer <span className="text-gradient">Tier II</span></>
-              )}
-              <br />
-              <span className="text-4xl md:text-6xl text-slate-400 font-bold">
-                {language === 'en' ? "Leading Innovation in Mexico" : 
-                 language === 'es' ? "Liderando Innovación en México" :
-                 language === 'it' ? "Leader nell'Innovazione in Messico" :
-                 language === 'fr' ? "Leader de l'Innovation au Mexique" :
-                 language === 'pt' ? "Liderando Inovação no México" :
-                 "Innovationsführer in Mexiko"}
-              </span>
+              {t.common.heroTitle.split(' ').slice(0, -1).join(' ')}{' '}
+              <span className="text-gradient">{t.common.heroTitle.split(' ').slice(-1)}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-              Hi, I&apos;m <span className="text-white font-medium">{t.personalInfo.name}</span>.&nbsp;
-              {t.personalInfo.role}
+              Hi, I&apos;m <span className="text-white font-medium">{t.personalInfo.name}</span>.{' '}
+              {t.common.heroSubtitle}
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">

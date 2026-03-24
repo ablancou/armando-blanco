@@ -52,6 +52,8 @@ export const translations = {
       ]
     },
     common: {
+      heroTitle: "Transformando la Complejidad en Simplicidad",
+      heroSubtitle: "Construyendo aplicaciones que transforman requerimientos complejos en soluciones elegantes.",
       exploreWork: "Explorar mi trabajo",
       letBuild: "Construyamos Juntos",
       visitPlatform: "Visitar Plataforma",
@@ -105,6 +107,8 @@ export const translations = {
       ]
     },
     common: {
+      heroTitle: "Turning Complexity Into Simplicity",
+      heroSubtitle: "Building applications that transform complex requirements into elegant solutions.",
       exploreWork: "Explore My Work",
       letBuild: "Let's Build Together",
       visitPlatform: "Visit Platform",
@@ -148,6 +152,8 @@ export const translations = {
       ]
     },
     common: {
+      heroTitle: "Trasformare la Complessità in Semplicità",
+      heroSubtitle: "Costruendo applicazioni che trasformano requisiti complessi in soluzioni eleganti.",
       exploreWork: "Esplora il mio lavoro",
       letBuild: "Costruiamo Insieme",
       visitPlatform: "Visita la Piattaforma",
@@ -191,6 +197,8 @@ export const translations = {
       ]
     },
     common: {
+      heroTitle: "Transformer la Complexité en Simplicité",
+      heroSubtitle: "Créer des applications qui transforment des exigences complexes en solutions élégantes.",
       exploreWork: "Explorer mon travail",
       letBuild: "Construisons Ensemble",
       visitPlatform: "Visiter la Plateforme",
@@ -234,6 +242,8 @@ export const translations = {
       ]
     },
     common: {
+      heroTitle: "Transformando Complexidade em Simplicidade",
+      heroSubtitle: "Construindo aplicações que transformam requisitos complexos em soluções elegantes.",
       exploreWork: "Explorar meu trabalho",
       letBuild: "Vamos Construir Juntos",
       visitPlatform: "Visitar Plataforma",
@@ -277,6 +287,8 @@ export const translations = {
       ]
     },
     common: {
+      heroTitle: "Komplexität in Einfachheit verwandeln",
+      heroSubtitle: "Anwendungen entwickeln, die komplexe Anforderungen in elegante Lösungen verwandeln.",
       exploreWork: "Meine Arbeit erkunden",
       letBuild: "Lass uns zusammen bauen",
       visitPlatform: "Plattform besuchen",
@@ -354,15 +366,15 @@ export const featuredProjects: any[] = [
     techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "Phaser 3", "Gemini AI"]
   },
   {
-    id: "cosmos-view",
+    id: "orbital-dome",
     category: "Precision Engineering",
-    title: "CosmosView",
+    title: "Orbital Dome",
     tagline: "Interactive Real-Time Space and 3D Orbit Visualizer.",
     description: "High-performance interactive 3D web application to visualize the night sky and track thousands of real-time satellites.",
     techDesc: "Implemented real-time orbital propagation using SGP4 mathematical models and live TLE data.",
     icon: "Eye",
     image: "/projects/cosmosview.png",
-    url: "https://cosmosview.vercel.app/",
+    url: "https://www.orbitaldome.com",
     techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"]
   },
   {
