@@ -262,7 +262,7 @@ export default function Portfolio() {
           </div>
 
           {/* Other Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {allProjects.map((project: any) => (
               <ProjectCard 
                 key={project.id} 

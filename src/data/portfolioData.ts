@@ -282,6 +282,7 @@ export const allProjects: any[] = [
     category: "Data Science",
     title: "Diabetes Prediction AI",
     tagline: "Predictive diagnostics with neural networks.",
+    image: "/projects/diabetes-ai-v2.png",
     techTags: ["PyTorch", "Python", "Streamlit", "Neural Networks"],
     url: "https://ablancou-diabetes-prediction-app-4jhd5b.streamlit.app/"
   },
@@ -290,8 +291,8 @@ export const allProjects: any[] = [
     category: "Data Science",
     title: "Cardiovascular AI",
     tagline: "Heart disease probability modeling.",
+    image: "/projects/heart-ai-v2.png",
     techTags: ["Data Science", "PyTorch", "Python", "Predictive Modeling"],
     url: "https://ablancou-heart-disease-prediction-app-tmyzus.streamlit.app/"
   }
 ];
-

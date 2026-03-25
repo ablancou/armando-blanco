@@ -36,7 +36,7 @@ export function Certifications() {
           <h2 className="text-sm font-black tracking-widest text-blue-500 uppercase mb-4">Elite Upskilling</h2>
           <h3 className="text-4xl md:text-5xl font-black text-white">Advanced Generative AI <span className="text-slate-500">Certifications</span></h3>
           <p className="mt-6 text-xl text-slate-400 max-w-2xl text-balance">
-            An elite portfolio of 80+ advanced technical certifications, spearheaded by domain-specific mastery in Generative AI architectures.
+            A specialized collection of 80+ elite technical credentials, anchored by world-class mastery in domain-specific Generative AI architectures.
           </p>
         </div>
 
