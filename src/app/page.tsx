@@ -38,7 +38,6 @@ import { BentoGrid, BentoGridItem } from "@/components/BentoGrid"
 import { cn } from "@/lib/utils"
 
 import { LighthouseScorecard } from "@/components/LighthouseScorecard"
-import { SkillCloud } from "@/components/SkillCloud"
 import { CareerTimeline } from "@/components/CareerTimeline"
 import { AIChatbot } from "@/components/AIChatbot"
 import { ProjectShowcase } from "@/components/ProjectShowcase"
@@ -221,48 +220,6 @@ export default function Portfolio() {
       {/* Engineering Excellence Audit */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <LighthouseScorecard />
-      </section>
-
-      {/* Expertise Section */}
-      <section id="skills" className="py-32 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-black mb-6">{commonText.fortitude.split(' ')[0]} <span className="text-gradient">{commonText.fortitude.split(' ')[1] || "Expertise"}</span></h2>
-            <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light">{commonText.fortitudeText}</p>
-          </div>
-
-          <div className="mb-24">
-            <SkillCloud />
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {technicalExpertise.map((cat: any, idx: number) => {
-              const Icon = cat.icon
-              return (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="glass-card group p-8 rounded-[2rem] border-white/5 hover:border-blue-500/30"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-8 border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
-                    <Icon size={28} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-6 text-slate-100">{cat.category}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {cat.skills.map((skill: string) => (
-                      <span key={skill} className="px-3 py-1.5 bg-white/5 rounded-xl text-xs font-medium text-slate-300 border border-white/5 hover:bg-white/10 transition-colors">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
       </section>
 
       {/* Experience - The Narrative */}

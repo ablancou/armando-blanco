@@ -29,20 +29,22 @@ function Milestone({ date, title, company, description, icon, side, isLast }: Mi
         initial={{ opacity: 0, x: side === "left" ? -50 : 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        className={`w-[calc(100%-3rem)] md:w-[45%] glass-card p-6 rounded-[2rem] border-white/5 bg-slate-900/40 relative group hover:border-blue-500/30 transition-all duration-500 ml-10 md:ml-0`}
+        className={`w-[calc(100%-3rem)] md:w-[45%] relative ml-10 md:ml-0 group transition-all duration-500 hover:-translate-y-1`}
       >
-        <div className="absolute -top-3 -left-3 md:group-hover:-translate-y-2 transition-transform duration-500">
+        <div className="absolute -top-3 -left-3 md:group-hover:-translate-y-1 transition-transform duration-500 z-20">
            <span className="px-4 py-1 rounded-full bg-blue-600 text-[10px] font-black uppercase tracking-widest text-white shadow-xl">
              {date}
            </span>
         </div>
-        
-        <h4 className="text-xl font-bold text-white mb-1 mt-2 group-hover:text-blue-400 transition-colors uppercase tracking-tight">{title}</h4>
-        <p className="text-blue-400/80 text-sm font-medium mb-4">{company}</p>
-        <p className="text-slate-400 text-sm leading-relaxed font-light">{description}</p>
+
+        <div className="glass-card p-6 rounded-[2rem] border-white/5 bg-slate-900/40 w-full hover:border-blue-500/30 transition-all duration-500">
+          <h4 className="text-xl font-bold text-white mb-1 mt-2 group-hover:text-blue-400 transition-colors uppercase tracking-tight">{title}</h4>
+          <p className="text-blue-400/80 text-sm font-medium mb-4">{company}</p>
+          <p className="text-slate-400 text-sm leading-relaxed font-light">{description}</p>
+        </div>
         
         {!isLast && (
-           <div className="absolute top-full left-[20px] md:left-auto md:right-1/2 h-24 w-[2px] bg-gradient-to-b from-blue-500 to-transparent md:translate-x-1/2 -z-10 opacity-20" />
+           <div className="absolute top-full left-[-20px] md:left-auto md:right-1/2 h-24 w-[2px] bg-gradient-to-b from-blue-500 to-transparent md:translate-x-1/2 -z-10 opacity-20" />
         )}
       </motion.div>
     </div>
