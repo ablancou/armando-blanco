@@ -79,9 +79,8 @@ export const techStack = [
 export const socials = [
   { name: "LinkedIn", url: "https://www.linkedin.com/in/armandoblanco", icon: "Linkedin" },
   { name: "GitHub", url: "https://github.com/ablancou", icon: "Github" },
-  { name: "SoloLearn", url: "https://www.sololearn.com/es/profile/3850882", icon: "Code" },
-  { name: "Duolingo", url: "https://www.duolingo.com/profile/ablancou", icon: "Languages" },
-  { name: "X (Twitter)", url: "https://x.com/ablancou", icon: "Twitter" }
+  { name: "X (Twitter)", url: "https://x.com/ablancou", icon: "Twitter" },
+  { name: "Duolingo", url: "https://www.duolingo.com/profile/ablancou", icon: "Globe" }
 ];
 
 

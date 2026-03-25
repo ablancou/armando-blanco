@@ -248,21 +248,27 @@ export default function Portfolio() {
             {commonText.footerText}
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-24">
-            {socials.map((social: any) => (
-              <motion.a 
-                key={social.name} 
-                href={social.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                whileHover={{ y: -5, backgroundColor: 'rgba(255,255,255,0.1)' }}
-                className="flex items-center gap-3 px-8 py-3 rounded-2xl bg-white/5 border border-white/10 text-slate-200 transition-all font-medium"
-              >
-                <ExternalLink size={18} />
-                <span>{social.name}</span>
-              </motion.a>
-            ))}
-          </div>
+            <div className="flex flex-wrap justify-center gap-4 mb-24">
+              {socials.map((social: any) => {
+                const Icon = social.icon === 'Linkedin' ? Linkedin : 
+                             social.icon === 'Github' ? Github : 
+                             social.icon === 'Twitter' ? Twitter : 
+                             social.icon === 'Globe' ? Globe : ExternalLink;
+                return (
+                  <motion.a 
+                    key={social.name} 
+                    href={social.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -5, backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(59,130,246,0.3)' }}
+                    className="flex items-center gap-3 px-8 py-3 rounded-2xl bg-white/5 border border-white/10 text-slate-200 transition-all font-medium shadow-lg hover:shadow-blue-500/10 group"
+                  >
+                    <Icon size={18} className="group-hover:text-blue-400 transition-colors" />
+                    <span>{social.name}</span>
+                  </motion.a>
+                );
+              })}
+            </div>
           
           <div className="flex flex-col items-center gap-4 pt-12 border-t border-white/5">
             <p className="text-slate-600 text-sm font-mono uppercase tracking-[0.2em]">
