@@ -20,8 +20,6 @@ const navItems = [
   { name: "Contact", href: "#contact", icon: MessageSquare },
 ]
 
-import { LanguageSwitcher } from "./LanguageSwitcher"
-
 export default function Navbar() {
   const [hovered, setHovered] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -105,9 +103,6 @@ export default function Navbar() {
             </a>
           )
         })}
-        
-        <div className="w-px h-6 bg-white/10 mx-1 sm:mx-2" />
-        <LanguageSwitcher />
       </motion.nav>
     </div>
   )

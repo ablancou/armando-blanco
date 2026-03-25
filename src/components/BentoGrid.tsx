@@ -23,7 +23,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto",
+        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto auto-rows-min",
         className
       )}
     >
@@ -46,7 +46,7 @@ export const BentoGridItem = ({
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "row-span-1 glass-card rounded-3xl group p-6 border border-white/[0.1] flex flex-col justify-between",
+        "row-span-1 glass-card rounded-3xl group p-6 sm:p-8 border border-white/[0.1] flex flex-col justify-between min-h-[12rem] md:min-h-0",
         className
       )}
     >

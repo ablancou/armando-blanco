@@ -18,8 +18,6 @@ export const metadata: Metadata = {
   keywords: ["Software Engineer II Mexico", "Full-Stack Developer Mexico", "Next.js Expert Mexico", "AI Engineer Mexico", "Armando Blanco Software"],
 };
 
-import { LanguageProvider } from "@/context/LanguageContext";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,7 +28,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LanguageProvider>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -61,7 +58,6 @@ export default function RootLayout({
             }}
           />
           {children}
-        </LanguageProvider>
       </body>
     </html>
   );
