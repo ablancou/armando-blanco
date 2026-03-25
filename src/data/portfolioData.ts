@@ -77,7 +77,7 @@ export const techStack = [
 ];
 
 export const socials = [
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/armandoblanco", icon: "Linkedin" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/armandoblanco/", icon: "Linkedin" },
   { name: "GitHub", url: "https://github.com/ablancou", icon: "Github" },
   { name: "X", url: "https://x.com/ablancou", icon: "Twitter" },
   { name: "Duolingo", url: "https://www.duolingo.com/profile/ablancou", icon: "Duolingo" },
