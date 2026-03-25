@@ -138,9 +138,11 @@ export default function Portfolio() {
               <span className="text-gradient">{commonText.heroTitle.split(' ').slice(-1)}</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light text-balance">
               Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>.{' '}
-              {commonText.heroSubtitle}
+              {commonText.heroSubtitle.split('. ')[0]}.
+              <br className="hidden md:block" />
+              {commonText.heroSubtitle.split('. ').slice(1).join('. ')}
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
@@ -186,7 +188,7 @@ export default function Portfolio() {
               <span className="w-12 h-1.5 bg-blue-500 rounded-full"></span>
               {commonText.vision}
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-400 text-lg leading-relaxed text-balance">
               {commonText.visionText}
             </p>
           </div>
@@ -290,7 +292,7 @@ export default function Portfolio() {
         
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-5xl md:text-7xl font-black mb-8">{commonText.footerTitle.split(' ').slice(0, -1).join(' ')} <span className="text-gradient">{commonText.footerTitle.split(' ').slice(-1)}</span></h2>
-          <p className="text-slate-400 text-xl mb-16 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-slate-400 text-xl mb-16 max-w-2xl mx-auto font-light leading-relaxed text-balance">
             {commonText.footerText}
           </p>
           
@@ -418,7 +420,7 @@ function ProjectCard({ project, isLarge = false, onSelect }: { project: any, isL
         <h4 className="text-3xl md:text-4xl font-extrabold mb-4 group-hover:text-blue-400 transition-colors">
           {project.title}
         </h4>
-        <p className="text-slate-400 text-lg mb-8 leading-relaxed font-light">
+        <p className="text-slate-400 text-lg mb-8 leading-relaxed font-light text-balance">
           {project.tagline}
         </p>
         
