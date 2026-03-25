@@ -49,6 +49,44 @@ export default function Portfolio() {
   const { scrollYProgress } = useScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95])
+
+  const BrandLogos: Record<string, React.ReactNode> = {
+    Linkedin: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    ),
+    Github: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+    ),
+    Twitter: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/>
+      </svg>
+    ),
+    Globe: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    ),
+    LeetCode: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-orange-400">
+        <path d="M16.102 17.93l-2.69 2.607c-.466.451-1.211.451-1.677 0l-4.515-4.376a5.081 5.081 0 010-7.307l4.515-4.376c.466-.451 1.211-.451 1.677 0l2.69 2.607a1.168 1.168 0 001.62-.031 1.096 1.096 0 00.03-1.569l-2.69-2.607c-1.353-1.31-3.553-1.31-4.906 0l-4.515 4.376a7.258 7.258 0 000 10.443l4.515 4.376c1.353 1.31 3.553 1.31 4.906 0l2.69-2.607a1.096 1.096 0 00-.03-1.569 1.168 1.168 0 00-1.62.031zM22.097 12a1.096 1.096 0 00-1.097-1.096H10.124a1.096 1.096 0 000 2.192h10.876A1.096 1.096 0 0022.097 12z"/>
+      </svg>
+    ),
+    HackerRank: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-emerald-400">
+        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3.5 16.5H6.2V7.5h2.3v9zm5.3-2.1V16.5h-2.3V7.5h2.3v6.9zm5 2.1h-2.3V7.5h2.3v9z"/>
+      </svg>
+    ),
+    SoloLearn: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-sky-400">
+        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.125 17.25l-4.5-5.25 4.5-5.25.75.75-3.75 4.5 3.75 4.5-.75.75zm3.75 0l-.75-.75 3.75-4.5-3.75-4.5.75-.75 4.5 5.25-4.5 5.25z"/>
+      </svg>
+    )
+  }
   
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 overflow-x-hidden">
@@ -172,9 +210,9 @@ export default function Portfolio() {
                 className="md:col-span-1"
                 header={
                   <div className="flex flex-col gap-2 relative z-50">
-                    <a href="https://leetcode.com/u/ablancou/" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2"><CodeIcon size={14}/> LeetCode</a>
-                    <a href="https://www.hackerrank.com/profile/ablancou" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2"><Terminal size={14}/> HackerRank</a>
-                    <a href="https://www.sololearn.com/es/profile/3850882" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2"><CodeIcon size={14}/> SoloLearn</a>
+                    <a href="https://leetcode.com/u/ablancou/" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.LeetCode} LeetCode</a>
+                    <a href="https://www.hackerrank.com/profile/ablancou" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.HackerRank} HackerRank</a>
+                    <a href="https://www.sololearn.com/es/profile/3850882" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.SoloLearn} SoloLearn</a>
                   </div>
                 }
               />
@@ -248,23 +286,35 @@ export default function Portfolio() {
             {commonText.footerText}
           </p>
           
-            <div className="flex flex-wrap justify-center gap-4 mb-24">
+            <div className="flex flex-wrap justify-center gap-6 mb-24">
               {socials.map((social: any) => {
-                const Icon = social.icon === 'Linkedin' ? Linkedin : 
-                             social.icon === 'Github' ? Github : 
-                             social.icon === 'Twitter' ? Twitter : 
-                             social.icon === 'Globe' ? Globe : ExternalLink;
+                const brandColors: Record<string, string> = {
+                  Linkedin: "hover:bg-blue-600/20 hover:border-blue-500/50 hover:shadow-blue-500/20 hover:text-blue-400",
+                  Github: "hover:bg-slate-800 hover:border-slate-700 hover:shadow-white/5 hover:text-white",
+                  Twitter: "hover:bg-slate-900/50 hover:border-white/20 hover:shadow-white/5 hover:text-white",
+                  Globe: "hover:bg-emerald-600/20 hover:border-emerald-500/50 hover:shadow-emerald-500/20 hover:text-emerald-400"
+                };
+                
                 return (
                   <motion.a 
                     key={social.name} 
                     href={social.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    whileHover={{ y: -5, backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(59,130,246,0.3)' }}
-                    className="flex items-center gap-3 px-8 py-3 rounded-2xl bg-white/5 border border-white/10 text-slate-200 transition-all font-medium shadow-lg hover:shadow-blue-500/10 group"
+                    whileHover={{ y: -8, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={cn(
+                      "flex items-center gap-4 px-10 py-4 rounded-2xl bg-white/5 border border-white/10 text-slate-300 transition-all font-bold shadow-2xl backdrop-blur-md group relative overflow-hidden",
+                      brandColors[social.icon as keyof typeof brandColors]
+                    )}
                   >
-                    <Icon size={18} className="group-hover:text-blue-400 transition-colors" />
-                    <span>{social.name}</span>
+                    <div className="relative z-10">
+                      {BrandLogos[social.icon as keyof typeof BrandLogos] || <ExternalLink size={20} />}
+                    </div>
+                    <span className="relative z-10 tracking-tight">{social.name}</span>
+                    
+                    {/* Gloss Reflection effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-x-full group-hover:translate-x-full" />
                   </motion.a>
                 );
               })}
