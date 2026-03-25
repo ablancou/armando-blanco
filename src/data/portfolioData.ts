@@ -403,7 +403,34 @@ export const featuredProjects: any[] = [
       { icon: "🎼", text: "Professional Notation Suite" },
       { icon: "🌍", text: "Multi-language Global Support" }
     ],
-    techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "Phaser 3", "Gemini AI"]
+    techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "Phaser 3", "Gemini AI"],
+    caseStudy: {
+      metrics: [
+        { label: "Active Users", value: "Global" },
+        { label: "Interactive Games", value: "12" },
+        { label: "Languages", value: "6" },
+        { label: "Framework", value: "Next.js 15" }
+      ],
+      overview: "Jazz Arcade is a high-traffic, cutting-edge music education platform that serves a global audience. It bridges the gap between complex music theory and interactive learning by integrating a custom-built AI tutor powered by Google Gemini, alongside a suite of 12 highly interactive, low-latency browser games built with Phaser 3.",
+      sections: [
+        {
+          title: "AI-Powered Adaptive Pedagogy",
+          content: "Pioneered the integration of Google Gemini AI to create the first adaptive 'Jazz Tutor'. The AI analyzes user performance in real-time, identifies theoretical weaknesses, and dynamically adjusts the curriculum complexity to ensure optimal learning curves."
+        },
+        {
+          title: "High-Performance Game Engine",
+          content: "Engineered 12 fully custom interactive mini-games using Phaser 3 and WebGL. Optimized asset delivery and rendering pipelines to ensure 60FPS performance even on low-tier mobile devices, providing a seamless, app-like experience in the browser."
+        },
+        {
+          title: "Professional Notation Suite",
+          content: "Built a proprietary music notation rendering system that dynamically translates MIDI and JSON data into beautiful, readable standard sheet music on the fly, allowing for infinite procedural generation of sight-reading exercises."
+        },
+        {
+          title: "Global Scalability & Architecture",
+          content: "Architected on AWS Amplify with a cloud-native serverless backend, ensuring the platform scales effortlessly during traffic spikes. The entire application is fully internationalized (i18n), supporting 6 different languages with dynamic routing."
+        }
+      ]
+    }
   },
   {
     id: "smart-med-calc",
@@ -415,7 +442,34 @@ export const featuredProjects: any[] = [
     icon: "Calculator",
     image: "/projects/smartmedcalc.png",
     url: "https://smartmedcalc-silver-apple.reflex.run/",
-    techTags: ["Python", "Reflex", "Data Science", "Clinical Tools"]
+    techTags: ["Python", "Reflex", "Data Science", "Clinical Tools"],
+    caseStudy: {
+      metrics: [
+        { label: "Prediction Models", value: "4 Hybrid" },
+        { label: "Accuracy", value: "Clinical Grade" },
+        { label: "Target Demo", value: "Pediatric" },
+        { label: "Tech Stack", value: "Python + Reflex" }
+      ],
+      overview: "Statura Predict is a clinical decision-support application built for endocrinologists and pediatricians. It provides highly accurate adult height predictions specifically calibrated for the Mexican pediatric population, transforming complex datasets into immediate clinical insights.",
+      sections: [
+        {
+          title: "Hybrid Prediction Engine",
+          content: "Rather than relying on a single fallible metric, Statura Predict combines 4 distinct prediction methodologies into a sophisticated, mathematically weighted hybrid system. This algorithmic approach minimizes individual model bias and significantly improves overall prediction accuracy."
+        },
+        {
+          title: "Automated Outlier Detection",
+          content: "Implemented statistical guardrails that automatically detect and flag anomalous biometric inputs (outliers) in real-time. This ensures that clinical decisions are never based on data entry errors or extreme deviations, protecting patient outcomes."
+        },
+        {
+          title: "Pure Python Full-Stack (Reflex)",
+          content: "Leveraged the Reflex framework to build the entire platform—from the predictive mathematical models to the responsive UI—strictly in Python. This architectural choice simplified the data science pipeline and eliminated the friction of context-switching between backend logic and frontend rendering."
+        },
+        {
+          title: "Clinical UI/UX",
+          content: "Designed a distraction-free, high-contrast interface tailored for medical professionals in fast-paced clinical environments. Results are presented with clear confidence intervals and visual charts, allowing for immediate interpretation during patient consultations."
+        }
+      ]
+    }
   }
 ];
 
