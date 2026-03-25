@@ -328,12 +328,8 @@ export default function Portfolio() {
               <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms & Conditions</Link>
             </div>
             
-            <p className="text-slate-600 text-[10px] font-mono uppercase tracking-[0.25em]">
-              Next.js 15 • Framer Motion • Pure Precision Architecture
-            </p>
-            
-            <p className="text-slate-700 text-[10px] font-medium">
-              © {new Date().getFullYear()} {personalInfo.name}. All systems operational. Designed for Software Engineer II recruitment.
+            <p className="text-slate-700 text-[10px] font-medium tracking-tight">
+              © {new Date().getFullYear()} {personalInfo.name}. All systems operational.
             </p>
           </div>
         </div>
