@@ -66,35 +66,35 @@ export function CareerTimeline() {
 
   const milestones: MilestoneProps[] = [
     {
-      date: "2014 - 2018",
-      title: "Business Strategist",
-      company: "Strategic Growth Corp",
-      description: "Led market expansion initiatives and financial modeling for distributed operations in Latin America.",
+      date: "2019 - Present",
+      title: "Content Creator",
+      company: "Educational Content on Social Media",
+      description: "Created engaging educational content for YouTube and TikTok, focusing on music theory and complex topics.",
       icon: <TrendingUp size={16} className="text-blue-400" />,
       side: "left"
     },
     {
-      date: "2019 - 2021",
-      title: "Data Consultant",
-      company: "Insight Analytics",
-      description: "Bridged the gap between business requirements and technical implementation using Python and early AI models.",
-      icon: <GraduationCap size={16} className="text-blue-400" />,
+      date: "2015 - Present",
+      title: "Technical Consultant",
+      company: "Data Science & Machine Learning, Freelance",
+      description: "Provided consultation services for data-driven projects, guiding clients through PyTorch neural network implementations and data analysis.",
+      icon: <Briefcase size={16} className="text-blue-400" />,
       side: "right"
     },
     {
-      date: "2021 - 2023",
-      title: "Software Engineer",
-      company: "TechPulse Solutions",
-      description: "Directed full-stack development for high-availability enterprise applications using React and Node.js.",
+      date: "2012 - Present",
+      title: "Full-Stack Developer & Data Scientist",
+      company: "Freelance",
+      description: "Developed and deployed educational games with AI integrations, built neural networks, and designed scalable data pipelines.",
       icon: <Code size={16} className="text-blue-400" />,
       side: "left"
     },
     {
-      date: "2024 - Present",
-      title: "Software Engineer II",
-      company: "Apex Intelligence",
-      description: "Architecting multi-agent AI systems and high-performance cloud infrastructure for international scaling.",
-      icon: <Rocket size={16} className="text-blue-400" />,
+      date: "2005 - 2009",
+      title: "Bachelor in Business Administration",
+      company: "Universidad Anáhuac, Mexico City",
+      description: "Foundation in business strategy, quantitative analysis, and administration.",
+      icon: <GraduationCap size={16} className="text-blue-400" />,
       side: "right",
       isLast: true
     }

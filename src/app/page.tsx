@@ -19,7 +19,8 @@ import {
   Code as CodeIcon,
   Zap,
   CheckCircle2,
-  Globe
+  Globe,
+  Trophy
 } from "lucide-react"
 
 import { 
@@ -41,6 +42,7 @@ import { LighthouseScorecard } from "@/components/LighthouseScorecard"
 import { CareerTimeline } from "@/components/CareerTimeline"
 import { AIChatbot } from "@/components/AIChatbot"
 import { ProjectShowcase } from "@/components/ProjectShowcase"
+import { TechArsenal } from "@/components/TechArsenal"
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<any>(null)
@@ -164,10 +166,16 @@ export default function Portfolio() {
                 icon={<Zap />}
               />
               <BentoGridItem
-                title="Global Perspective"
-                description="Supporting 6+ languages and international users."
+                title="Coding Profiles"
+                description="Verified algorithms & data structures expertise."
                 className="md:col-span-1"
-                icon={<Globe />}
+                header={
+                  <div className="flex flex-col gap-2 relative z-50">
+                    <a href="https://leetcode.com/u/ablancou/" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2"><CodeIcon size={14}/> LeetCode</a>
+                    <a href="https://www.hackerrank.com/profile/ablancou" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2"><Terminal size={14}/> HackerRank</a>
+                    <a href="https://www.sololearn.com/es/profile/3850882" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2"><CodeIcon size={14}/> SoloLearn</a>
+                  </div>
+                }
               />
               <BentoGridItem
                 title="The Toolkit"
@@ -183,6 +191,8 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      <TechArsenal />
 
       {/* Projects - Elite Showcase */}
       <section id="projects" className="py-32 bg-slate-900/30">
