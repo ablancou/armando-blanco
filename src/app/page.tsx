@@ -43,8 +43,10 @@ import { SatelliteTracker } from "@/components/SatelliteTracker"
 import { SkillCloud } from "@/components/SkillCloud"
 import { CareerTimeline } from "@/components/CareerTimeline"
 import { AIChatbot } from "@/components/AIChatbot"
+import { ProjectShowcase } from "@/components/ProjectShowcase"
 
 export default function Portfolio() {
+  const [selectedProject, setSelectedProject] = useState<any>(null)
   const { scrollYProgress } = useScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95])
@@ -197,14 +199,23 @@ export default function Portfolio() {
           {/* Featured Projects Highlight */}
           <div className="space-y-12 mb-12">
             {featuredProjects.map((project: any) => (
-              <ProjectCard key={project.id} project={project} isLarge />
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                isLarge 
+                onSelect={() => project.caseStudy ? setSelectedProject(project) : null}
+              />
             ))}
           </div>
 
           {/* Other Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allProjects.map((project: any) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                onSelect={() => project.caseStudy ? setSelectedProject(project) : null}
+              />
             ))}
             <SatelliteTracker />
           </div>
@@ -300,11 +311,16 @@ export default function Portfolio() {
         </div>
       </footer>
       <AIChatbot />
+      <ProjectShowcase 
+        project={selectedProject} 
+        isOpen={!!selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
     </main>
   )
 }
 
-function ProjectCard({ project, isLarge = false }: { project: any, isLarge?: boolean }) {
+function ProjectCard({ project, isLarge = false, onSelect }: { project: any, isLarge?: boolean, onSelect?: () => void }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -402,9 +418,17 @@ function ProjectCard({ project, isLarge = false }: { project: any, isLarge?: boo
               Visit Platform <ExternalLink size={16} />
             </a>
           )}
-          <button className="text-slate-400 hover:text-white flex items-center gap-2 font-medium transition-colors text-sm group/btn">
-            Case Study <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-          </button>
+          {project.caseStudy && (
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                if (onSelect) onSelect();
+              }}
+              className="text-slate-400 hover:text-white flex items-center gap-2 font-medium transition-colors text-sm group/btn"
+            >
+              Case Study <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+            </button>
+          )}
         </div>
       </div>
     </motion.div>

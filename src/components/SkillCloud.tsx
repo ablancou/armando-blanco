@@ -14,7 +14,7 @@ const skills = [
 function Word({ children, ...props }: any) {
   const color = new THREE.Color("#94a3b8")
   const fontProps = { font: 'https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxM.woff', fontSize: 0.25, letterSpacing: -0.05, lineHeight: 1 }
-  const ref = useRef<any>()
+  const ref = useRef<any>(null)
   const [hovered, setHovered] = useState(false)
   const over = (e: any) => (e.stopPropagation(), setHovered(true))
   const out = () => setHovered(false)

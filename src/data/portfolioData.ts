@@ -357,9 +357,37 @@ export const featuredProjects: any[] = [
     description: "High-performance interactive 3D web application to visualize the night sky and track thousands of real-time satellites.",
     techDesc: "Implemented real-time orbital propagation using SGP4 mathematical models and live TLE data.",
     icon: "Eye",
-    image: "/projects/cosmosview.png",
+    image: "/projects/cosmosview.png", // Keeping the original main image
     url: "https://www.orbitaldome.com",
-    techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"]
+    techTags: ["Three.js", "React", "Vite", "satellite.js", "Astronomy Engine"],
+    caseStudy: {
+      metrics: [
+        { label: "Real Stars", value: "100K+" },
+        { label: "Components", value: "63" },
+        { label: "Languages", value: "8" },
+        { label: "Live Satellites", value: "30+" }
+      ],
+      overview: "Orbital Dome is a browser-based planetarium and space exploration platform built as a Progressive Web App. It renders an interactive, scientifically accurate night sky with 100,000+ real stars, real-time planetary positions, 3D visualizations, satellite tracking, and 30+ features — all running client-side in the browser with zero backend.",
+      sections: [
+        {
+          title: "Flagship 3D Experiences",
+          content: "Features a photorealistic 3D Earth globe with day/night terminator, atmospheric Rayleigh scattering, cloud layers, and real-time satellite tracking using SGP4 orbital propagation from NORAD TLE data. The Lunar Observatory provides NASA SVS high-resolution textured 3D Moon processing (progressive 2K to 4K to 8K loading) with real libration, displacement mapping for terrain relief, and 6 Apollo landing sites.",
+          image: "/projects/orbital-dome-poster.png"
+        },
+        {
+          title: "Sky Rendering Engine",
+          content: "100,000+ stars from HYG v3 catalog are rendered via GPU-accelerated instancing with spectral-type color mapping. Includes 48 IAU constellations, 110+ Messier objects, and a procedural Milky Way with dust lanes created via custom GLSL shaders. The atmosphere features realistic Rayleigh/Mie scattering and day/night transitions."
+        },
+        {
+          title: "Interactive Tools & Telemetry",
+          content: "Includes a Light Pollution Simulator (Bortle 1-9 scale), Deep Space Network Live tracking NASA's 3 DSN complexes, and an AR Camera Mode using WebRTC for sky alignment. Calculates real-time stargazing conditions via the Open-Meteo API."
+        },
+        {
+          title: "Technical Execution",
+          content: "Operates with zero backend requirements—all computations (astronomy-engine, satellite.js, Three.js) run purely client-side. Ensures adaptive performance across devices, automatically reducing geometry, clamping pixel ratios, and disabling antialiasing on mobile to maintain high frame rates."
+        }
+      ]
+    }
   },
   {
     id: "jazz-arcade",
