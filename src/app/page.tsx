@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { 
   ArrowRight, 
@@ -320,12 +321,19 @@ export default function Portfolio() {
               })}
             </div>
           
-          <div className="flex flex-col items-center gap-4 pt-12 border-t border-white/5">
-            <p className="text-slate-600 text-sm font-mono uppercase tracking-[0.2em]">
-              Handcrafted with Next.js, Framer Motion & Pure Precision
+          <div className="flex flex-col items-center gap-6 pt-12 border-t border-white/5">
+            <div className="flex items-center gap-8 text-xs font-medium text-slate-500 tracking-wide">
+              <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
+              <div className="w-1 h-1 rounded-full bg-slate-800" />
+              <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms & Conditions</Link>
+            </div>
+            
+            <p className="text-slate-600 text-[10px] font-mono uppercase tracking-[0.25em]">
+              Next.js 15 • Framer Motion • Pure Precision Architecture
             </p>
-            <p className="text-slate-700 text-xs">
-              © {new Date().getFullYear()} {personalInfo.name}. All systems operational.
+            
+            <p className="text-slate-700 text-[10px] font-medium">
+              © {new Date().getFullYear()} {personalInfo.name}. All systems operational. Designed for Software Engineer II recruitment.
             </p>
           </div>
         </div>
