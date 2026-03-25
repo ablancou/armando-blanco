@@ -71,7 +71,7 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-sm font-medium tracking-wide">
-              <Sparkles size={14} className="animate-spin" />
+              <CodeIcon size={14} className="animate-[spin_4s_linear_infinite]" />
               <span>{commonText.available}</span>
             </div>
             
