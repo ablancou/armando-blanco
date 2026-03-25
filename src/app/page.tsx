@@ -194,11 +194,11 @@ export default function Portfolio() {
           </div>
           
           <div className="w-full lg:w-2/3 space-y-8">
-            <BentoGrid>
+            <BentoGrid className="lg:grid-cols-2">
               <BentoGridItem
                 title={"10+ Years Experience"}
                 description={personalInfo.summary[0]}
-                className="md:col-span-2"
+                className="md:col-span-1"
                 header={
                   <div className="flex items-center gap-4 text-slate-300">
                     <CheckCircle2 className="text-emerald-500" />
@@ -227,7 +227,7 @@ export default function Portfolio() {
               <BentoGridItem
                 title="The Toolkit"
                 description="Next.js, PyTorch, AWS, and modern DevOps."
-                className="md:col-span-2"
+                className="md:col-span-1"
                 header={<div className="flex flex-wrap gap-2">
                   {techStack.map((ts: any) => (
                     <span key={ts.name} className="px-2 py-1 bg-slate-800 rounded-lg text-[10px] text-blue-400 border border-blue-500/10 uppercase tracking-tighter">{ts.name}</span>
