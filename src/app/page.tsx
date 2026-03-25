@@ -73,6 +73,7 @@ export default function Portfolio() {
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-sm font-medium tracking-wide">
               <CodeIcon size={14} className="animate-[spin_4s_linear_infinite]" />
               <span>{commonText.available}</span>
+              <Sparkles size={14} className="animate-pulse text-emerald-400" />
             </div>
             
             <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 group">
