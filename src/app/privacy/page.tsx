@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar"
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 overflow-x-hidden">
-      <div className="noise-bg" />
       <Navbar />
       
       <div className="max-w-4xl mx-auto px-4 pt-32 pb-24 relative z-10">

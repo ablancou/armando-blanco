@@ -91,7 +91,6 @@ export default function Portfolio() {
   
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30 overflow-x-hidden">
-      <div className="noise-bg" />
       <Navbar />
 
       {/* Hero Section */}

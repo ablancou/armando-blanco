@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { InteractiveBackground } from "@/components/InteractiveBackground";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -57,6 +58,7 @@ export default function RootLayout({
               })
             }}
           />
+          <InteractiveBackground />
           {children}
       </body>
     </html>
