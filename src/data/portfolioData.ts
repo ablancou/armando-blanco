@@ -81,7 +81,7 @@ export const socials = [
   { name: "GitHub", url: "https://github.com/ablancou", icon: "Github" },
   { name: "X", url: "https://x.com/ablancou", icon: "Twitter" },
   { name: "Duolingo", url: "https://www.duolingo.com/profile/ablancou", icon: "Duolingo" },
-  { name: "Goodreads", url: "https://www.goodreads.com/user/show/TU_ID", icon: "Goodreads" }
+  { name: "Goodreads", url: "https://www.goodreads.com/ablancou", icon: "Goodreads" }
 ];
 
 
