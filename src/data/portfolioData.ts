@@ -51,7 +51,7 @@ export const personalInfo = {
 
 export const commonText = {
   heroTitle: "Turning Complexity Into Simplicity",
-  heroSubtitle: "Building applications that transform complex requirements into elegant solutions.",
+  heroSubtitle: "Software Developer & Data Scientist. Building systems that transform complex requirements into elegant solutions.",
   exploreWork: "Explore My Work",
   letBuild: "Let's Build Together",
   visitPlatform: "Visit Platform",
