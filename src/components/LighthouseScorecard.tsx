@@ -110,17 +110,14 @@ export function LighthouseScorecard() {
       </div>
 
       <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-        <div className="flex gap-2">
-          {[1,2,3,4,5].map(i => (
-            <div key={i} className="w-1.5 h-6 bg-emerald-500/20 rounded-full overflow-hidden">
-               <motion.div 
-                initial={{ height: 0 }}
-                animate={{ height: "100%" }}
-                transition={{ duration: 1, delay: 1 + (i*0.1) }}
-                className="w-full bg-emerald-500" 
-               />
-            </div>
-          ))}
+        <div className="flex items-center gap-3">
+          <div className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </div>
+          <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+            Systems Optimal
+          </span>
         </div>
         <p className="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">
           Audit Type: Mobile & Desktop High-Fidelity
