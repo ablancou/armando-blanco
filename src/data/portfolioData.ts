@@ -84,6 +84,49 @@ export const socials = [
   { name: "Goodreads", url: "https://www.goodreads.com/ablancou", icon: "Goodreads" }
 ];
 
+export const certifications = [
+  {
+    id: "ai-engineering",
+    title: "Generative AI for Engineers",
+    issuer: "CodeSignal",
+    date: "2024",
+    link: "/certificates/CodeSignal-AI-Engineering.pdf",
+    icon: "Code2",
+    description: "Advanced application of GenAI models for code generation, architecture design, and automated testing.",
+    color: "blue"
+  },
+  {
+    id: "ai-data",
+    title: "Generative AI for Data & Analytics",
+    issuer: "CodeSignal",
+    date: "2024",
+    link: "/certificates/CodeSignal-AI-Data.pdf",
+    icon: "Database",
+    description: "Orchestration of LLMs for complex data pipelines, automated insights, and predictive analytics.",
+    color: "emerald"
+  },
+  {
+    id: "ai-healthcare",
+    title: "Generative AI for Healthcare",
+    issuer: "CodeSignal",
+    date: "2024",
+    link: "/certificates/CodeSignal-AI-Healthcare.pdf",
+    icon: "Activity", 
+    description: "Implementation of secure AI systems optimized for clinical data, diagnostics, and strict compliance workflows.",
+    color: "rose"
+  },
+  {
+    id: "ai-cybersecurity",
+    title: "Generative AI in Cybersecurity",
+    issuer: "CodeSignal",
+    date: "2024",
+    link: "/certificates/CodeSignal-AI-Cybersecurity.pdf",
+    icon: "Shield",
+    description: "Leveraging AI for advanced threat intelligence, automated response systems, and robust architecture modeling.",
+    color: "amber"
+  }
+];
+
 
 export const technicalExpertise = [
   {

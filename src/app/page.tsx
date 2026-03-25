@@ -42,6 +42,7 @@ import { cn } from "@/lib/utils"
 import { LighthouseScorecard } from "@/components/LighthouseScorecard"
 import { CareerTimeline } from "@/components/CareerTimeline"
 import { AIChatbot } from "@/components/AIChatbot"
+import { Certifications } from "@/components/Certifications"
 import { ProjectShowcase } from "@/components/ProjectShowcase"
 import { TechArsenal } from "@/components/TechArsenal"
 
@@ -280,6 +281,8 @@ export default function Portfolio() {
       <section id="experience" className="py-12 border-t border-white/5">
         <CareerTimeline />
       </section>
+
+      <Certifications />
 
       {/* Footer / Connect */}
       <footer id="contact" className="py-24 border-t border-white/5 bg-slate-950/80 backdrop-blur-xl relative overflow-hidden">
