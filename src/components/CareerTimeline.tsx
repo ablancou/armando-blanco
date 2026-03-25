@@ -66,28 +66,20 @@ export function CareerTimeline() {
 
   const milestones: MilestoneProps[] = [
     {
-      date: "2019 - Present",
-      title: "Content Creator",
-      company: "Educational Content on Social Media",
-      description: "Created engaging educational content for YouTube and TikTok, focusing on music theory and complex topics.",
-      icon: <TrendingUp size={16} className="text-blue-400" />,
+      date: "2014 - Present",
+      title: "Software Developer",
+      company: "Freelance / AI Projects",
+      description: "Architecting high-traffic platforms (Next.js, AWS), orchestrating LLM integrations, and building clinical diagnostic neural networks using PyTorch.",
+      icon: <Code size={16} className="text-blue-400" />,
       side: "left"
     },
     {
       date: "2015 - Present",
       title: "Technical Consultant",
       company: "Data Science & Machine Learning, Freelance",
-      description: "Provided consultation services for data-driven projects, guiding clients through PyTorch neural network implementations and data analysis.",
+      description: "Guiding teams in the implementation of predictive models, automated ETL data pipelines, and optimized cloud deployments.",
       icon: <Briefcase size={16} className="text-blue-400" />,
       side: "right"
-    },
-    {
-      date: "2012 - Present",
-      title: "Full-Stack Developer & Data Scientist",
-      company: "Freelance",
-      description: "Developed and deployed educational games with AI integrations, built neural networks, and designed scalable data pipelines.",
-      icon: <Code size={16} className="text-blue-400" />,
-      side: "left"
     },
     {
       date: "2005 - 2009",
@@ -95,7 +87,7 @@ export function CareerTimeline() {
       company: "Universidad Anáhuac, Mexico City",
       description: "Foundation in business strategy, quantitative analysis, and administration.",
       icon: <GraduationCap size={16} className="text-blue-400" />,
-      side: "right",
+      side: "left",
       isLast: true
     }
   ]

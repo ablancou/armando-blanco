@@ -26,24 +26,24 @@ export const personalInfo = {
   ],
   experience: [
     {
-      title: "Senior Full-Stack Developer & Data Scientist",
-      company: "Freelance / Jazz Arcade",
-      date: "2012 - Present",
+      title: "Senior Software Engineer & AI Integrator",
+      company: "Freelance",
+      date: "2020 - Present",
       bullets: [
-        "Architected Jazz Arcade, a high-traffic music education platform serving global users with AI-powered personalized learning.",
-        "Implemented diagnostic pipelines for medical labs using Python, transforming raw genomic data into clinical insights.",
-        "Engineered real-time data visualization suites with Next.js and Streamlit, improving decision speed for consultants by 40%.",
-        "Pioneered the integration of Google Gemini AI into music theory pedagogy, creating the first adaptive AI jazz tutor."
+        "Architected Jazz Arcade, a high-traffic education platform serving global users with AI-powered personalized learning.",
+        "Pioneered the integration of Google Gemini AI into music pedagogy, creating the first adaptive AI jazz tutor.",
+        "Engineered real-time data visualization suites with Next.js and Streamlit, improving decision speed for consultants by 40%."
       ]
     },
     {
-      title: "Technical Consultant",
-      company: "Data Science Solutions",
-      date: "2015 - Present",
+      title: "Full-Stack Developer & Data Scientist",
+      company: "Freelance",
+      date: "2014 - 2020",
       bullets: [
-        "Led cross-functional teams in the implementation of predictive neural networks for clinical risk assessment.",
+        "Implemented diagnostic pipelines for medical labs using Python, transforming raw genomic data into clinical insights.",
+        "Led cross-functional teams in the implementation of predictive neural networks using PyTorch for clinical risk assessment.",
         "Designed automated ETL pipelines for handling heterogeneous medical data sources.",
-        "Optimized cloud deployment strategies on AWS, reducing costs for clients by 25%."
+        "Optimized cloud deployment strategies on AWS, reducing operational costs by 25%."
       ]
     }
   ]
