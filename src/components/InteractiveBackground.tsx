@@ -35,8 +35,16 @@ export function InteractiveBackground() {
       />
 
       {/* Layer 1: Precision Dot Matrix */}
-      <div 
+      <motion.div 
         className="absolute inset-0 opacity-[0.2]"
+        animate={{
+          backgroundPosition: ["0px 0px", "32px 32px"]
+        }}
+        transition={{
+          repeat: Infinity,
+          ease: "linear",
+          duration: 20
+        }}
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1.5' fill='rgba(255,255,255,0.7)'/%3E%3C/svg%3E")`,
           backgroundSize: '32px 32px'
