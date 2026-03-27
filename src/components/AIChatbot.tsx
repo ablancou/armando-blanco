@@ -51,9 +51,9 @@ export function AIChatbot() {
       response: "With **over 10 years of professional experience**, Armando is a seasoned technologist specializing in **Full-Stack & AI development**. He is currently focused on high-scale **Software Engineer II** roles where he can apply his expertise in system architecture, clinical diagnostics, and cloud infrastructure."
     },
     {
-      category: "Continuous Learning",
-      keywords: ["certifications", "certificates", "certs", "study", "learning", "education", "courses", "academy", "training", "constante", "estudio", "80", "diplomas"],
-      response: "Armando is a high-velocity learner with **over 80 technical certifications**. His discipline for constant evolution allows him to master complex stacks (from **System Architecture** to **Generative AI**) with elite efficiency, ensuring he stays at the forefront of the industry."
+      category: "Continuous Learning & Problem Solving",
+      keywords: ["certifications", "certificates", "certs", "leetcode", "hackerrank", "codesignal", "sololearn", "algorithms", "solving", "challenges", "study", "learning", "80", "diplomas"],
+      response: "Armando is a high-velocity learner with **over 80 technical certifications**. He has a strong algorithmic foundation with **dozens of challenges solved on LeetCode and HackerRank**, and certifications from **CodeSignal** and **SoloLearn**. This discipline ensures he builds high-performance, optimized solutions."
     },
     {
       category: "Professional Foundation",
@@ -203,7 +203,7 @@ export function AIChatbot() {
             {messages[messages.length - 1].role === "assistant" && !isLoading && (
               <div className="px-6 pb-2 flex flex-wrap gap-2">
                 <button onClick={() => handleSend("AI Specialization")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">AI Specialization</button>
-                <button onClick={() => handleSend("80+ Certifications")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">80+ Certifications</button>
+                <button onClick={() => handleSend("Certs & Algorithms")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Certs & Algorithms</button>
                 <button onClick={() => handleSend("Tech Stack")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Tech Stack</button>
                 <button onClick={() => handleSend("APIs & Cloud")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">APIs & Cloud</button>
               </div>
