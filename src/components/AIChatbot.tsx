@@ -21,9 +21,9 @@ export function AIChatbot() {
 
   const QA_MAP = [
     {
-      category: "Specialization",
-      keywords: ["ai", "machine learning", "pytorch", "genai", "llm", "gemini", "neural", "models", "intelligence"],
-      response: "Armando is an expert in **Generative AI** and **Machine Learning**. He specializes in **LLM orchestration** with Google Gemini and has built **clinical diagnostic neural networks** with PyTorch. He focuses on practical, scalable AI for high-impact industries."
+      category: "AI Specialization",
+      keywords: ["ai", "machine learning", "pytorch", "genai", "llm", "gemini", "claude", "perplexity", "antigravity", "grok", "neural", "models", "intelligence"],
+      response: "Armando is a specialist in **Generative AI** and **LLM Orchestration**. He works with a diverse toolset including **Antigravity**, **Claude**, **Perplexity**, **Gemini**, and **Grok**. He focuses on building practical, high-impact AI solutions, from **clinical diagnostic neural networks** (PyTorch) to AI-powered educational platforms."
     },
     {
       category: "APIs & Integration",
@@ -200,7 +200,7 @@ export function AIChatbot() {
                 <button onClick={() => handleSend("AI Specialization")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">AI Specialization</button>
                 <button onClick={() => handleSend("Tech Stack")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Tech Stack</button>
                 <button onClick={() => handleSend("APIs & Cloud")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">APIs & Cloud</button>
-                <button onClick={() => handleSend("Clinical AI")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Clinical AI</button>
+                <button onClick={() => handleSend("Project Strategy")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Project Strategy</button>
               </div>
             )}
 
