@@ -19,13 +19,63 @@ export function AIChatbot() {
     }
   }, [messages])
 
-  const QA_DATABASE: Record<string, string> = {
-    stack: "Armando's primary stack focuses on robust, modern architecture and AI integration. He builds with Next.js 15, TypeScript, Python, PyTorch, and scales using AWS (Amplify, Serverless). He also has extensive experience in WebGL with Three.js.",
-    experience: "Armando brings over a decade of cross-disciplinary expertise. Since 2014, he has operated as a Full-Stack Software Developer & Data Scientist, designing everything from clinical Machine Learning pipelines to high-traffic educational web applications.",
-    projects: "His flagship engineering artifacts include 'Jazz Arcade' (an AI-powered full-stack education platform), 'Orbital Dome' (a real-time 3D SGP4 satellite tracking engine), and clinical neural networks for medical diagnostics.",
-    contact: "You can reach Armando directly via his LinkedIn profile or through the contact details provided in his professional resume. He is currently available for Software Engineer II roles.",
-    default: "I am Armando's simulated portfolio assistant. While I can't generate dynamic answers right now, you can ask me about his 'Tech Stack', 'Experience', 'Projects' or 'Contact info'—or simply select one of the quick options below."
-  }
+  const QA_MAP = [
+    {
+      category: "Specialization",
+      keywords: ["ai", "machine learning", "pytorch", "genai", "llm", "gemini", "neural", "models", "intelligence"],
+      response: "Armando is an expert in **Generative AI** and **Machine Learning**. He specializes in **LLM orchestration** with Google Gemini and has built **clinical diagnostic neural networks** with PyTorch. He focuses on practical, scalable AI for high-impact industries."
+    },
+    {
+      category: "APIs & Integration",
+      keywords: ["api", "rest", "graphql", "integration", "endpoint", "fetch", "axios", "webhook", "webrtc", "request"],
+      response: "He has deep experience with **RESTful APIs** and real-time integrations. In **Orbital Dome**, he used the **Open-Meteo API** (weather) and the **NASA DSN API** (telemetry). In **Jazz Arcade**, he integrated **Gemini's AI API** and used **WebRTC** for AR camera features."
+    },
+    {
+      category: "Cloud & AWS",
+      keywords: ["cloud", "aws", "amplify", "serverless", "lambda", "cognito", "infrastructure", "devops", "deploy", "hosting", "iaas", "paas", "cicd", "pipelines"],
+      response: "Armando is an **AWS specialist**. He architected **Jazz Arcade** using **AWS Amplify** for global scalability. His expertise includes managing **Cognito** for secure auth, **Lambda** for serverless functions, and implementing **Infrastructure as Code (IaC)** for robust CI/CD pipelines."
+    },
+    {
+      category: "Frontend & Web",
+      keywords: ["frontend", "react", "nextjs", "next.js", "typescript", "tailwind", "css", "framermotion", "framer", "ux", "ui", "styling", "responsive"],
+      response: "Armando builds with **Next.js 15** and **TypeScript**. He's an expert in **Framer Motion** for high-performance animations and **UI Engineering**. He prioritize type-safe, accessible, and ultra-responsive frontend architectures."
+    },
+    {
+      category: "Backend & Data",
+      keywords: ["backend", "python", "node", "nodejs", "database", "sql", "postgresql", "data", "pandas", "etl", "processing", "scipy", "server"],
+      response: "His backend expertise spans **Python** and **Node.js**. He has built several **clinical data pipelines (ETL)** and predictive tools using **pandas** and **scipy**. He focuses on building reliable, high-integrity data systems."
+    },
+    {
+      category: "Seniority & Background",
+      keywords: ["senior", "seniority", "years", "experience", "background", "history", "career", "engineer ii", "mexico", "leadership", "lead"],
+      response: "With **over 10 years of professional experience**, Armando is a seasoned technologist specializing in **Full-Stack & AI development**. He is currently focused on high-scale **Software Engineer II** roles where he can apply his expertise in system architecture, clinical diagnostics, and cloud infrastructure."
+    },
+    {
+      category: "Professional Foundation",
+      keywords: ["marketing", "manager", "hospitals", "angeles", "sedatu", "head of department", "master", "maestría", "business", "administration", "leadership", "jefe"],
+      response: "Armando's engineering approach is informed by a strong foundation in **Project Management and leadership**. Having served in strategic management roles (including **Hospital Angeles** and **SEDATU**), he brings a high level of professional maturity, effective communication, and a unique ability to align technical solutions with organizational goals."
+    },
+    {
+      category: "3D & Graphics",
+      keywords: ["3d", "threejs", "three.js", "webgl", "graphics", "rendering", "orbital", "satellite", "astronomy", "canvas", "opengl"],
+      response: "He is a specialist in **Three.js** and **WebGL**. His project **Orbital Dome** is a high-performance 3D engine that renders 100,000+ stars and real-time satellite telemetry using **SGP4 mathematical models** purely in the browser."
+    },
+    {
+      category: "Health & Science",
+      keywords: ["health", "medical", "clinical", "diagnostic", "statura", "pediatric", "height", "lab", "biological", "genomic"],
+      response: "Armando has a unique background in **Clinical AI**. He developed **Statura Predict**, a pure-Python (Reflex) clinical tool for height predictions, and has built diagnostic pipelines for labs to transform genomic data into medical insights."
+    },
+    {
+      category: "Education & Impact",
+      keywords: ["education", "teaching", "pedagogy", "jazz arcade", "music", "sight-reading", "theory", "tutor"],
+      response: "He architected **Jazz Arcade**, a gold standard music education platform. He integrated an **AI Jazz Tutor (Gemini)** and built a custom notation suite that translates MIDI/JSON into standard sheet music dynamically."
+    },
+    {
+      category: "Architecture & System Design",
+      keywords: ["architecture", "system design", "scale", "reliability", "distributed", "microservices", "optimization", "scalability"],
+      response: "Armando emphasizes **System Design** and **Scalability**. He approaches every project as an 'Engineering Artifact', prioritizing security, high-load optimization, and maintainability in multi-disciplinary teams."
+    }
+  ]
 
   const handleSend = async (customQuery?: string) => {
     const query = customQuery || input
@@ -38,17 +88,35 @@ export function AIChatbot() {
     // Simulate network delay for a more authentic 'AI' feel
     await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 800))
 
-    let reply = QA_DATABASE.default
     const lowerQuery = query.toLowerCase()
+    
+    // Scoring logic
+    let bestMatch: any = null
+    let maxScore = 0
 
-    if (lowerQuery.includes("stack") || lowerQuery.includes("tech") || lowerQuery.includes("framework")) {
-      reply = QA_DATABASE.stack
-    } else if (lowerQuery.includes("experience") || lowerQuery.includes("work") || lowerQuery.includes("job") || lowerQuery.includes("years")) {
-      reply = QA_DATABASE.experience
-    } else if (lowerQuery.includes("project") || lowerQuery.includes("portfolio") || lowerQuery.includes("build")) {
-      reply = QA_DATABASE.projects
+    for (const item of QA_MAP) {
+      let score = 0
+      for (const kw of item.keywords) {
+        if (lowerQuery.includes(kw)) {
+          score += 1
+          if (lowerQuery.split(/\s+/).includes(kw)) score += 1
+        }
+      }
+      if (score > maxScore) {
+        maxScore = score
+        bestMatch = item
+      }
+    }
+
+    let reply = ""
+    if (maxScore > 0 && bestMatch) {
+      reply = bestMatch.response
     } else if (lowerQuery.includes("contact") || lowerQuery.includes("hire") || lowerQuery.includes("email") || lowerQuery.includes("linkedin")) {
-      reply = QA_DATABASE.contact
+      reply = "You can reach Armando directly via his LinkedIn profile or through the contact details provided in his professional resume. He is currently available for Software Engineer II roles."
+    } else if (lowerQuery.includes("project") || lowerQuery.includes("portfolio") || lowerQuery.includes("build") || lowerQuery.includes("work")) {
+      reply = "His flagship engineering artifacts include 'Jazz Arcade' (an AI-powered education platform), 'Orbital Dome' (a real-time 3D satellite tracking engine), and clinical neural networks for medical diagnostics."
+    } else {
+      reply = "I am Armando's simulated portfolio assistant. I can answer questions about his 'AI Specialization', 'APIs & Integration', 'Cloud Architecture', 'Clinical Experience', 'Leadership & Biz', or his 'Tech Stack'. How can I help you?"
     }
 
     setMessages(prev => [...prev, { role: "assistant", content: reply }])
@@ -129,9 +197,10 @@ export function AIChatbot() {
             {/* Quick Replies */}
             {messages[messages.length - 1].role === "assistant" && !isLoading && (
               <div className="px-6 pb-2 flex flex-wrap gap-2">
+                <button onClick={() => handleSend("AI Specialization")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">AI Specialization</button>
                 <button onClick={() => handleSend("Tech Stack")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Tech Stack</button>
-                <button onClick={() => handleSend("Experience")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Experience</button>
-                <button onClick={() => handleSend("Projects")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Projects</button>
+                <button onClick={() => handleSend("APIs & Cloud")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">APIs & Cloud</button>
+                <button onClick={() => handleSend("Clinical AI")} className="px-3 py-1.5 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/20 transition-colors">Clinical AI</button>
               </div>
             )}
 

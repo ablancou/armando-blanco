@@ -8,7 +8,8 @@ import {
   Cpu, 
   Mail, 
   Home,
-  MessageSquare
+  MessageSquare,
+  Upload
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -18,11 +19,13 @@ const navItems = [
   { name: "Projects", href: "#projects", icon: Briefcase },
   { name: "Skills", href: "#skills", icon: Cpu },
   { name: "Contact", href: "#contact", icon: MessageSquare },
+  { name: "Share", icon: Upload, isAction: true },
 ]
 
 export default function Navbar() {
   const [hovered, setHovered] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +34,32 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleShare = async () => {
+    const shareData = {
+      title: "Armando Blanco | Software Engineer II",
+      text: "Check out Armando Blanco's portfolio - Elite Software Engineer II specializing in AI and Full-Stack development.",
+      url: typeof window !== 'undefined' ? window.location.href : '',
+    };
+
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        if ((err as Error).name !== 'AbortError') {
+          console.error("Error sharing:", err);
+        }
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+    }
+  };
 
   return (
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-4 w-full max-w-fit">
@@ -46,61 +75,92 @@ export default function Navbar() {
         {navItems.map((item) => {
           const Icon = item.icon
           const isHovered = hovered === item.name
+          const isShare = item.name === "Share"
 
-          return (
-            <a
-              key={item.name}
-              href={item.href}
-              className="relative p-2 sm:p-3 group outline-none"
-              onMouseEnter={() => setHovered(item.name)}
-              onMouseLeave={() => setHovered(null)}
-            >
+          const content = (
+            <div className="relative">
+              <Icon 
+                size={18} 
+                className={cn(
+                  "transition-all duration-300",
+                  isHovered ? "text-blue-400 scale-110" : "text-slate-400"
+                )}
+              />
+              
+              {/* Tooltip */}
               <AnimatePresence>
                 {isHovered && (
                   <motion.span
-                    layoutId="nav-bg"
-                    className="absolute inset-0 bg-blue-500/10 rounded-xl -z-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
+                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: -40, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                    className="absolute left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-slate-800 text-slate-100 text-[10px] font-medium whitespace-nowrap pointer-events-none border border-slate-700 shadow-xl"
+                  >
+                    {isShare && copied ? "Copied!" : item.name}
+                  </motion.span>
                 )}
               </AnimatePresence>
+            </div>
+          )
 
-              <div className="relative">
-                <Icon 
-                  size={18} 
-                  className={cn(
-                    "transition-all duration-300",
-                    isHovered ? "text-blue-400 scale-110" : "text-slate-400"
-                  )}
-                />
-                
-                {/* Tooltip */}
-                <AnimatePresence>
-                  {isHovered && (
-                    <motion.span
-                      initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                      animate={{ opacity: 1, y: -40, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                      className="absolute left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-slate-800 text-slate-100 text-[10px] font-medium whitespace-nowrap pointer-events-none border border-slate-700 shadow-xl"
-                    >
-                      {item.name}
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-              </div>
+          const commonProps = {
+            className: "relative p-2 sm:p-3 group outline-none cursor-pointer",
+            onMouseEnter: () => setHovered(item.name),
+            onMouseLeave: () => setHovered(null),
+          }
 
-              {/* Indicator dot */}
-              <motion.div
-                animate={{
-                  opacity: isHovered ? 1 : 0,
-                  scale: isHovered ? 1 : 0.5
-                }}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-500"
-              />
-            </a>
+          return (
+            <React.Fragment key={item.name}>
+              {item.isAction ? (
+                <button {...commonProps} onClick={handleShare}>
+                  <AnimatePresence>
+                    {isHovered && (
+                      <motion.span
+                        layoutId="nav-bg"
+                        className="absolute inset-0 bg-blue-500/10 rounded-xl -z-10"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                  </AnimatePresence>
+                  {content}
+                  {/* Indicator dot */}
+                  <motion.div
+                    animate={{
+                      opacity: isHovered ? 1 : 0,
+                      scale: isHovered ? 1 : 0.5
+                    }}
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-500"
+                  />
+                </button>
+              ) : (
+                <a {...commonProps} href={item.href}>
+                  <AnimatePresence>
+                    {isHovered && (
+                      <motion.span
+                        layoutId="nav-bg"
+                        className="absolute inset-0 bg-blue-500/10 rounded-xl -z-10"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                  </AnimatePresence>
+                  {content}
+                  {/* Indicator dot */}
+                  <motion.div
+                    animate={{
+                      opacity: isHovered ? 1 : 0,
+                      scale: isHovered ? 1 : 0.5
+                    }}
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-500"
+                  />
+                </a>
+              )}
+            </React.Fragment>
           )
         })}
       </motion.nav>
