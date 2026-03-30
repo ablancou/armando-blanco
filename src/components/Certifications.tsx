@@ -49,8 +49,7 @@ export function Certifications() {
             return (
               <motion.a
                 key={cert.id}
-                href={cert.link}
-                target="_blank"
+                href={`/certificates/${cert.id}`}
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
