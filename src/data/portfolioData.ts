@@ -58,7 +58,7 @@ export const commonText = {
   caseStudy: "Case Study",
   available: "Available for high-impact projects",
   vision: "The Vision",
-  visionText: "Bridging the gap between raw data and professional software architecture. My approach is rooted in academic excellence and a decade of field experience.",
+  visionText: "Curiosity in motion. Driven by continuous self-learning, I transform ideas into scalable systems where data, design, and technology converge to create real impact.",
   eliteShowcase: "Elite Showcase",
   engineeringArtifacts: "Curated Engineering Artifacts",
   fortitude: "Fortitude",

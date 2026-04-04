@@ -64,6 +64,15 @@
     80% { transform: translate(-15%,0); }
     90% { transform: translate(10%,5%); }
   }
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+    80% { opacity: 0.9; }
+  }
 }
 
 @layer base {

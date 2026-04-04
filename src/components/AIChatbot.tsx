@@ -7,7 +7,7 @@ import { MessageSquare, X, Send, Sparkles, Bot, User } from "lucide-react"
 export function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<{ role: "assistant" | "user"; content: string }[]>([
-    { role: "assistant", content: "Hello! I'm Armando's AI persona. How can I help you explore his work today?" }
+    { role: "assistant", content: "Hello! I'm Armando's virtual assistant. How can I help you explore his work today?" }
   ])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -79,6 +79,11 @@ export function AIChatbot() {
       category: "Architecture & System Design",
       keywords: ["architecture", "system design", "scale", "reliability", "distributed", "microservices", "optimization", "scalability"],
       response: "Armando emphasizes **System Design** and **Scalability**. He approaches every project as an 'Engineering Artifact', prioritizing security, high-load optimization, and maintainability in multi-disciplinary teams."
+    },
+    {
+      category: "Tech Stack",
+      keywords: ["tech", "stack", "tools", "languages", "toolkit", "technology", "development", "build"],
+      response: "Armando's core toolkit includes **Python (AI/Data)**, **Next.js 15 (Full-Stack)**, **TypeScript**, and **AWS (Infrastructure)**. He is an expert in **PyTorch** for neural research, **Three.js/WebGL** for interactive 3D, and the **GenAI** ecosystem (Gemini, Claude, Grok)."
     }
   ]
 
@@ -135,10 +140,22 @@ export function AIChatbot() {
         onClick={() => setIsOpen(true)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-24 right-4 sm:bottom-32 sm:right-8 z-50 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-2xl shadow-blue-500/40 border border-white/20 group"
+        className="fixed bottom-24 right-4 sm:bottom-32 sm:right-8 z-50 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-950/80 backdrop-blur-md text-white flex items-center justify-center shadow-2xl shadow-blue-900/40 border border-white/20 group overflow-hidden"
       >
-        <div className="absolute inset-0 bg-blue-400 rounded-full blur-xl opacity-0 group-hover:opacity-40 transition-opacity" />
-        <Bot size={28} className="relative z-10" />
+        {/* MI-styled scanning effect */}
+        <motion.div 
+          animate={{ 
+            top: ["-100%", "100%"]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent z-20"
+        />
+        <div className="absolute inset-0 bg-blue-900/20 rounded-full animate-pulse opacity-50" />
+        <Bot size={28} className="relative z-10 text-blue-100" />
       </motion.button>
 
       {/* Chat Window */}

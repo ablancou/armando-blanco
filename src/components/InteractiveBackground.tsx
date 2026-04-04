@@ -69,9 +69,12 @@ export function InteractiveBackground() {
         ))}
       </div>
 
-      {/* Layer 3: Subtle Noise Texture */}
-      <div className="absolute inset-0 noise-bg opacity-50" />
-      
+      {/* Layer 4: Mission Impossible Style Scanning Line */}
+      <div 
+        className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent z-10 pointer-events-none"
+        style={{ animation: 'scanline 12s linear infinite' }}
+      />
+
       {/* Vignette for depth */}
       <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/20 to-slate-950/80 mix-blend-multiply" />
     </div>
