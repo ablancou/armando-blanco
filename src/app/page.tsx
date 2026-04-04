@@ -197,7 +197,7 @@ export default function Portfolio() {
             <BentoGrid className="lg:grid-cols-2">
               <BentoGridItem
                 title={"10+ Years Experience"}
-                description={personalInfo.summary[0]}
+                description={"10+ years building scalable software across disciplines — from fullstack development to complex systems."}
                 className="md:col-span-1"
                 header={
                   <div className="flex items-center gap-4 text-slate-300">
@@ -208,7 +208,7 @@ export default function Portfolio() {
               />
               <BentoGridItem
                 title="AI Integration"
-                description="Architecting LLM orchestration and adaptive neural learning systems."
+                description="Architecting LLM and adaptive learning systems with modern frameworks."
                 className="md:col-span-1"
                 icon={<Zap />}
               />
