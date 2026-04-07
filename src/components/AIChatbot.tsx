@@ -12,10 +12,11 @@ export function AIChatbot() {
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
+  const lastMessageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, [messages])
 
@@ -195,13 +196,17 @@ export function AIChatbot() {
               className="flex-1 overflow-y-auto p-6 space-y-4 scrollbar-hide"
             >
               {messages.map((m, i) => (
-                <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div 
+                  key={i} 
+                  ref={i === messages.length - 1 ? lastMessageRef : null}
+                  className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
                   <div className={`max-w-[85%] p-4 text-sm leading-relaxed ${
                     m.role === 'user' 
                       ? 'bg-blue-600 text-white rounded-[2rem] rounded-tr-sm shadow-lg shadow-blue-500/20' 
                       : 'bg-slate-800/80 text-slate-100 border border-white/5 rounded-[2rem] rounded-tl-sm shadow-xl backdrop-blur-md'
                   }`}>
-                    {m.content}
+                    {m.content.replace(/\*\*/g, '')}
                   </div>
                 </div>
               ))}

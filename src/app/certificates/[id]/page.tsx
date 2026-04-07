@@ -65,8 +65,8 @@ export default async function CertificatePage({ params }: PageProps) {
       </nav>
 
       {/* PDF Viewer Container */}
-      <div className="flex-1 mt-20 p-4 sm:p-6 lg:p-8 flex flex-col">
-        <div className="flex-1 rounded-3xl overflow-hidden border border-white/10 bg-slate-900/50 relative group">
+      <div className="mt-20 p-4 sm:p-6 lg:p-8" style={{ height: 'calc(100vh - 5rem)' }}>
+        <div className="h-full rounded-3xl overflow-hidden border border-white/10 bg-slate-900/50 relative group">
           {/* Ambient Glow */}
           <div className="absolute inset-x-0 -top-40 h-80 bg-blue-500/10 blur-[120px] pointer-events-none" />
           
@@ -75,14 +75,6 @@ export default async function CertificatePage({ params }: PageProps) {
             className="w-full h-full border-none rounded-3xl"
             title={cert.title}
           />
-
-          {/* Loading Overlay (hidden when iframe loads) */}
-          <div className="absolute inset-0 flex items-center justify-center bg-slate-950/20 backdrop-blur-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-             <div className="flex flex-col items-center gap-3">
-                <div className="w-12 h-12 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
-                <span className="text-xs font-mono text-slate-500 uppercase tracking-widest">Secure Viewer Active</span>
-             </div>
-          </div>
         </div>
         
         {/* Mobile Info Bar */}
