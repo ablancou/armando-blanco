@@ -51,7 +51,7 @@ export const personalInfo = {
 
 export const commonText = {
   heroTitle: "Turning Complexity Into Simplicity",
-  heroSubtitle: "Software Developer & Data Scientist. Building systems that transform complex requirements into elegant solutions.",
+  heroSubtitle: "Senior Full-Stack Software Engineer — Independent Consultant. With over 10 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.",
   exploreWork: "Explore My Work",
   letBuild: "Let's Build Together",
   visitPlatform: "Visit Platform",
