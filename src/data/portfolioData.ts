@@ -16,10 +16,10 @@ import {
 
 export const personalInfo = {
   name: "Armando Blanco",
-  role: "Software Engineer II | Full-Stack & AI Intelligence",
+  role: "Senior AI + Full-Stack Engineer",
   tagline: "Architecting high-performance systems and intelligent AI pipelines in Mexico.",
   summary: [
-    "Software Engineer II with 10+ years of cross-disciplinary experience, specializing in scalable Next.js architectures and clinical AI diagnostics.",
+    "Senior AI + Full-Stack Engineer with 12+ years of cross-disciplinary experience, specializing in scalable Next.js architectures and clinical AI diagnostics.",
     "Expert in LLM orchestration, neural research with PyTorch, and deploying mission-critical distributed systems.",
     "Proven track record in Mexico's tech ecosystem, bridging the gap between advanced data science and professional software engineering.",
     "Specialized in architecting complex data pipelines, cloud-native DevOps (AWS), and high-reliability healthcare platforms."
@@ -51,7 +51,7 @@ export const personalInfo = {
 
 export const commonText = {
   heroTitle: "Turning Complexity Into Simplicity",
-  heroSubtitle: "Senior Full-Stack Software Engineer — Independent Consultant. With over 10 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.",
+  heroSubtitle: "Senior Full-Stack Software Engineer — Independent Consultant. With 12+ years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.",
   exploreWork: "Explore My Work",
   letBuild: "Let's Build Together",
   visitPlatform: "Visit Platform",

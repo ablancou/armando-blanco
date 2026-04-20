@@ -37,8 +37,8 @@ export default function Navbar() {
 
   const handleShare = async () => {
     const shareData = {
-      title: "Armando Blanco | Software Engineer II",
-      text: "Check out Armando Blanco's portfolio - Elite Software Engineer II specializing in AI and Full-Stack development.",
+      title: "Armando Blanco | Senior AI + Full-Stack Engineer",
+      text: "Check out Armando Blanco's portfolio - Elite Senior AI + Full-Stack Engineer specializing in AI and Full-Stack development.",
       url: typeof window !== 'undefined' ? window.location.href : '',
     };
 

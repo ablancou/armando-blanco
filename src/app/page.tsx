@@ -143,7 +143,7 @@ export default function Portfolio() {
             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light text-balance">
               Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>. Senior Full-Stack Software Engineer &mdash; Independent Consultant.
               <br /><br />
-              With over 10 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.
+              With over 12 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
@@ -197,8 +197,8 @@ export default function Portfolio() {
           <div className="w-full lg:w-2/3 space-y-8">
             <BentoGrid className="lg:grid-cols-2">
               <BentoGridItem
-                title={"10+ Years Experience"}
-                description={"10+ years building scalable software across disciplines, from fullstack development to complex systems."}
+                title={"12+ Years Experience"}
+                description={"12+ years building scalable software across disciplines, from fullstack development to complex systems."}
                 className="md:col-span-1"
                 header={
                   <div className="flex items-center gap-4 text-slate-300">

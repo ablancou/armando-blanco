@@ -48,8 +48,8 @@ export function AIChatbot() {
     },
     {
       category: "Seniority & Background",
-      keywords: ["senior", "seniority", "years", "experience", "background", "history", "career", "engineer ii", "mexico", "leadership", "lead"],
-      response: "With **over 10 years of professional experience**, Armando is a seasoned technologist specializing in **Full-Stack & AI development**. He is currently focused on high-scale **Software Engineer II** roles where he can apply his expertise in system architecture, clinical diagnostics, and cloud infrastructure."
+      keywords: ["senior", "seniority", "years", "experience", "background", "history", "career", "Senior AI + Full-Stack Engineer", "mexico", "leadership", "lead"],
+      response: "With 12+ years of professional experience, Armando is a seasoned technologist specializing in Full-Stack & AI development. He is currently focused on high-scale Senior AI + Full-Stack Engineer roles where he can apply his expertise in system architecture, clinical diagnostics, and cloud infrastructure."
     },
     {
       category: "Continuous Learning & Problem Solving",
@@ -123,7 +123,7 @@ export function AIChatbot() {
     if (maxScore > 0 && bestMatch) {
       reply = bestMatch.response
     } else if (lowerQuery.includes("contact") || lowerQuery.includes("hire") || lowerQuery.includes("email") || lowerQuery.includes("linkedin")) {
-      reply = "You can reach Armando directly via his LinkedIn profile or through the contact details provided in his professional resume. He is currently available for Software Engineer II roles."
+      reply = "You can reach Armando directly via his LinkedIn profile or through the contact details provided in his professional resume. He is currently available for Senior AI + Full-Stack Engineer roles."
     } else if (lowerQuery.includes("project") || lowerQuery.includes("portfolio") || lowerQuery.includes("build") || lowerQuery.includes("work")) {
       reply = "His flagship engineering artifacts include 'Jazz Arcade' (an AI-powered education platform), 'Orbital Dome' (a real-time 3D satellite tracking engine), and clinical neural networks for medical diagnostics."
     } else {

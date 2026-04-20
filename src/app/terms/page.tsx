@@ -51,7 +51,7 @@ export default function TermsPage() {
           </section>
 
           <footer className="pt-8 border-t border-white/5 text-sm text-slate-500">
-            Last Updated: March 2026. Designed for Software Engineer II recruitment in world-class organizations.
+            Last Updated: March 2026. Designed for Senior AI + Full-Stack Engineer recruitment in world-class organizations.
           </footer>
         </div>
       </div>
