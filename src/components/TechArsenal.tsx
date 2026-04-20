@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 const topSkills = [
   "Next.js 15", "TypeScript", "Python", "PyTorch", "LLMs", "Three.js",
-  "WebGL", "AWS", "React 18", "Node.js", "Phaser 3", "SQL", "pandas",
+  "AWS", "React 18", "Node.js", "WebGL", "SQL", "Phaser 3", "pandas",
   "Machine Learning", "Streamlit"
 ]
 

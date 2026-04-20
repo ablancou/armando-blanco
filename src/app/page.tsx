@@ -141,7 +141,7 @@ export default function Portfolio() {
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light text-balance">
-              Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>. Senior Full-Stack Software Engineer &mdash; Independent Consultant.
+              Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>. Senior AI + Full-Stack Engineer &mdash; Independent Consultant.
               <br /><br />
               With over 12 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.
             </p>
