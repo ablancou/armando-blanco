@@ -30,6 +30,8 @@ import {
   featuredProjects,
   omniWiserProject,
   clinicalProjects,
+  productivityProjects,
+  entertainmentProjects,
   allProjects,
   technicalExpertise,
   personalInfo,
@@ -245,13 +247,12 @@ export default function Portfolio() {
       {/* SECTION 1 — Elite Showcase */}
       <section id="projects" className="py-32 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-20">
-            <h2 className="text-sm font-black tracking-widest text-blue-500 uppercase mb-4">{commonText.eliteShowcase}</h2>
-            <h3 className="text-5xl md:text-7xl font-black mb-8">{commonText.engineeringArtifacts.split(' ').slice(0, -1).join(' ')} <span className="text-white">{commonText.engineeringArtifacts.split(' ').slice(-1)}</span></h3>
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">Projects</h2>
           </div>
 
           <div className="space-y-12">
-            {featuredProjects.map((project: any) => (
+            {[...featuredProjects.slice(0,3), omniWiserProject, ...featuredProjects.slice(3)].map((project: any) => (
               <ProjectCard 
                 key={project.id} 
                 project={project} 
@@ -263,24 +264,13 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* SECTION 2 — Omni Wiser (Standalone Featured) */}
-      <section className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/[0.03] via-transparent to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <ProjectCard 
-            project={omniWiserProject} 
-            isLarge 
-            onSelect={() => omniWiserProject.caseStudy ? setSelectedProject(omniWiserProject) : null}
-          />
-        </div>
-      </section>
+
 
       {/* SECTION 3 — Clinical AI & Data Science */}
       <section className="py-24 bg-slate-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <h2 className="text-sm font-black tracking-widest text-emerald-500 uppercase mb-4">{commonText.clinicalAI}</h2>
-            <p className="text-xl text-slate-400 font-light max-w-2xl">{commonText.clinicalAIDesc}</p>
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">Medical Projects</h2>
           </div>
 
           <div className="space-y-8">
@@ -316,6 +306,35 @@ export default function Portfolio() {
       </section>
 
       <Certifications />
+
+      {/* SECTION — Additional Projects */}
+      <section className="py-32 bg-slate-900/30 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">Additional Projects</h2>
+          </div>
+
+          <div className="space-y-32">
+            {/* Productivity */}
+            <div>
+              <ProjectCard 
+                project={productivityProjects[0]} 
+                isLarge 
+                onSelect={() => productivityProjects[0].caseStudy ? setSelectedProject(productivityProjects[0]) : null}
+              />
+            </div>
+
+            {/* Entertainment */}
+            <div>
+              <ProjectCard 
+                project={entertainmentProjects[0]} 
+                isLarge 
+                onSelect={() => entertainmentProjects[0].caseStudy ? setSelectedProject(entertainmentProjects[0]) : null}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer / Connect */}
       <footer id="contact" className="py-24 border-t border-white/5 bg-slate-950/80 backdrop-blur-xl relative overflow-hidden">

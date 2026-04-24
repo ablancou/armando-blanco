@@ -270,6 +270,39 @@ export const featuredProjects: any[] = [
         }
       ]
     }
+  },
+  {
+    id: "music-plugins",
+    category: "Audio · DSP · C++",
+    title: "🎛️ Music Plugins",
+    tagline: "The Cosmic Blast That Transforms Your Sound.",
+    description: "Professional audio plugins with analog character, developed with modern DSP techniques. Available in VST3 and AU formats.",
+    image: "/projects/blitzarnova-v2.png",
+    url: "https://blitzarnova-dsp.vercel.app/",
+    techTags: ["C++", "JUCE Framework", "DSP", "React", "TypeScript", "Vite"],
+    caseStudy: {
+      metrics: [
+        { label: "Formats", value: "VST3 / AU" },
+        { label: "Focus", value: "Analog Character" },
+        { label: "Core", value: "C++ DSP" },
+        { label: "Stack", value: "React + Vite" }
+      ],
+      overview: "BlitzarNova DSP offers a suite of professional audio plugins designed to bring analog warmth and cosmic character to modern digital productions. Built on robust C++ DSP algorithms and wrapped in a sleek, hardware-inspired UI.",
+      sections: [
+        {
+          title: "Advanced Digital Signal Processing",
+          content: "Utilizes modern DSP techniques written in C++ to model analog circuitry, providing rich harmonics and dynamic response that rival hardware counterparts."
+        },
+        {
+          title: "Hardware-Inspired Interface",
+          content: "The user interface is designed with a dark, premium aesthetic, ensuring high legibility and intuitive control during critical mixing sessions. Every knob and meter responds smoothly."
+        },
+        {
+          title: "Cross-Platform Compatibility",
+          content: "Compiled for both macOS and Windows, supporting VST3 and AudioUnit (AU) formats to guarantee seamless integration with industry-standard Digital Audio Workstations like Ableton Live, Logic Pro, and FL Studio."
+        }
+      ]
+    }
   }
 ];
 
@@ -384,4 +417,79 @@ export const clinicalProjects: any[] = [
 // Legacy export for backward compatibility — combines all projects
 export const allProjects: any[] = [
   ...clinicalProjects.filter(p => !p.caseStudy),
+];
+
+// ─── SECTION 4: Productividad ───────────────────────────────────────────────────
+export const productivityProjects: any[] = [
+  {
+    id: "stoic-focus",
+    category: "Productivity · Minimalist · PWA",
+    title: "⏱️ Focus Timer",
+    tagline: "Focus with intention.",
+    description: "A minimalist, privacy-first Pomodoro timer designed to help you focus with intention. Features local storage for streak tracking, distraction-free interface, and zero tracking.",
+    icon: "Clock",
+    image: "/projects/stoic-focus-v2.png",
+    url: "https://stoic-focus.vercel.app/",
+    techTags: ["React", "TypeScript", "PWA", "Vite"],
+    caseStudy: {
+      metrics: [
+        { label: "Architecture", value: "Offline-First" },
+        { label: "Storage", value: "Local Only" },
+        { label: "Type", value: "PWA" },
+        { label: "Design", value: "Minimalist" }
+      ],
+      overview: "Stoic Pomodoro is a mindful productivity tool built on the principles of Stoicism. It's designed to be a quiet companion for deep work, eliminating all unnecessary distractions, accounts, and telemetry.",
+      sections: [
+        {
+          title: "Privacy-First Local Storage",
+          content: "Your tasks, statistics, and preferences live solely on your device within your browser's local storage. The application does not transmit, collect, or monetize any user data, ensuring complete privacy."
+        },
+        {
+          title: "Distraction-Free Interface",
+          content: "The UI is intentionally stripped back to the essentials. By focusing purely on typography, spacing, and subtle color cues, the application keeps your attention on the task at hand rather than the tool itself."
+        },
+        {
+          title: "Progressive Web App (PWA)",
+          content: "Fully installable on iOS, Android, and Desktop environments. It functions seamlessly offline and feels indistinguishable from a native application without the overhead of an app store."
+        }
+      ]
+    }
+  }
+];
+
+// ─── SECTION 5: Entertainment ───────────────────────────────────────────────────
+export const entertainmentProjects: any[] = [
+  {
+    id: "digital-magic",
+    category: "Entertainment · Interactive · 3D",
+    title: "🎩 🪄 Digital Magic",
+    tagline: "Are you up for a magic trick? 🎩 🪄",
+    description: "Are you up for a magic trick? 🎩 🪄 An interactive, dark-tech aesthetic digital illusion experience.",
+    image: "/projects/digital-magic-v3.png",
+    url: "https://neural-digital-wonder.vercel.app/",
+    techTags: ["Next.js", "Three.js", "Framer Motion"],
+    caseStudy: {
+      metrics: [
+        { label: "Experience", value: "Interactive" },
+        { label: "Aesthetic", value: "Dark Tech" },
+        { label: "Engine", value: "Three.js" },
+        { label: "Platform", value: "Next.js" }
+      ],
+      overview: "Digital Magic is an interactive digital illusion platform wrapped in a premium 'dark tech' aesthetic. It leverages 3D web technologies to deliver an engaging, magical experience directly in the browser.",
+      sections: [
+        {
+          title: "Immersive 3D Environment",
+          content: "The platform features a sophisticated 3D hero background with elegant wireframe orbs and orbital rings, creating a futuristic, high-end visual atmosphere."
+        },
+        {
+          title: "Interactive Illusions",
+          content: "Users are guided through a series of interactive steps that culminate in a mind-reading magic trick, powered by complex state management and seamless transitions."
+        },
+        {
+          title: "Premium UI Components",
+          content: "Utilizes deep blue-black color palettes and refined glassmorphism effects to maintain high text readability and consistent premium UI across all devices."
+        }
+      ]
+    }
+  }
 ];
