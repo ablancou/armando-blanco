@@ -120,6 +120,7 @@ export default function RootLayout({
           />
           <InteractiveBackground />
           {children}
+          <ConsentBanner />
       </body>
     </html>
   );

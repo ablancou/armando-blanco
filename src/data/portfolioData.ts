@@ -428,7 +428,7 @@ export const productivityProjects: any[] = [
     tagline: "Focus with intention.",
     description: "A minimalist, privacy-first Pomodoro timer designed to help you focus with intention. Features local storage for streak tracking, distraction-free interface, and zero tracking.",
     icon: "Clock",
-    image: "/projects/stoic-focus-v2.png",
+    image: "/projects/stoic-focus-v4.png",
     url: "https://stoic-focus.vercel.app/",
     techTags: ["React", "TypeScript", "PWA", "Vite"],
     caseStudy: {
@@ -465,7 +465,7 @@ export const entertainmentProjects: any[] = [
     title: "🎩 🪄 Digital Magic",
     tagline: "Are you up for a magic trick? 🎩 🪄",
     description: "Are you up for a magic trick? 🎩 🪄 An interactive, dark-tech aesthetic digital illusion experience.",
-    image: "/projects/digital-magic-v3.png",
+    image: "/projects/digital-magic-v4.png",
     url: "https://neural-digital-wonder.vercel.app/",
     techTags: ["Next.js", "Three.js", "Framer Motion"],
     caseStudy: {

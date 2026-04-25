@@ -9,7 +9,8 @@ import {
   Mail, 
   Home,
   MessageSquare,
-  Upload
+  Upload,
+  Award
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -18,6 +19,7 @@ const navItems = [
   { name: "About", href: "#about", icon: User },
   { name: "Projects", href: "#projects", icon: Briefcase },
   { name: "Skills", href: "#skills", icon: Cpu },
+  { name: "Certificates", href: "#certifications", icon: Award },
   { name: "Contact", href: "#contact", icon: MessageSquare },
   { name: "Share", icon: Upload, isAction: true },
 ]

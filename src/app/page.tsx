@@ -49,6 +49,7 @@ import { AIChatbot } from "@/components/AIChatbot"
 import { Certifications } from "@/components/Certifications"
 import { ProjectShowcase } from "@/components/ProjectShowcase"
 import { TechArsenal } from "@/components/TechArsenal"
+import { SectionHeader } from "@/components/SectionHeader"
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<any>(null)
@@ -247,9 +248,7 @@ export default function Portfolio() {
       {/* SECTION 1 — Elite Showcase */}
       <section id="projects" className="py-32 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white">Projects</h2>
-          </div>
+          <SectionHeader title="Projects" />
 
           <div className="space-y-12">
             {[...featuredProjects.slice(0,3), omniWiserProject, ...featuredProjects.slice(3)].map((project: any) => (
@@ -269,9 +268,7 @@ export default function Portfolio() {
       {/* SECTION 3 — Clinical AI & Data Science */}
       <section className="py-24 bg-slate-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white">Medical Projects</h2>
-          </div>
+          <SectionHeader title="Data Science Projects" />
 
           <div className="space-y-8">
             {/* Featured clinical project — full width */}
@@ -310,9 +307,7 @@ export default function Portfolio() {
       {/* SECTION — Additional Projects */}
       <section className="py-32 bg-slate-900/30 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white">Additional Projects</h2>
-          </div>
+          <SectionHeader title="Additional Projects" />
 
           <div className="space-y-32">
             {/* Productivity */}

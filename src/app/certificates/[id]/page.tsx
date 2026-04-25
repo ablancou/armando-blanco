@@ -65,22 +65,34 @@ export default async function CertificatePage({ params }: PageProps) {
       </nav>
 
       {/* PDF Viewer Container */}
-      <div className="mt-20 p-4 sm:p-6 lg:p-8" style={{ height: 'calc(100vh - 5rem)' }}>
-        <div className="h-full rounded-3xl overflow-hidden border border-white/10 bg-slate-900/50 relative group">
-          {/* Ambient Glow */}
-          <div className="absolute inset-x-0 -top-40 h-80 bg-blue-500/10 blur-[120px] pointer-events-none" />
-          
-          <iframe 
-            src={`${cert.link}#toolbar=0&navpanes=0`} 
-            className="w-full h-full border-none rounded-3xl"
-            title={cert.title}
-          />
-        </div>
-        
+      <div className="mt-20 p-4 sm:p-6 lg:p-8 flex-1 flex flex-col" style={{ height: 'calc(100vh - 5rem)' }}>
         {/* Mobile Info Bar */}
-        <div className="mt-4 sm:hidden px-4 py-3 rounded-2xl bg-white/5 border border-white/5">
+        <div className="mb-4 sm:hidden px-4 py-3 rounded-2xl bg-white/5 border border-white/5 z-10 shrink-0">
              <h2 className="text-xs font-bold text-white mb-1">{cert.title}</h2>
              <p className="text-[10px] text-slate-500 uppercase tracking-widest">{cert.issuer}</p>
+        </div>
+
+        <div className="flex-1 relative w-full h-full flex items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50">
+          {/* Ambient Glow */}
+          <div className="absolute inset-0 bg-blue-500/10 blur-[120px] pointer-events-none" />
+          
+          {/* 
+            On Desktop: w-full, h-full, no rotation.
+            On Mobile: rotate-90, swap width/height to fill the screen properly. 
+            We use a container that rotates to handle the landscape aspect ratio.
+          */}
+          <div className="
+            absolute inset-0 m-auto flex items-center justify-center
+            w-[100vh] h-[100vw] rotate-90 scale-[0.8] 
+            sm:w-full sm:h-full sm:rotate-0 sm:scale-100
+            transition-transform duration-500
+          ">
+            <iframe 
+              src={`${cert.link}#toolbar=0&navpanes=0&view=FitH`} 
+              className="w-full h-full border-none rounded-3xl shadow-2xl"
+              title={cert.title}
+            />
+          </div>
         </div>
       </div>
     </main>
