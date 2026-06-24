@@ -2,15 +2,16 @@
 
 import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { 
-  User, 
-  Briefcase, 
-  Cpu, 
-  Mail, 
+import {
+  User,
+  Briefcase,
+  Cpu,
+  Mail,
   Home,
   MessageSquare,
   Upload,
-  Award
+  Award,
+  Gamepad2
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -18,6 +19,7 @@ const navItems = [
   { name: "Home", href: "#", icon: Home },
   { name: "About", href: "#about", icon: User },
   { name: "Projects", href: "#projects", icon: Briefcase },
+  { name: "Games", href: "#games", icon: Gamepad2 },
   { name: "Skills", href: "#skills", icon: Cpu },
   { name: "Certificates", href: "#certifications", icon: Award },
   { name: "Contact", href: "#contact", icon: MessageSquare },

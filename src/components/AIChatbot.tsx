@@ -7,7 +7,7 @@ import { MessageSquare, X, Send, Sparkles, Bot, User } from "lucide-react"
 export function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<{ role: "assistant" | "user"; content: string }[]>([
-    { role: "assistant", content: "Hello! I'm Armando's virtual assistant. How can I help you explore his work today?" }
+    { role: "assistant", content: "Hey there! 👋 I'm Armando's AI assistant. Ask me anything — his projects, his stack, the 3D games and academies, his AI work, or the kind of role he's looking for. Where would you like to start?" }
   ])
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -67,6 +67,16 @@ export function AIChatbot() {
       response: "He is a specialist in **Three.js** and **WebGL**. His project **Orbital Dome** is a high-performance 3D engine that renders 100,000+ stars and real-time satellite telemetry using **SGP4 mathematical models** purely in the browser."
     },
     {
+      category: "3D Games & Interactive",
+      keywords: ["game", "games", "gaming", "racing", "racer", "drive", "soccer", "football", "tennis", "surf", "world cup", "worldcup", "aetherlynx", "coastline", "playable", "arcade"],
+      response: "Armando builds **browser-native 3D games** with Three.js/WebGL — no install required. Highlights include **Coastline Drive** (a procedurally-generated Acapulco racer built entirely in code), **The Tennis Game** (real physics, tournaments and cinematic replays), **Aetherlynx** (wave-based space combat), plus **3D Soccer**, **Surf 3D** and **WorldCupVault** (an interactive World Cup archive in 7 languages)."
+    },
+    {
+      category: "3D Learning Academies",
+      keywords: ["anatomy", "genetics", "dna", "crispr", "molecular", "academy", "academies", "atlas", "education", "learning", "chess", "interactive 3d", "study"],
+      response: "Armando created a suite of **interactive 3D learning academies**: **Genetics 3D Academy** (the central dogma of molecular biology — replication, transcription, translation and CRISPR — in real-time 3D), **Anatomy 3D Academy** (a dissectible atlas of ~90 human structures), and **Chess 3D Academy** (a 3D board with a theory-based move advisor). These are data-science & education projects, not medical services."
+    },
+    {
       category: "Health & Science",
       keywords: ["health", "medical", "clinical", "diagnostic", "statura", "pediatric", "height", "lab", "biological", "genomic"],
       response: "Armando has a unique background in **Clinical AI**. He developed **Statura Predict**, a pure-Python (Reflex) clinical tool for height predictions, and has built diagnostic pipelines for labs to transform genomic data into medical insights."
@@ -100,7 +110,7 @@ export function AIChatbot() {
     await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 800))
 
     const lowerQuery = query.toLowerCase()
-    
+
     // Scoring logic
     let bestMatch: any = null
     let maxScore = 0
@@ -119,15 +129,28 @@ export function AIChatbot() {
       }
     }
 
+    // Conversational scaffolding so the canned answers feel more natural and varied.
+    const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)]
+    const intros = ["", "", "Great question — ", "Sure thing! ", "Absolutely. ", "Happy to dig into that. "]
+    const followUps = [
+      "",
+      "",
+      " Anything else you'd like to explore?",
+      " Want me to point you to a specific project?",
+      " Curious about something else?",
+    ]
+
     let reply = ""
     if (maxScore > 0 && bestMatch) {
-      reply = bestMatch.response
-    } else if (lowerQuery.includes("contact") || lowerQuery.includes("hire") || lowerQuery.includes("email") || lowerQuery.includes("linkedin")) {
-      reply = "You can reach Armando directly via his LinkedIn profile or through the contact details provided in his professional resume. He is currently available for Senior AI + Full-Stack Engineer roles."
+      reply = pick(intros) + bestMatch.response + pick(followUps)
+    } else if (lowerQuery.includes("contact") || lowerQuery.includes("hire") || lowerQuery.includes("email") || lowerQuery.includes("linkedin") || lowerQuery.includes("available") || lowerQuery.includes("reach")) {
+      reply = "Definitely — the best way to reach Armando is through his LinkedIn (linked at the bottom of the page) or the contact section. He's currently open to senior AI + full-stack roles and high-impact consulting. Want me to summarize his strengths for a role you have in mind?"
     } else if (lowerQuery.includes("project") || lowerQuery.includes("portfolio") || lowerQuery.includes("build") || lowerQuery.includes("work")) {
-      reply = "His flagship engineering artifacts include 'Jazz Arcade' (an AI-powered education platform), 'Orbital Dome' (a real-time 3D satellite tracking engine), and clinical neural networks for medical diagnostics."
+      reply = "He's shipped a lot! A few favorites: Jazz Arcade (an AI-powered music-education platform with 3D didactic games), Orbital Dome (a real-time 3D satellite & sky engine), a SmartMedCalc data-science suite, and a whole collection of browser 3D games. Which area interests you — AI, 3D, data science, or games?"
+    } else if (lowerQuery.includes("hi") || lowerQuery.includes("hello") || lowerQuery.includes("hey") || lowerQuery.length < 4) {
+      reply = "Hey! 👋 Ask me about Armando's AI work, his 3D engines and games, the data-science projects, his cloud/AWS architecture, or what role he's after. What sounds interesting?"
     } else {
-      reply = "I am Armando's simulated portfolio assistant. I can answer questions about his 'AI Specialization', 'APIs & Integration', 'Cloud Architecture', 'Clinical Experience', 'Leadership & Biz', or his 'Tech Stack'. How can I help you?"
+      reply = "Good question! I'm a lightweight assistant, so I'm sharpest on a few topics: Armando's AI & LLM work, his Three.js/WebGL engines, the 3D games and learning academies, his cloud/AWS architecture, his 80+ certifications, or the kind of role he's looking for. Which of those would help?"
     }
 
     setMessages(prev => [...prev, { role: "assistant", content: reply }])
