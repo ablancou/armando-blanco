@@ -32,13 +32,19 @@ export function Certifications() {
   return (
     <section id="certifications" className="py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 text-center md:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-16 text-center md:text-left"
+        >
           <h2 className="text-sm font-black tracking-widest text-blue-500 uppercase mb-4">Elite Upskilling</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-white">Advanced Generative AI <span className="text-slate-500">Certifications</span></h3>
-          <p className="mt-6 text-xl text-slate-400 max-w-2xl text-balance">
+          <h3 className="text-4xl md:text-5xl font-black text-white">Advanced Generative AI <span className="text-gradient">Certifications</span></h3>
+          <p className="mt-6 text-xl text-slate-300 max-w-2xl text-balance">
             Elite collection of 80+ technical credentials, anchored by specialized mastery in Generative AI systems architecture.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((cert, idx) => {

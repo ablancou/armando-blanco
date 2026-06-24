@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     "AWS",
     "TypeScript",
     "Clinical AI",
+    "Data Science",
+    "3D Games",
+    "WebGL Games",
+    "Three.js Games",
+    "Interactive Education",
     "Mexico City",
     "Remote",
   ],
@@ -97,7 +102,7 @@ export default function RootLayout({
                 "@type": "Person",
                 "name": "Armando Blanco",
                 "jobTitle": "Senior AI + Full-Stack Engineer",
-                "url": "https://jazzarcade.com",
+                "url": "https://www.armandoblanco.dev",
                 "sameAs": [
                   "https://github.com/ablancou",
                   "https://www.linkedin.com/in/armandoblanco"

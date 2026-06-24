@@ -13,6 +13,10 @@ import {
   Eye
 } from "lucide-react"
 
+// Note on iconography: project objects reference lucide icon names as strings
+// (e.g. icon: "Dna"). The premium poster fallback in ProjectCard resolves these
+// at render time, so no direct icon import is needed here for project cards.
+
 
 export const personalInfo = {
   name: "Armando Blanco",
@@ -63,6 +67,15 @@ export const commonText = {
   engineeringArtifacts: "Curated Engineering Artifacts",
   clinicalAI: "Clinical AI & Data Science",
   clinicalAIDesc: "Diagnostic tools and neural network systems built for real-world clinical impact.",
+  // ── New section copy (2026 expansion) ──────────────────────────────────────
+  dataScienceTitle: "Data Science & Applied AI",
+  dataScienceDisclaimer: "Data-science and engineering projects built for educational and exploratory purposes. These tools are not medical devices and are not a substitute for professional clinical judgment.",
+  academiesTitle: "Interactive 3D Academies",
+  academiesDesc: "Real-time WebGL learning experiences that turn complex science and strategy into something you can rotate, dissect and explore.",
+  engineeringTitle: "Engineering & Architecture",
+  engineeringDesc: "Generative design tooling bridging architecture, civil engineering and AI-assisted modeling.",
+  gamesTitle: "3D Games & Interactive",
+  gamesDesc: "Browser-native, physics-driven worlds and interactive experiences engineered with Three.js / WebGL — no install required.",
   fortitude: "Fortitude",
   fortitudeText: "The foundational stack powering mission-critical solutions.",
   trajectory: "Trajectory",
@@ -163,12 +176,12 @@ export const featuredProjects: any[] = [
     tagline: "The gold standard for music education platforms.",
     image: "/projects/jazz-arcade.png",
     gif: "/projects/jazz-arcade.gif",
-    description: "Full-stack EdTech platform with 12 arcade games, 22+ lessons and 590+ practice exercises in 6 languages. Includes Jazz Studio (sheet music editor, chord diagrams, guitar tabs), cloud-synced XP/streak system and Gemini AI integration.",
+    description: "Full-stack EdTech platform with 12 arcade games plus a new suite of 3D didactic mini-games, 22+ lessons and 590+ practice exercises in 6 languages. Includes Jazz Studio with on-the-fly sheet-music generation, a guitar-tablature creation engine and chord diagrams, a cloud-synced XP/streak system and Gemini AI integration.",
     features: [
-      { icon: "🎯", text: "12 Interactive Games (Phaser 3)" },
-      { icon: "🤖", text: "AI-Powered Adaptive Pedagogy" },
-      { icon: "🎼", text: "Professional Notation Suite" },
-      { icon: "🌍", text: "Multi-language Global Support" }
+      { icon: "🧊", text: "New 3D Didactic Games" },
+      { icon: "🎼", text: "Sheet Music Generator" },
+      { icon: "🎸", text: "Tablature Creation Engine" },
+      { icon: "🤖", text: "AI-Powered Adaptive Pedagogy" }
     ],
     techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "GraphQL", "Phaser 3", "Gemini AI", "VexFlow"],
     caseStudy: {
@@ -185,12 +198,12 @@ export const featuredProjects: any[] = [
           content: "Pioneered the integration of Google Gemini AI to create the first adaptive 'Jazz Tutor'. The AI analyzes user performance in real-time, identifies theoretical weaknesses, and dynamically adjusts the curriculum complexity to ensure optimal learning curves."
         },
         {
-          title: "High-Performance Game Engine",
-          content: "Engineered 12 fully custom interactive mini-games using Phaser 3 and WebGL. Optimized asset delivery and rendering pipelines to ensure 60FPS performance even on low-tier mobile devices, providing a seamless, app-like experience in the browser."
+          title: "High-Performance Game Engine & New 3D Didactic Games",
+          content: "Engineered 12 fully custom interactive mini-games using Phaser 3 and WebGL, recently expanded with a new suite of immersive 3D didactic games that teach theory and ear-training in a spatial, hands-on way. Optimized asset delivery and rendering pipelines ensure 60FPS performance even on low-tier mobile devices, providing a seamless, app-like experience in the browser."
         },
         {
-          title: "Professional Notation Suite",
-          content: "Built a proprietary music notation rendering system using VexFlow that dynamically translates MIDI and JSON data into beautiful, readable standard sheet music, chord diagrams and guitar tablature on the fly, allowing for infinite procedural generation of sight-reading exercises."
+          title: "Notation, Score Generation & Tablature Studio",
+          content: "Built a proprietary music notation engine (VexFlow) that dynamically generates beautiful, readable standard sheet music, chord diagrams and full guitar tablature from MIDI/JSON on the fly. Dedicated Score Generation and Tablature Creation studios let learners produce and export their own notation, enabling infinite procedural sight-reading and fretboard exercises."
         },
         {
           title: "Global Scalability & Architecture",
@@ -351,66 +364,370 @@ export const omniWiserProject: any = {
   }
 };
 
-// ─── SECTION 3: Clinical AI & Data Science ──────────────────────────────────────
+// ─── SECTION 3: Data Science & Applied AI ───────────────────────────────────────
+// NOTE: Framed strictly as data-science / engineering work for educational and
+// exploratory use — never as a clinical claim or professional medical service.
 export const clinicalProjects: any[] = [
   {
-    id: "statura-predict",
-    category: "Clinical AI · Pediatrics · Mexico",
-    title: "Statura Predict",
-    tagline: "Mexican Pediatric Adult Height Predictor.",
-    description: "Mexican pediatric adult height predictor using anthropometric data and growth curve models. The only clinical tool of its kind calibrated for Mexican population. Built for use in clinical consultation settings.",
-    techDesc: "Combines 4 prediction methods into a weighted hybrid system with automatic outlier detection.",
+    id: "smartmedcalc-suite",
+    category: "Data Science · Health Informatics · Python",
+    title: "SmartMedCalc Suite",
+    tagline: "A 20+ calculator data-science platform for health education.",
+    description: "A full data-science platform bundling 20+ evidence-based health & nutrition calculators, regional anthropometric models and a hybrid statistical prediction engine — built end-to-end in pure Python with Reflex, installable as a PWA.",
     icon: "Calculator",
+    accent: "emerald",
     image: "/projects/smartmedcalc.png",
     url: "https://smartmedcalc-silver-apple.reflex.run/",
-    techTags: ["Python", "Reflex", "Data Science Pipelines"],
+    techTags: ["Python", "Reflex", "Statistical Modeling", "Data Pipelines", "PWA"],
+    features: [
+      { icon: "🧮", text: "20+ Calculators & Scores" },
+      { icon: "📊", text: "5-Method Hybrid Engine" },
+      { icon: "🗺️", text: "7-Zone Regional Calibration" },
+      { icon: "📱", text: "Installable PWA (iOS/Android)" }
+    ],
     caseStudy: {
       metrics: [
-        { label: "Prediction Models", value: "4 Hybrid" },
-        { label: "Accuracy", value: "Clinical Grade" },
-        { label: "Target Demo", value: "Pediatric" },
-        { label: "Tech Stack", value: "Python + Reflex" }
+        { label: "Calculators", value: "20+" },
+        { label: "Prediction Methods", value: "5 Hybrid" },
+        { label: "Regional Zones", value: "7" },
+        { label: "Tech Stack", value: "Pure Python" }
       ],
-      overview: "Statura Predict is a clinical decision-support application built for endocrinologists and pediatricians. It provides highly accurate adult height predictions specifically calibrated for the Mexican pediatric population, transforming complex datasets into immediate clinical insights.",
+      overview: "SmartMedCalc is a data-science platform that consolidates 20+ health, nutrition and anthropometric calculators behind a single, fast, installable interface. Built entirely in Python with the Reflex framework, it pairs transparent statistical modeling with a clean, distraction-free UX — designed as an educational and exploratory tool, not a medical device.",
       sections: [
         {
-          title: "Hybrid Prediction Engine",
-          content: "Rather than relying on a single fallible metric, Statura Predict combines 4 distinct prediction methodologies into a sophisticated, mathematically weighted hybrid system. This algorithmic approach minimizes individual model bias and significantly improves overall prediction accuracy."
+          title: "Hybrid Statistical Prediction Engine",
+          content: "The flagship height-prediction model blends 5 distinct statistical methods into a mathematically weighted hybrid system with a 95% confidence band and a concordance indicator measuring agreement between methods. This ensemble approach minimizes individual model bias and surfaces uncertainty honestly."
         },
         {
-          title: "Automated Outlier Detection",
-          content: "Implemented statistical guardrails that automatically detect and flag anomalous biometric inputs (outliers) in real-time. This ensures that clinical decisions are never based on data entry errors or extreme deviations, protecting patient outcomes."
+          title: "Regional Calibration & Outlier Guardrails",
+          content: "Models are calibrated across 7 regional zones using public datasets (ENSANUT 2018, INEGI 2024) and integrate bone-age input via the Greulich-Pyle scale. Automatic outlier detection with physiological clamping prevents data-entry errors from producing nonsensical results."
         },
         {
-          title: "Pure Python Full-Stack (Reflex)",
-          content: "Leveraged the Reflex framework to build the entire platform—from the predictive mathematical models to the responsive UI—strictly in Python. This architectural choice simplified the data science pipeline and eliminated the friction of context-switching between backend logic and frontend rendering."
+          title: "Pure-Python Full-Stack (Reflex)",
+          content: "Every layer — from the statistical core to the responsive UI — is written in Python via Reflex, eliminating context-switching between backend logic and frontend rendering and keeping the entire data-science pipeline in one language."
         },
         {
-          title: "Clinical UI/UX",
-          content: "Designed a distraction-free, high-contrast interface tailored for medical professionals in fast-paced clinical environments. Results are presented with clear confidence intervals and visual charts, allowing for immediate interpretation during patient consultations."
+          title: "Installable, Offline-Friendly PWA",
+          content: "Ships as a Progressive Web App installable on iOS, Android and desktop, with a high-contrast, mobile-first interface optimized for quick lookups. Built for accessibility and speed across devices."
         }
       ]
     }
   },
   {
-    id: "diabetes-prediction",
-    category: "Neural Networks · Healthcare · ML",
-    title: "Diabetes Prediction App",
-    tagline: "Neural network–based health risk classifier.",
-    description: "Neural network–based health risk classifier trained on clinical datasets for diabetes risk assessment.",
-    image: "/projects/diabetes-ai-v2.png",
-    techTags: ["Python", "PyTorch", "Streamlit"],
-    url: "https://ablancou-diabetes-prediction-app-4jhd5b.streamlit.app/"
+    id: "statura-predict",
+    category: "Data Science · Anthropometrics · Mexico",
+    title: "Statura Predict",
+    tagline: "Adult-height prediction model calibrated for Mexican data.",
+    description: "A statistical adult-height prediction module (part of the SmartMedCalc Suite) using anthropometric data and growth-curve models calibrated on Mexican population datasets. An educational data-science tool.",
+    techDesc: "Combines multiple prediction methods into a weighted hybrid system with automatic outlier detection.",
+    icon: "TrendingUp",
+    accent: "blue",
+    image: "/projects/statura-predict.png",
+    url: "https://smartmedcalc-silver-apple.reflex.run/",
+    techTags: ["Python", "Reflex", "Statistical Modeling"]
   },
   {
-    id: "medical-calculators",
-    category: "Clinical Tools · General Medicine",
-    title: "Medical Calculators Toolkit",
-    tagline: "Clinical decision support for practitioners.",
-    description: "Suite of clinical decision support calculators for general medicine practitioners — including Wells Score, CURB-65, GFR estimation and more.",
-    image: "/projects/toolkit.png",
-    techTags: ["Python", "Streamlit"],
-    url: "#"
+    id: "diabetes-prediction",
+    category: "Neural Networks · Data Science · ML",
+    title: "Diabetes Prediction App",
+    tagline: "Neural-network risk classifier trained on open datasets.",
+    description: "A neural-network risk classifier trained on open clinical datasets to explore diabetes risk signals. A machine-learning data-science demo — for education and exploration, not diagnosis.",
+    image: "/projects/diabetes-ai-v2.png",
+    icon: "BrainCircuit",
+    accent: "rose",
+    techTags: ["Python", "PyTorch", "Streamlit"],
+    url: "https://ablancou-diabetes-prediction-app-4jhd5b.streamlit.app/"
+  }
+];
+
+// ─── SECTION 3b: Interactive 3D Academies ────────────────────────────────────────
+export const academyProjects: any[] = [
+  {
+    id: "genetics-3d",
+    category: "3D Education · Molecular Biology · WebGL",
+    title: "Genetics 3D Academy",
+    tagline: "The Central Dogma, rendered in real-time 3D.",
+    description: "An immersive molecular-biology playground: explore DNA replication, transcription, translation and CRISPR in real-time 3D, and compare B-DNA vs Z-DNA side by side with GPU shaders, post-processing and HD lighting.",
+    icon: "Dna",
+    accent: "emerald",
+    image: "/projects/genetics-3d.png",
+    url: "https://genetics-3d-academy.vercel.app/",
+    techTags: ["React", "Three.js", "WebGL", "GLSL Shaders", "Post-Processing"],
+    features: [
+      { icon: "🧬", text: "B-DNA vs Z-DNA Comparison" },
+      { icon: "🔬", text: "Central Dogma Journey" },
+      { icon: "✂️", text: "CRISPR Visualization" },
+      { icon: "🎯", text: "21 Guided Challenges" }
+    ],
+    caseStudy: {
+      metrics: [
+        { label: "Modules", value: "Central Dogma" },
+        { label: "Challenges", value: "21" },
+        { label: "Rendering", value: "GLSL + HDR" },
+        { label: "License", value: "Open Source" }
+      ],
+      overview: "Genetics 3D Academy turns molecular biology into something you can hold and rotate. It renders the central dogma of molecular biology — replication, transcription, translation — plus CRISPR gene editing as interactive, scientifically-grounded 3D scenes, grounded in peer-reviewed structural data.",
+      sections: [
+        {
+          title: "Real-Time Molecular Rendering",
+          content: "Sugar-phosphate backbones, nitrogenous bases, hydrogen bonds and grooves are rendered with custom GLSL shaders, post-processing and HD lighting — fast enough to orbit and dissect in real time, with an Ultra quality mode for capable hardware."
+        },
+        {
+          title: "B-DNA vs Z-DNA Comparison",
+          content: "A side-by-side comparative mode visualizes the right-handed B-DNA helix against the left-handed Z-DNA conformation, exposing structural parameters like chirality, base-pair turns, helix pitch and groove dimensions."
+        },
+        {
+          title: "Gamified, Evidence-Based Learning",
+          content: "21 challenges guide learners through progressively harder concepts. Content is grounded in peer-reviewed research (Watson & Crick, Olson et al.), and the open-source release democratizes access to professional-grade molecular visualization."
+        }
+      ]
+    }
+  },
+  {
+    id: "anatomy-3d",
+    category: "3D Education · Human Anatomy · WebGL",
+    title: "Anatomy 3D Academy",
+    tagline: "An interactive human-anatomy atlas you can dissect.",
+    description: "An interactive 3D human-anatomy atlas spanning ~90 structures across the skeletal, muscular, nervous, cardiovascular and visceral systems — with cutting planes, camera presets, layer isolation and timed guided study tours.",
+    icon: "PersonStanding",
+    accent: "rose",
+    image: "/projects/anatomy-3d.png",
+    url: "https://anatomy-3d-academy.vercel.app/",
+    techTags: ["React", "Three.js", "WebGL", "Interactive 3D"],
+    features: [
+      { icon: "🦴", text: "~90 Labeled Structures" },
+      { icon: "🔪", text: "Cross-Section Cutting Planes" },
+      { icon: "🎥", text: "6 Camera Presets" },
+      { icon: "🧭", text: "Guided Study Tours" }
+    ],
+    caseStudy: {
+      metrics: [
+        { label: "Structures", value: "~90" },
+        { label: "Systems", value: "5" },
+        { label: "Study Tours", value: "Timed" },
+        { label: "Controls", value: "Orbit/Zoom/Pan" }
+      ],
+      overview: "Anatomy 3D Academy is an interactive atlas of the human body. Organized by region — head & neck, thorax, abdomen, pelvis, limbs and spine — it lets learners orbit, zoom, slice and isolate structures across five major systems, with real-time labels and screenshot capture.",
+      sections: [
+        {
+          title: "Comprehensive, Region-Based Atlas",
+          content: "Roughly 90 structures span the skeletal (28), muscular (26) and combined nervous, cardiovascular and visceral systems (37), organized into anatomical regions for focused study."
+        },
+        {
+          title: "Dissection-Grade Interaction",
+          content: "Drag to orbit, scroll to zoom, right-click to pan. Cross-sectional cutting planes (including dual-plane wedges), layer toggling, structure isolation and bookmarking turn a static model into a dissection table."
+        },
+        {
+          title: "Structured Learning Flow",
+          content: "Guided study tours (5–18 minutes) walk through focused regions with timed progression, a daily mastery goal tracks engagement, and keyboard shortcuts keep navigation fast."
+        }
+      ]
+    }
+  },
+  {
+    id: "chess-3d",
+    category: "3D Strategy · Learning · WebGL",
+    title: "Chess 3D Academy",
+    tagline: "Learn chess on a board that teaches you the best move.",
+    description: "An immersive 3D chess board with legal-move highlighting and a theory-based move advisor that suggests the strongest play — wrapped in six futuristic glass-and-refraction visual themes.",
+    icon: "Crown",
+    accent: "amber",
+    image: "/projects/chess-3d.png",
+    url: "https://chess-3d-academy.vercel.app/",
+    techTags: ["React", "Three.js", "WebGL", "Game Logic"],
+    features: [
+      { icon: "♟️", text: "Legal-Move Highlighting" },
+      { icon: "🧠", text: "Theory-Based Move Advisor" },
+      { icon: "💎", text: "6 Glass/Refraction Themes" },
+      { icon: "🎥", text: "Free-Orbit 3D Camera" }
+    ],
+    caseStudy: {
+      metrics: [
+        { label: "Themes", value: "6" },
+        { label: "Advisor", value: "Theory-Based" },
+        { label: "Camera", value: "Full 3D" },
+        { label: "Mode", value: "Free Play" }
+      ],
+      overview: "Chess 3D Academy reimagines learning chess as a premium 3D experience. Click a piece to light up its legal moves, rotate the board freely, and lean on a built-in advisor that recommends the strongest move based on chess theory and principles.",
+      sections: [
+        {
+          title: "Guided, Theory-First Play",
+          content: "Rather than a black-box engine, the advisor surfaces the best move according to established chess theory and principles — turning each game into a teaching moment for improving players."
+        },
+        {
+          title: "Premium 3D Presentation",
+          content: "Six futuristic themes — including Arctic Crystal, Neon Hologram and Deep Ocean — use glass and refraction effects for a modern, high-end aesthetic, with intuitive click-to-move and orbit controls."
+        }
+      ]
+    }
+  }
+];
+
+// ─── SECTION 3c: Engineering & Architecture ──────────────────────────────────────
+export const engineeringProjects: any[] = [
+  {
+    id: "aether",
+    category: "Generative Design · Architecture · Civil Engineering",
+    title: "Aether — AI-Assisted Design Studio",
+    tagline: "Generative design for architecture and civil engineering.",
+    description: "A unified generative-design platform: Aetheria guides luxury residential architecture from site context to facades and interiors with live photorealistic AI rendering, while Structura handles conceptual bridge engineering with live parametric metrics.",
+    icon: "Building2",
+    accent: "blue",
+    image: "/projects/aether.png",
+    url: "https://architecture-web-app.vercel.app/",
+    techTags: ["Next.js", "Three.js", "Generative AI", "Parametric 3D", "WebGL"],
+    features: [
+      { icon: "🏛️", text: "Aetheria — Architecture Module" },
+      { icon: "🌉", text: "Structura — Bridge Engineering" },
+      { icon: "🖼️", text: "Live Photorealistic AI Render" },
+      { icon: "📐", text: "Real-Time Engineering Metrics" }
+    ],
+    caseStudy: {
+      metrics: [
+        { label: "Modules", value: "2" },
+        { label: "Disciplines", value: "Arch + Civil" },
+        { label: "Rendering", value: "AI Real-Time" },
+        { label: "Access", value: "Free" }
+      ],
+      overview: "Aether is a single design engine powering multiple disciplines. It pairs a step-by-step architecture workflow with a parametric civil-engineering module, giving both real-time 3D feedback and generative AI rendering as the design evolves.",
+      sections: [
+        {
+          title: "Aetheria — Architecture Module",
+          content: "A step-by-step luxury residential workflow covering site context, facades, stylistic influences and interior spaces, with live 3D modeling and real-time photorealistic AI rendering. References to renowned designers are educational inspirations only — no affiliation or endorsement."
+        },
+        {
+          title: "Structura — Civil Engineering Module",
+          content: "Conceptual bridge design with configurable typology, materials, lighting and foundation, surfaced alongside live engineering metrics that update dynamically as parameters change."
+        },
+        {
+          title: "Unified Real-Time Engine",
+          content: "Both modules share one underlying engine, so 3D models and engineering calculations update together in real time — a single system spanning two design disciplines."
+        }
+      ]
+    }
+  }
+];
+
+// ─── SECTION 3d: 3D Games & Interactive ──────────────────────────────────────────
+export const gameProjects: any[] = [
+  {
+    id: "coastline-drive",
+    category: "3D Racing · Procedural · WebGL",
+    title: "Coastline Drive",
+    tagline: "A sunset Acapulco racer — built entirely in code.",
+    description: "A procedural coastal-highway racer set in Acapulco at sunset, where the entire world and vehicles are generated in code rather than modeled assets. Nitro, handbrake drifts, adjustable time-of-day and a photo mode.",
+    icon: "Car",
+    accent: "amber",
+    image: "/projects/coastline-drive.png",
+    url: "https://coastline-drive.vercel.app/",
+    techTags: ["Three.js", "WebGL", "Procedural Generation", "Physics"],
+    features: [
+      { icon: "🌅", text: "Procedural Acapulco Sunset" },
+      { icon: "⚡", text: "Nitro + Handbrake Drift" },
+      { icon: "🧊", text: "No Modeled Assets (Code-Only)" },
+      { icon: "📸", text: "Photo Mode" }
+    ]
+  },
+  {
+    id: "tennis-3d",
+    category: "3D Sports Sim · Physics · WebGL",
+    title: "The Tennis Game",
+    tagline: "Real physics, tournaments and cinematic replays.",
+    description: "A full browser tennis simulation with real ball physics, pro-style tactics, tournament brackets and cinematic replays — plus challenge, survival and practice modes and a guided tutorial.",
+    icon: "Trophy",
+    accent: "emerald",
+    image: "/projects/tennis-3d.png",
+    url: "https://the-tennis-game.vercel.app/",
+    techTags: ["Next.js", "Three.js", "WebGL", "Physics"],
+    features: [
+      { icon: "🎾", text: "Real Ball Physics" },
+      { icon: "🏆", text: "5-Round Tournaments" },
+      { icon: "⏱️", text: "Challenge & Survival Modes" },
+      { icon: "🎬", text: "Cinematic Replays" }
+    ]
+  },
+  {
+    id: "aetherlynx",
+    category: "3D Space Combat · Arcade · WebGL",
+    title: "Aetherlynx",
+    tagline: "Wave-based space combat with an unlockable arsenal.",
+    description: "A wave-based space-combat shooter: fly a craft through escalating hostile waves, manage shields and hull, read the radar, and unlock progressively powerful primary and secondary weapons via a credit system.",
+    icon: "Rocket",
+    accent: "blue",
+    image: "/projects/aetherlynx.png",
+    url: "https://aetherlynx-3d.vercel.app/play",
+    techTags: ["Three.js", "WebGL", "Game Loop", "Physics"],
+    features: [
+      { icon: "🚀", text: "Wave-Based Combat" },
+      { icon: "🛡️", text: "Shield & Hull System" },
+      { icon: "🎯", text: "Mission Variety" },
+      { icon: "🔫", text: "Unlockable Weapon Tiers" }
+    ]
+  },
+  {
+    id: "soccer-3d",
+    category: "3D Sports · Arcade · WebGL",
+    title: "3D Soccer Game",
+    tagline: "Browser-native 3D football, no install required.",
+    description: "A scene-based 3D soccer game running entirely in the browser via WebGL — built as a real-time interactive sports experience.",
+    icon: "Goal",
+    accent: "emerald",
+    image: "/projects/soccer-3d.png",
+    url: "https://3d-soccer-game.vercel.app/",
+    techTags: ["Three.js", "WebGL", "Real-Time 3D"]
+  },
+  {
+    id: "surf-3d",
+    category: "3D Sports · Arcade · WebGL",
+    title: "Surf 3D",
+    tagline: "Ride the wave — a real-time 3D surfing experience.",
+    description: "A real-time 3D wave-riding game built for the browser with Three.js / WebGL.",
+    icon: "Waves",
+    accent: "blue",
+    image: "/projects/surf-3d.png",
+    url: "https://surf-3d.vercel.app/",
+    techTags: ["Three.js", "WebGL", "Real-Time 3D"]
+  },
+  {
+    id: "worldcup-vault",
+    category: "Sports · Interactive Archive · i18n",
+    title: "WorldCupVault",
+    tagline: "A cinematic, interactive World Cup archive (1930–2022).",
+    description: "An independent, cinematic football-history archive covering every World Cup from 1930 to 2022 — with a 2026 bracket predictor, group-stage visualizer, knowledge quiz and full support for 7 languages.",
+    icon: "Globe",
+    accent: "amber",
+    image: "/projects/worldcup-vault.png",
+    url: "https://theworldcupvault.vercel.app/en",
+    techTags: ["Next.js", "TypeScript", "i18n", "Data Viz"],
+    features: [
+      { icon: "🏆", text: "Every Final, 1930–2022" },
+      { icon: "🔮", text: "2026 Bracket Predictor" },
+      { icon: "❓", text: "World Cup Knowledge Quiz" },
+      { icon: "🌐", text: "7 Languages" }
+    ],
+    caseStudy: {
+      metrics: [
+        { label: "Tournaments", value: "1930–2022" },
+        { label: "Languages", value: "7" },
+        { label: "Predictor", value: "2026" },
+        { label: "Type", value: "Interactive Archive" }
+      ],
+      overview: "WorldCupVault is an independent, cinematic archive of more than a century of World Cup football. It pairs a complete historical record with interactive tools, and is explicitly not affiliated with or endorsed by FIFA or any federation.",
+      sections: [
+        {
+          title: "A Century of History, Explorable",
+          content: "Championship records, match scores and top-scorer statistics span every tournament from 1930 to 2022, browsable through a historical explorer."
+        },
+        {
+          title: "Interactive Tools",
+          content: "A 2026 bracket predictor (12 groups with format details), group-stage visualization and a knowledge quiz turn passive history into active exploration."
+        },
+        {
+          title: "Global by Default",
+          content: "The entire experience is localized across 7 languages — English, Spanish, French, Italian, German, Japanese and Mandarin Chinese."
+        }
+      ]
+    }
   }
 ];
 

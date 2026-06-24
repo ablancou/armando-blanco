@@ -3,6 +3,7 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { 
   ArrowRight, 
@@ -21,15 +22,32 @@ import {
   Zap,
   CheckCircle2,
   Globe,
-  Trophy
+  Trophy,
+  Calculator,
+  TrendingUp,
+  BrainCircuit,
+  Dna,
+  PersonStanding,
+  Crown,
+  Building2,
+  Car,
+  Rocket,
+  Goal,
+  Waves,
+  Eye,
+  Box,
+  GraduationCap
 } from "lucide-react"
 
-import { 
+import {
   commonText,
   techStack,
   featuredProjects,
   omniWiserProject,
   clinicalProjects,
+  academyProjects,
+  engineeringProjects,
+  gameProjects,
   productivityProjects,
   entertainmentProjects,
   allProjects,
@@ -37,6 +55,23 @@ import {
   personalInfo,
   socials
 } from "@/data/portfolioData"
+
+// Resolve the lucide icon name a project declares (e.g. icon: "Dna") to a component
+// for the premium poster fallback used when a project has no screenshot yet.
+const PROJECT_ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  Calculator, TrendingUp, BrainCircuit, Dna, PersonStanding, Crown,
+  Building2, Car, Rocket, Goal, Waves, Globe, Trophy, Eye, Box, Monitor
+}
+
+// Brand-consistent gradient tints for the poster fallback, keyed by project.accent.
+const ACCENT_STYLES: Record<string, { from: string; glow: string; icon: string }> = {
+  blue:    { from: "from-blue-600/30",    glow: "bg-blue-500/20",    icon: "text-blue-300" },
+  emerald: { from: "from-emerald-600/30", glow: "bg-emerald-500/20", icon: "text-emerald-300" },
+  rose:    { from: "from-rose-600/30",    glow: "bg-rose-500/20",    icon: "text-rose-300" },
+  amber:   { from: "from-amber-600/30",   glow: "bg-amber-500/20",   icon: "text-amber-300" },
+}
+
+const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false })
 
 
 import Navbar from "@/components/Navbar"
@@ -109,8 +144,11 @@ export default function Portfolio() {
         {/* Animated Background Elements */}
         <div className="absolute top-1/4 -left-10 sm:-left-20 w-60 h-60 sm:w-80 sm:h-80 bg-blue-600/10 rounded-full blur-[120px] animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-10 sm:-right-20 w-60 h-60 sm:w-80 sm:h-80 bg-emerald-500/10 rounded-full blur-[120px] animate-pulse-slow" />
-        
-        <motion.div 
+
+        {/* Immersive 3D scene — sits behind the hero copy */}
+        <Hero3D />
+
+        <motion.div
           style={{ opacity, scale }}
           className="max-w-7xl mx-auto w-full z-10 text-center"
         >
@@ -143,7 +181,7 @@ export default function Portfolio() {
               <span className="text-gradient">{commonText.heroTitle.split(' ').slice(-1)}</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light text-balance">
+            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light text-balance">
               Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>. Senior AI + Full-Stack Engineer &mdash; Independent Consultant.
               <br /><br />
               With over 12 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.
@@ -192,7 +230,7 @@ export default function Portfolio() {
               <span className="w-12 h-1.5 bg-blue-500 rounded-full"></span>
               {commonText.vision}
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed text-balance">
+            <p className="text-slate-300 text-lg leading-relaxed text-balance">
               {commonText.visionText}
             </p>
           </div>
@@ -239,6 +277,31 @@ export default function Portfolio() {
                 </div>}
               />
             </BentoGrid>
+
+            {/* Teaching / thought-leadership — discreet badge linking to the live AI course */}
+            <motion.a
+              href="https://www.skool.com/adopcion-inteligente-de-ia-8506"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3 }}
+              className="glass-card group flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-6 rounded-3xl border-white/5 hover:border-blue-500/40 transition-colors no-underline"
+            >
+              <div className="flex items-center gap-4 flex-1">
+                <div className="shrink-0 w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                  <GraduationCap size={24} />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-bold text-white">Teaching AI Adoption</h3>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Live Course</span>
+                  </div>
+                  <p className="text-slate-400 text-sm mt-0.5">Sharing applied AI in a hands-on community course on Skool.</p>
+                </div>
+              </div>
+              <span className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 group-hover:bg-blue-500/20 border border-white/10 group-hover:border-blue-500/40 text-white text-sm font-semibold transition-colors">
+                View Course <ExternalLink size={15} />
+              </span>
+            </motion.a>
           </div>
         </div>
       </section>
@@ -265,29 +328,95 @@ export default function Portfolio() {
 
 
 
-      {/* SECTION 3 — Clinical AI & Data Science */}
-      <section className="py-24 bg-slate-900/20">
+      {/* SECTION 3 — Data Science & Applied AI */}
+      <section id="data-science" className="py-24 bg-slate-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title="Data Science Projects" />
+          <SectionHeader title={commonText.dataScienceTitle} />
+
+          {/* Educational/exploratory framing — not a clinical claim */}
+          <p className="text-slate-400 text-sm leading-relaxed max-w-3xl mb-10 -mt-4 italic">
+            {commonText.dataScienceDisclaimer}
+          </p>
 
           <div className="space-y-8">
-            {/* Featured clinical project — full width */}
-            <ProjectCard 
-              project={clinicalProjects[0]} 
-              isLarge 
+            {/* Flagship hub — full width */}
+            <ProjectCard
+              project={clinicalProjects[0]}
+              isLarge
               onSelect={() => clinicalProjects[0].caseStudy ? setSelectedProject(clinicalProjects[0]) : null}
             />
 
-            {/* Other clinical projects — grid */}
+            {/* Highlighted individual projects — grid */}
             <div className="grid md:grid-cols-2 gap-8">
               {clinicalProjects.slice(1).map((project: any) => (
-                <ProjectCard 
-                  key={project.id} 
-                  project={project} 
+                <ProjectCard
+                  key={project.id}
+                  project={project}
                   onSelect={() => project.caseStudy ? setSelectedProject(project) : null}
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3b — Interactive 3D Academies */}
+      <section id="academies" className="py-24 bg-slate-900/30 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader title={commonText.academiesTitle} />
+          <p className="text-slate-300 text-base leading-relaxed max-w-3xl mb-12 -mt-4 font-light">
+            {commonText.academiesDesc}
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {academyProjects.map((project: any) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onSelect={() => project.caseStudy ? setSelectedProject(project) : null}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3c — Engineering & Architecture */}
+      <section id="engineering" className="py-24 bg-slate-900/20 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader title={commonText.engineeringTitle} />
+          <p className="text-slate-300 text-base leading-relaxed max-w-3xl mb-12 -mt-4 font-light">
+            {commonText.engineeringDesc}
+          </p>
+
+          <div className="space-y-8">
+            {engineeringProjects.map((project: any) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                isLarge
+                onSelect={() => project.caseStudy ? setSelectedProject(project) : null}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3d — 3D Games & Interactive */}
+      <section id="games" className="py-24 bg-slate-900/30 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader title={commonText.gamesTitle} />
+          <p className="text-slate-300 text-base leading-relaxed max-w-3xl mb-12 -mt-4 font-light">
+            {commonText.gamesDesc}
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {gameProjects.map((project: any) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onSelect={() => project.caseStudy ? setSelectedProject(project) : null}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -337,7 +466,7 @@ export default function Portfolio() {
         
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-5xl md:text-7xl font-black mb-8">{commonText.footerTitle.split(' ').slice(0, -1).join(' ')} <span className="text-gradient">{commonText.footerTitle.split(' ').slice(-1)}</span></h2>
-          <p className="text-slate-400 text-xl mb-16 max-w-2xl mx-auto font-light leading-relaxed text-balance">
+          <p className="text-slate-300 text-xl mb-16 max-w-2xl mx-auto font-light leading-relaxed text-balance">
             {commonText.footerText}
           </p>
           
@@ -402,15 +531,16 @@ export default function Portfolio() {
 }
 
 function ProjectCard({ project, isLarge = false, onSelect }: { project: any, isLarge?: boolean, onSelect?: () => void }) {
-  const [isHovered, setIsHovered] = useState(false)
+  // If a wired image path doesn't exist yet (or fails to load), fall back to the
+  // premium poster instead of showing a broken image. Lets us wire AI-cover paths
+  // ahead of the assets being dropped into public/projects/.
+  const [imgError, setImgError] = useState(false)
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className={cn(
         "glass-card p-0 rounded-[2.5rem] overflow-hidden group cursor-pointer border-white/5 hover:border-blue-500/40",
         isLarge ? "flex flex-col lg:flex-row" : "flex flex-col"
@@ -423,30 +553,43 @@ function ProjectCard({ project, isLarge = false, onSelect }: { project: any, isL
       )}>
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10" />
         
-        {/* Project Image */}
-        {project.image ? (
-          <Image 
-            src={project.image} 
+        {/* Project Image, or a premium gradient+icon poster fallback */}
+        {project.image && !imgError ? (
+          <Image
+            src={project.image}
             alt={project.title}
             fill
+            onError={() => setImgError(true)}
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-slate-800">
-            <div className="flex flex-col items-center gap-4 opacity-40 group-hover:opacity-100 transition-opacity duration-700">
-              {isHovered && project.gif ? (
-                 <div className="animate-pulse flex flex-col items-center text-blue-400">
-                    <Monitor size={64} />
-                    <span className="text-xs font-mono uppercase mt-2 tracking-widest">Hover Playback Mode</span>
-                 </div>
-              ) : (
-                  <div className="flex flex-col items-center text-slate-500">
-                    <Monitor size={48} />
-                    <span className="text-xs font-mono uppercase mt-2 tracking-widest">{project.title} Preview</span>
-                  </div>
-              )}
-            </div>
-          </div>
+          (() => {
+            const accent = ACCENT_STYLES[project.accent as string] ?? ACCENT_STYLES.blue
+            const PosterIcon = PROJECT_ICONS[project.icon as string] ?? Box
+            return (
+              <div className={cn(
+                "w-full h-full relative flex items-center justify-center overflow-hidden bg-gradient-to-br to-slate-950",
+                accent.from
+              )}>
+                {/* Soft glow + faint grid texture for depth */}
+                <div className={cn("absolute -top-1/3 left-1/2 -translate-x-1/2 w-2/3 aspect-square rounded-full blur-[80px] transition-all duration-700 group-hover:scale-125", accent.glow)} />
+                <div
+                  className="absolute inset-0 opacity-[0.12]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, rgba(255,255,255,0.25) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.25) 1px, transparent 1px)",
+                    backgroundSize: "44px 44px",
+                  }}
+                />
+                <div className="relative z-10 flex flex-col items-center gap-4">
+                  <PosterIcon size={72} className={cn("transition-transform duration-700 group-hover:scale-110", accent.icon)} />
+                  <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-slate-300/70">
+                    {project.title}
+                  </span>
+                </div>
+              </div>
+            )
+          })()
         )}
 
         {/* Category Badge */}
