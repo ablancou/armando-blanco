@@ -183,7 +183,7 @@ export default function Portfolio() {
             <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light text-balance">
               Hi, I&apos;m <span className="text-white font-medium">{personalInfo.name}</span>. Senior AI + Full-Stack Engineer &mdash; Independent Consultant.
               <br /><br />
-              With over 12 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.
+              With over 12 years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js, React, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
@@ -268,14 +268,22 @@ export default function Portfolio() {
               />
               <BentoGridItem
                 title="The Toolkit"
-                description="Next.js, PyTorch, AWS, and modern DevOps."
+                description="My core stack."
                 className="md:col-span-1"
                 titleFirst
-                header={<div className="flex flex-wrap gap-2">
-                  {techStack.map((ts: any) => (
-                    <span key={ts.name} className="px-2 py-1 bg-slate-800 rounded-lg text-[10px] text-blue-400 border border-blue-500/10 uppercase tracking-tighter">{ts.name}</span>
-                  ))}
-                </div>}
+                header={
+                  <ul className="flex flex-col gap-2.5">
+                    {techStack.map((ts: any) => (
+                      <li key={ts.name} className="flex items-start gap-3">
+                        <span className="mt-1.5 w-1.5 h-1.5 shrink-0 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
+                        <div className="leading-tight">
+                          <div className="text-sm font-semibold text-slate-100">{ts.name}</div>
+                          <div className="text-xs text-slate-400">{ts.desc}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                }
               />
             </BentoGrid>
           </div>

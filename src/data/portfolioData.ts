@@ -55,7 +55,7 @@ export const personalInfo = {
 
 export const commonText = {
   heroTitle: "Turning Complexity Into Simplicity",
-  heroSubtitle: "Senior AI + Full-Stack Engineer — Independent Consultant. With 12+ years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js 15, React 18, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.",
+  heroSubtitle: "Senior AI + Full-Stack Engineer — Independent Consultant. With 12+ years of experience architecting and delivering high-complexity full-stack solutions. Specialized in Next.js, React, Three.js/WebGL, Python (PyTorch/Reflex), TypeScript and AWS serverless architectures. I build real-time 3D interactive engines, gamified EdTech platforms and data-driven systems with end-to-end ownership.",
   exploreWork: "Explore My Work",
   letBuild: "Let's Build Together",
   visitPlatform: "Visit Platform",
@@ -86,7 +86,7 @@ export const commonText = {
 
 export const techStack = [
   { name: "Python", desc: "Scientific computing & AI backbone", url: "https://www.python.org/" },
-  { name: "Next.js 15", desc: "Modern full-stack web excellence", url: "https://nextjs.org/" },
+  { name: "Next.js", desc: "Modern full-stack web excellence", url: "https://nextjs.org/" },
   { name: "PyTorch", desc: "Deep learning & neural research", url: "https://pytorch.org/" },
   { name: "AWS", desc: "Enterprise cloud infrastructure", url: "https://aws.amazon.com/" }
 ];
@@ -147,7 +147,7 @@ export const technicalExpertise = [
   {
     category: "Architecture & Systems",
     icon: Server,
-    skills: ["Next.js 15", "Microservices", "System Design", "Scalable Data Pipelines"]
+    skills: ["Next.js", "Microservices", "System Design", "Scalable Data Pipelines"]
   },
   {
     category: "Intelligence & Data",
@@ -157,7 +157,7 @@ export const technicalExpertise = [
   {
     category: "Web & UX",
     icon: Layout,
-    skills: ["React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "UI Engineering"]
+    skills: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "UI Engineering"]
   },
   {
     category: "Cloud Ops",
@@ -183,13 +183,13 @@ export const featuredProjects: any[] = [
       { icon: "🎸", text: "Tablature Creation Engine" },
       { icon: "🤖", text: "AI-Powered Adaptive Pedagogy" }
     ],
-    techTags: ["Next.js 15", "TypeScript", "AWS Amplify", "GraphQL", "Phaser 3", "Gemini AI", "VexFlow"],
+    techTags: ["Next.js", "TypeScript", "AWS Amplify", "GraphQL", "Phaser 3", "Gemini AI", "VexFlow"],
     caseStudy: {
       metrics: [
         { label: "Arcade Games", value: "12" },
         { label: "Practice Items", value: "590+" },
         { label: "Languages", value: "6" },
-        { label: "Framework", value: "Next.js 15" }
+        { label: "Framework", value: "Next.js" }
       ],
       overview: "Jazz Arcade is a high-traffic, cutting-edge music education platform that serves a global audience. It bridges the gap between complex music theory and interactive learning by integrating a custom-built AI tutor powered by Google Gemini, alongside a suite of 12 highly interactive, low-latency browser games built with Phaser 3.",
       sections: [

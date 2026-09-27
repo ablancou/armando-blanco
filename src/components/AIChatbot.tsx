@@ -39,7 +39,7 @@ export function AIChatbot() {
     {
       category: "Frontend & Web",
       keywords: ["frontend", "react", "nextjs", "next.js", "typescript", "tailwind", "css", "framermotion", "framer", "ux", "ui", "styling", "responsive"],
-      response: "Armando builds with **Next.js 15** and **TypeScript**. He's an expert in **Framer Motion** for high-performance animations and **UI Engineering**. He prioritize type-safe, accessible, and ultra-responsive frontend architectures."
+      response: "Armando builds with **Next.js** and **TypeScript**. He's an expert in **Framer Motion** for high-performance animations and **UI Engineering**. He prioritize type-safe, accessible, and ultra-responsive frontend architectures."
     },
     {
       category: "Backend & Data",
@@ -94,7 +94,7 @@ export function AIChatbot() {
     {
       category: "Tech Stack",
       keywords: ["tech", "stack", "tools", "languages", "toolkit", "technology", "development", "build"],
-      response: "Armando's core toolkit includes **Python (AI/Data)**, **Next.js 15 (Full-Stack)**, **TypeScript**, and **AWS (Infrastructure)**. He is an expert in **PyTorch** for neural research, **Three.js/WebGL** for interactive 3D, and the **GenAI** ecosystem (Gemini, Claude, Grok)."
+      response: "Armando's core toolkit includes **Python (AI/Data)**, **Next.js (Full-Stack)**, **TypeScript**, and **AWS (Infrastructure)**. He is an expert in **PyTorch** for neural research, **Three.js/WebGL** for interactive 3D, and the **GenAI** ecosystem (Gemini, Claude, Grok)."
     }
   ]
 

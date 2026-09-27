@@ -4,8 +4,8 @@ import React from "react"
 import { motion } from "framer-motion"
 
 const topSkills = [
-  "Next.js 15", "TypeScript", "Python", "PyTorch", "LLMs", "Three.js",
-  "WebGL", "AWS", "React 18", "Node.js", "Phaser 3"
+  "Next.js", "TypeScript", "Python", "PyTorch", "LLMs", "Three.js",
+  "WebGL", "AWS", "React", "Node.js", "Phaser 3"
 ]
 
 export function TechArsenal() {

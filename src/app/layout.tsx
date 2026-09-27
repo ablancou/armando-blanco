@@ -18,17 +18,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.armandoblanco.dev"),
   title: {
     default:
-      "🚀 Armando Blanco — Senior AI + Full-Stack Engineer | Next.js 15, PyTorch, LLMs",
+      "🚀 Armando Blanco — Senior AI + Full-Stack Engineer | Next.js, PyTorch, LLMs",
     template: "🚀 %s | Armando Blanco",
   },
   description:
-    "12+ years shipping high-complexity systems. Next.js 15, Python/PyTorch, LLMs, Three.js/WebGL, AWS. Clinical AI, gamified EdTech, real-time 3D engines. Available for senior remote roles and high-impact consulting.",
+    "12+ years shipping high-complexity systems. Next.js, Python/PyTorch, LLMs, Three.js/WebGL, AWS. Clinical AI, gamified EdTech, real-time 3D engines. Available for senior remote roles and high-impact consulting.",
   keywords: [
     "Senior Software Engineer",
     "AI Engineer",
     "LLM Engineer",
     "Full-Stack Engineer",
-    "Next.js 15",
+    "Next.js",
     "PyTorch",
     "Three.js",
     "WebGL",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Armando Blanco",
     title: "🚀 Armando Blanco — Senior AI + Full-Stack Engineer",
     description:
-      "Senior engineer · 12+ yrs · Next.js 15, PyTorch, LLMs, Three.js/WebGL, AWS · Clinical AI & EdTech · Remote-first.",
+      "Senior engineer · 12+ yrs · Next.js, PyTorch, LLMs, Three.js/WebGL, AWS · Clinical AI & EdTech · Remote-first.",
     images: [
       {
         url: "/og-image.png",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "🚀 Armando Blanco — Senior AI + Full-Stack Engineer",
     description:
-      "12+ yrs · Next.js 15, PyTorch, LLMs, Three.js/WebGL · Clinical AI & EdTech · Remote.",
+      "12+ yrs · Next.js, PyTorch, LLMs, Three.js/WebGL · Clinical AI & EdTech · Remote.",
     images: ["/og-image.png"],
     creator: "@armandoblanco",
   },
