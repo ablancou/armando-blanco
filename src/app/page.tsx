@@ -35,8 +35,7 @@ import {
   Goal,
   Waves,
   Eye,
-  Box,
-  GraduationCap
+  Box
 } from "lucide-react"
 
 import {
@@ -277,31 +276,6 @@ export default function Portfolio() {
                 </div>}
               />
             </BentoGrid>
-
-            {/* Teaching / thought-leadership — discreet badge linking to the live AI course */}
-            <motion.a
-              href="https://www.skool.com/adopcion-inteligente-de-ia-8506"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ y: -3 }}
-              className="glass-card group flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-6 rounded-3xl border-white/5 hover:border-blue-500/40 transition-colors no-underline"
-            >
-              <div className="flex items-center gap-4 flex-1">
-                <div className="shrink-0 w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                  <GraduationCap size={24} />
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-bold text-white">Teaching AI Adoption</h3>
-                    <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Live Course</span>
-                  </div>
-                  <p className="text-slate-400 text-sm mt-0.5">Sharing applied AI in a hands-on community course on Skool.</p>
-                </div>
-              </div>
-              <span className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 group-hover:bg-blue-500/20 border border-white/10 group-hover:border-blue-500/40 text-white text-sm font-semibold transition-colors">
-                View Course <ExternalLink size={15} />
-              </span>
-            </motion.a>
           </div>
         </div>
       </section>
