@@ -11,6 +11,12 @@ interface BentoItemProps {
   description?: string
   header?: React.ReactNode
   icon?: React.ReactNode
+  /**
+   * Render the title/description above the `header` content instead of below it.
+   * Use when `header` holds supporting content (links, tags) that reads better
+   * underneath its heading, rather than a badge meant to sit on top.
+   */
+  titleFirst?: boolean
 }
 
 export const BentoGrid = ({
@@ -38,7 +44,24 @@ export const BentoGridItem = ({
   description,
   header,
   icon,
+  titleFirst = false,
 }: BentoItemProps) => {
+  const titleBlock = (
+    <div className={cn("group-hover:translate-x-2 transition duration-200", titleFirst ? "mb-4" : "mt-2")}>
+      {icon && <div className="mb-2 text-blue-400">{icon}</div>}
+      <div className="font-bold text-slate-100 mb-1">
+        {title}
+      </div>
+      <div className="font-normal text-slate-400 text-xs">
+        {description}
+      </div>
+    </div>
+  )
+
+  const headerBlock = header ? (
+    <div className={titleFirst ? "" : "mb-4"}>{header}</div>
+  ) : null
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -51,16 +74,17 @@ export const BentoGridItem = ({
       )}
     >
       <div className="flex flex-col h-full">
-        {header && <div className="mb-4">{header}</div>}
-        <div className="group-hover:translate-x-2 transition duration-200 mt-2">
-          {icon && <div className="mb-2 text-blue-400">{icon}</div>}
-          <div className="font-bold text-slate-100 mb-1">
-            {title}
-          </div>
-          <div className="font-normal text-slate-400 text-xs">
-            {description}
-          </div>
-        </div>
+        {titleFirst ? (
+          <>
+            {titleBlock}
+            {headerBlock}
+          </>
+        ) : (
+          <>
+            {headerBlock}
+            {titleBlock}
+          </>
+        )}
       </div>
     </motion.div>
   )

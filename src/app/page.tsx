@@ -257,6 +257,7 @@ export default function Portfolio() {
                 title="Coding Profiles"
                 description="Verified algorithms & data structures expertise."
                 className="md:col-span-1"
+                titleFirst
                 header={
                   <div className="flex flex-col gap-2 relative z-50">
                     <a href="https://leetcode.com/u/ablancou/" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.LeetCode} LeetCode</a>
@@ -269,6 +270,7 @@ export default function Portfolio() {
                 title="The Toolkit"
                 description="Next.js, PyTorch, AWS, and modern DevOps."
                 className="md:col-span-1"
+                titleFirst
                 header={<div className="flex flex-wrap gap-2">
                   {techStack.map((ts: any) => (
                     <span key={ts.name} className="px-2 py-1 bg-slate-800 rounded-lg text-[10px] text-blue-400 border border-blue-500/10 uppercase tracking-tighter">{ts.name}</span>
