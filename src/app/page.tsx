@@ -261,9 +261,9 @@ export default function Portfolio() {
                 titleFirst
                 header={
                   <div className="flex flex-col gap-2 relative z-50">
-                    <a href="https://leetcode.com/u/ablancou/" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.LeetCode} LeetCode</a>
-                    <a href="https://www.hackerrank.com/profile/ablancou" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.HackerRank} HackerRank</a>
-                    <a href="https://www.sololearn.com/es/profile/3850882" target="_blank" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.SoloLearn} SoloLearn</a>
+                    <a href="https://leetcode.com/u/ablancou/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.LeetCode} LeetCode</a>
+                    <a href="https://www.hackerrank.com/profile/ablancou" target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.HackerRank} HackerRank</a>
+                    <a href="https://www.sololearn.com/es/profile/3850882" target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-slate-800/80 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-blue-500/20 border border-white/5 hover:border-blue-500/30 transition-all flex items-center gap-2">{BrandLogos.SoloLearn} SoloLearn</a>
                   </div>
                 }
               />
@@ -481,12 +481,12 @@ export default function Portfolio() {
                       brandColors[social.icon as keyof typeof brandColors]
                     )}
                   >
-                    <div className="relative z-10">
+                    <div className="relative z-10" aria-hidden="true">
                       {BrandLogos[social.icon as keyof typeof BrandLogos] || <ExternalLink size={20} />}
                     </div>
-                    {social.name !== "X" && (
-                      <span className="relative z-10 tracking-tight">{social.name}</span>
-                    )}
+                    {/* X shows only its logo, so its name is kept for screen readers */}
+                    <span className={social.name === "X" ? "sr-only" : "relative z-10 tracking-tight"}>{social.name}</span>
+                    <span className="sr-only">(opens in a new tab)</span>
                     
                     {/* Gloss Reflection effect */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-x-full group-hover:translate-x-full" />
@@ -496,13 +496,13 @@ export default function Portfolio() {
             </div>
           
           <div className="flex flex-col items-center gap-6 pt-12 border-t border-white/5">
-            <div className="flex items-center gap-8 text-xs font-medium text-slate-500 tracking-wide">
+            <div className="flex items-center gap-8 text-xs font-medium text-slate-400 tracking-wide">
               <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
               <div className="w-1 h-1 rounded-full bg-slate-800" />
               <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms & Conditions</Link>
             </div>
             
-            <p className="text-slate-700 text-[10px] font-medium tracking-tight">
+            <p className="text-slate-400 text-[10px] font-medium tracking-tight">
               © {new Date().getFullYear()} {personalInfo.name}. All systems operational.
             </p>
           </div>
