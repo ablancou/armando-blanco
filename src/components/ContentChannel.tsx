@@ -86,10 +86,10 @@ export function ContentChannel() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start"
+          className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-stretch"
         >
           {/* Channel card */}
-          <div className="lg:col-span-2 min-w-0 glass rounded-[2rem] p-6 sm:p-8">
+          <div className="lg:col-span-2 min-w-0 flex flex-col glass rounded-[2rem] p-6 sm:p-8">
             <p lang="es" className="text-lg sm:text-xl font-bold text-white mb-3 text-balance">
               {brand}
             </p>
@@ -97,7 +97,7 @@ export function ContentChannel() {
               {description}
             </p>
 
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 mt-auto">
               {profiles.map((profile) => (
                 <li key={profile.name}>
                   <a
@@ -107,8 +107,10 @@ export function ContentChannel() {
                     className={`flex items-center gap-3 w-full min-w-0 min-h-[44px] px-5 py-3 rounded-xl bg-blue-950/40 border border-blue-900/40 text-slate-200 hover:text-white hover:bg-blue-600/10 hover:border-blue-500/50 transition-colors ${focusRing}`}
                   >
                     {PROFILE_ICONS[profile.icon]}
-                    <span className="font-semibold">{profile.name}</span>
-                    <span className="min-w-0 text-sm text-slate-400 truncate">{profile.handle}</span>
+                    <span className="flex flex-col min-w-0 leading-tight">
+                      <span className="font-semibold">{profile.name}</span>
+                      <span className="text-sm text-slate-400 truncate">{profile.handle}</span>
+                    </span>
                     <ExternalLink size={16} className="ml-auto shrink-0 text-slate-400" aria-hidden="true" />
                     <span className="sr-only">(opens in a new tab)</span>
                   </a>
@@ -122,10 +124,10 @@ export function ContentChannel() {
             ref={panelRef}
             tabIndex={-1}
             aria-label="Latest TikTok videos"
-            className="lg:col-span-3 min-w-0 glass rounded-[2rem] overflow-hidden focus:outline-none"
+            className="lg:col-span-3 min-w-0 flex flex-col glass rounded-[2rem] overflow-hidden focus:outline-none"
           >
             {feed === "idle" ? (
-              <div className="flex flex-col items-center justify-center text-center gap-5 px-6 py-10 sm:p-10 min-h-[280px] sm:min-h-[340px] [@media(max-height:500px)]:min-h-0 [@media(max-height:500px)]:py-6 [@media(max-height:500px)]:gap-4">
+              <div className="flex-1 flex flex-col items-center justify-center text-center gap-5 px-6 py-10 sm:p-10 min-h-[280px] sm:min-h-[340px] [@media(max-height:500px)]:min-h-0 [@media(max-height:500px)]:py-6 [@media(max-height:500px)]:gap-4">
                 <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-300">
                   <TikTokLogo className="w-8 h-8" />
                 </div>
