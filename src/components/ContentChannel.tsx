@@ -8,7 +8,6 @@ import { SectionHeader } from "@/components/SectionHeader"
 import { contentChannel } from "@/data/portfolioData"
 
 const TIKTOK_EMBED_SRC = "https://www.tiktok.com/embed.js"
-// If TikTok hasn't rendered its iframe by then, assume it was blocked.
 const EMBED_TIMEOUT_MS = 15000
 
 const focusRing =
@@ -47,13 +46,19 @@ export function ContentChannel() {
 
     container.innerHTML = `<blockquote class="tiktok-embed" cite="${tiktok.url}" data-unique-id="${tiktok.handle}" data-embed-type="creator" style="max-width:780px;min-width:288px;margin:0 auto;"><section><a target="_blank" rel="noopener noreferrer" href="${tiktok.url}?refer=creator_embed">@${tiktok.handle}</a></section></blockquote>`
 
+    // Keep the loading status until TikTok's iframe has actually painted.
     const observer = new MutationObserver(() => {
-      if (container.querySelector("iframe")) setFeed("ready")
+      const iframe = container.querySelector("iframe")
+      if (!iframe) return
+      observer.disconnect()
+      iframe.addEventListener("load", () => setFeed("ready"), { once: true })
     })
     observer.observe(container, { childList: true, subtree: true })
 
+    // No iframe by now → blocked. An iframe that never fires "load" still ends
+    // the loading state so the spinner can't hang.
     const timeout = window.setTimeout(() => {
-      if (!container.querySelector("iframe")) setFeed("error")
+      setFeed(container.querySelector("iframe") ? "ready" : "error")
     }, EMBED_TIMEOUT_MS)
 
     const script = document.createElement("script")
@@ -70,7 +75,7 @@ export function ContentChannel() {
   }, [feed, tiktok.url, tiktok.handle])
 
   return (
-    <section id="content" aria-labelledby="content-title" className="py-24 bg-slate-900/20 border-t border-white/5">
+    <section id="content" aria-labelledby="content-title" className="py-24 relative z-10 bg-slate-900/20 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader id="content-title" title={title} />
         <p className="text-slate-300 text-base leading-relaxed max-w-3xl mb-12 -mt-4 font-light">
@@ -81,10 +86,10 @@ export function ContentChannel() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid lg:grid-cols-5 gap-6 lg:gap-8 items-start"
+          className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start"
         >
           {/* Channel card */}
-          <div className="lg:col-span-2 glass rounded-[2rem] p-6 sm:p-8">
+          <div className="lg:col-span-2 min-w-0 glass rounded-[2rem] p-6 sm:p-8">
             <p lang="es" className="text-lg sm:text-xl font-bold text-white mb-3 text-balance">
               {brand}
             </p>
@@ -99,11 +104,11 @@ export function ContentChannel() {
                     href={profile.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-3 w-full min-h-[44px] px-5 py-3 rounded-xl bg-blue-950/40 border border-blue-900/40 text-slate-200 hover:text-white hover:bg-blue-600/10 hover:border-blue-500/50 transition-colors ${focusRing}`}
+                    className={`flex items-center gap-3 w-full min-w-0 min-h-[44px] px-5 py-3 rounded-xl bg-blue-950/40 border border-blue-900/40 text-slate-200 hover:text-white hover:bg-blue-600/10 hover:border-blue-500/50 transition-colors ${focusRing}`}
                   >
                     {PROFILE_ICONS[profile.icon]}
                     <span className="font-semibold">{profile.name}</span>
-                    <span className="text-sm text-slate-400 truncate">{profile.handle}</span>
+                    <span className="min-w-0 text-sm text-slate-400 truncate">{profile.handle}</span>
                     <ExternalLink size={16} className="ml-auto shrink-0 text-slate-400" aria-hidden="true" />
                     <span className="sr-only">(opens in a new tab)</span>
                   </a>
@@ -117,10 +122,10 @@ export function ContentChannel() {
             ref={panelRef}
             tabIndex={-1}
             aria-label="Latest TikTok videos"
-            className="lg:col-span-3 glass rounded-[2rem] overflow-hidden focus:outline-none"
+            className="lg:col-span-3 min-w-0 glass rounded-[2rem] overflow-hidden focus:outline-none"
           >
             {feed === "idle" ? (
-              <div className="flex flex-col items-center justify-center text-center gap-5 px-6 py-10 sm:p-10 min-h-[280px] sm:min-h-[340px]">
+              <div className="flex flex-col items-center justify-center text-center gap-5 px-6 py-10 sm:p-10 min-h-[280px] sm:min-h-[340px] [@media(max-height:500px)]:min-h-0 [@media(max-height:500px)]:py-6 [@media(max-height:500px)]:gap-4">
                 <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-300">
                   <TikTokLogo className="w-8 h-8" />
                 </div>
@@ -173,7 +178,27 @@ export function ContentChannel() {
                     </div>
                   )}
                 </div>
-                <div ref={embedRef} className={feed === "error" ? "hidden" : "min-h-[280px]"} />
+                <div
+                  ref={embedRef}
+                  className={feed === "error" ? "hidden" : feed === "loading" ? "min-h-[280px]" : undefined}
+                />
+                {/* Always-available exit: TikTok can fail inside its own iframe
+                    (rate limits, region blocks) where we can't detect it. */}
+                {feed !== "error" && (
+                  <div className="flex justify-center px-6 py-4">
+                    <a
+                      href={tiktok.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-2 min-h-[44px] px-4 text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors ${focusRing}`}
+                    >
+                      <TikTokLogo className="w-4 h-4" />
+                      Open @{tiktok.handle} on TikTok
+                      <ExternalLink size={14} aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                  </div>
+                )}
               </div>
             )}
           </div>
