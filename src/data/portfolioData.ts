@@ -99,6 +99,24 @@ export const socials = [
   { name: "Goodreads", url: "https://www.goodreads.com/ablancou", icon: "Goodreads" }
 ];
 
+// ─── Content channel: AI news in Spanish (short-form video) ─────────────────────
+// Spanish strings are rendered with lang="es". The TikTok feed is loaded only
+// after the visitor clicks (see ContentChannel) — no third-party script on page load.
+export const contentChannel = {
+  title: "AI news, explained in Spanish",
+  intro: "I build AI-powered web apps — and explain the AI news that matters to Spanish-speaking audiences.",
+  brand: "Armando Blanco | Inteligencia Artificial",
+  description: "Noticias de inteligencia artificial y tecnología explicadas en español, en videos cortos.",
+  tiktok: {
+    handle: "armandoblanco.ia",
+    url: "https://www.tiktok.com/@armandoblanco.ia"
+  },
+  profiles: [
+    { name: "TikTok", handle: "@armandoblanco.ia", url: "https://www.tiktok.com/@armandoblanco.ia", icon: "TikTok" },
+    { name: "Instagram", handle: "@armandoblanco.ia", url: "https://www.instagram.com/armandoblanco.ia/", icon: "Instagram" }
+  ]
+};
+
 export const certifications = [
   {
     id: "ai-engineering",

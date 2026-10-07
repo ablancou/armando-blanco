@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-white mb-4">Focus on Data Sovereignty</h2>
             <p>
-              Your privacy is of paramount importance. This portfolio is designed as a high-fidelity technical showcase and does not engage in covert data collection, third-party tracking, or identity harvesting.
+              Your privacy is of paramount importance. This portfolio is designed as a high-fidelity technical showcase and does not engage in covert data collection, third-party tracking, or identity harvesting. No third-party scripts are loaded unless you explicitly request them (see Embedded TikTok Content below).
             </p>
           </section>
 
@@ -39,7 +39,14 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-white mb-4">External Links and Assets</h2>
             <p>
-              This site provides links to verified professional platforms (LinkedIn, GitHub, HackerRank, etc.). Once you navigate to these external services, their respective privacy policies apply. We do not control or assume responsibility for their data practices.
+              This site provides links to verified professional platforms (LinkedIn, GitHub, HackerRank, etc.) and to Armando&apos;s content channels (TikTok, Instagram). Once you navigate to these external services, their respective privacy policies apply. We do not control or assume responsibility for their data practices.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-white mb-4">Embedded TikTok Content</h2>
+            <p>
+              The content section can display Armando&apos;s latest TikTok videos. Nothing from TikTok is loaded when you open this site — the feed is only requested when you click &quot;Load my latest videos&quot;. At that point your browser connects to TikTok, which may set its own cookies and process data under the TikTok Privacy Policy. If you don&apos;t click, no connection to TikTok is made.
             </p>
           </section>
 
@@ -51,7 +58,7 @@ export default function PrivacyPage() {
           </section>
 
           <footer className="pt-8 border-t border-white/5 text-sm text-slate-500">
-            Current Version: 1.0 (March 2026). For high-end professional inquiries, please contact Armando directly via LinkedIn.
+            Current Version: 1.1 (October 2026). For high-end professional inquiries, please contact Armando directly via LinkedIn.
           </footer>
         </div>
       </div>

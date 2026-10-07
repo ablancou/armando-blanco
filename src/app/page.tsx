@@ -84,6 +84,7 @@ import { Certifications } from "@/components/Certifications"
 import { ProjectShowcase } from "@/components/ProjectShowcase"
 import { TechArsenal } from "@/components/TechArsenal"
 import { SectionHeader } from "@/components/SectionHeader"
+import { ContentChannel } from "@/components/ContentChannel"
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<any>(null)
@@ -416,6 +417,9 @@ export default function Portfolio() {
       </section>
 
       <Certifications />
+
+      {/* SECTION — Content channel (AI news in Spanish) */}
+      <ContentChannel />
 
       {/* SECTION — Additional Projects */}
       <section className="py-32 bg-slate-900/30 border-t border-white/5">

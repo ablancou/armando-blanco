@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     description:
       "12+ yrs · Next.js, PyTorch, LLMs, Three.js/WebGL · Clinical AI & EdTech · Remote.",
     images: ["/og-image.png"],
-    creator: "@armandoblanco",
+    creator: "@ablancou",
   },
   robots: {
     index: true,
@@ -105,7 +105,9 @@ export default function RootLayout({
                 "url": "https://www.armandoblanco.dev",
                 "sameAs": [
                   "https://github.com/ablancou",
-                  "https://www.linkedin.com/in/armandoblanco"
+                  "https://www.linkedin.com/in/armandoblanco",
+                  "https://www.tiktok.com/@armandoblanco.ia",
+                  "https://www.instagram.com/armandoblanco.ia/"
                 ],
                 "address": {
                   "@type": "PostalAddress",

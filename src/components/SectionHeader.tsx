@@ -5,9 +5,10 @@ import { motion } from "framer-motion"
 
 interface SectionHeaderProps {
   title: string;
+  id?: string;
 }
 
-export function SectionHeader({ title }: SectionHeaderProps) {
+export function SectionHeader({ title, id }: SectionHeaderProps) {
   return (
     <div className="mb-12 flex justify-start">
       <motion.div 
@@ -25,7 +26,7 @@ export function SectionHeader({ title }: SectionHeaderProps) {
         <div className="relative px-8 py-4 rounded-2xl border border-blue-500/20 bg-blue-950/40 backdrop-blur-xl shadow-[0_0_20px_rgba(30,58,138,0.3)] flex items-center gap-4 overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
           <div className="w-1.5 h-8 rounded-full bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
-          <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-100">
+          <h2 id={id} className="text-3xl md:text-4xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-100">
             {title}
           </h2>
         </div>
